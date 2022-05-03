@@ -28,7 +28,7 @@
 <meta property="og:description" content="从 Macbook Pro 2018 的 macOS 平台换回了 Thinkbook 16p 的 Windows 平台，记录一下为 Thinkbook 16p 装系统的过程。 系统与驱动安装 开机进入 BIOS 系统安装盘启动。选择使用的 Windows 版本在格式化之后的硬盘上安装。  安装完重启进入配置界面，此时选择脱机账户而非微软账户，微软账户可以在进入系统之后再绑上。原因在于这里如果直接使">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2022-05-02T08:23:56.238Z">
+<meta property="article:modified_time" content="2022-05-03T07:33:48.990Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-02 09:23:56" itemprop="dateModified" datetime="2022-05-02T09:23:56+01:00">2022-05-02</time>
+                <time title="修改时间：2022-05-03 08:33:48" itemprop="dateModified" datetime="2022-05-03T08:33:48+01:00">2022-05-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -288,7 +288,10 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="包管理器 -scoop"><a href="# 包管理器 -scoop" class="headerlink" title="包管理器 scoop"></a>包管理器 scoop</h3><h4 id="本体安装"><a href="# 本体安装" class="headerlink" title="本体安装"></a>本体安装 </h4><p> 打开 PowerShell，检查系统内 PowerShell 的版本。Windows 10 自带的是 5，新装的是 7，总之大于等于 5 即可</p>
+<h3 id="包管理器 -scoop"><a href="# 包管理器 -scoop" class="headerlink" title="包管理器 scoop"></a>包管理器 scoop</h3><p>Windows 下的包管理器，我个人不太推荐使用 chocolatey 和 winget 来安装 GUI 程序。这两者默认用 <code>sudo</code> 权限把程序安装到 <code>C:\Program Files</code> 或者 <code>C:\Program Files (x86)</code> 下，并且安装过程中无法进行手动配置，很难判断是否有其他垃圾程序等被安装进电脑，处理起来也相当困难。</p>
+<p>scoop 在这方面做得实在是非常好，默认情况下安装都在 <code>% userprofile%\scoop</code> 文件夹内，基本是清一色的 “绿色版” 安装。</p>
+<p>包索引网页 <a target="_blank" rel="noopener" href="https://scoop.sh/">Scoop - A command-line installer for Windows</a> 也做得很棒。</p>
+<h4 id="本体安装"><a href="# 本体安装" class="headerlink" title="本体安装"></a>本体安装 </h4><p> 打开 PowerShell，检查系统内 PowerShell 的版本。Windows 10 自带的是 5，新装的是 7，总之大于等于 5 即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$psversiontable.psversion.major</span><br></pre></td></tr></table></figure>
 <p>允许 PowerShell 执行本地脚本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-executionpolicy remotesigned -scope currentuser</span><br></pre></td></tr></table></figure>
@@ -301,7 +304,7 @@
 <p>添加 scoop 的官方 Buckets，即官方提供的各种软件包列表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scoop install git</span><br><span class="line">scoop bucket add extras</span><br><span class="line">scoop bucket add versions</span><br></pre></td></tr></table></figure>
 <p>安装 CLI 程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install curl wget python python27 rclone cwrsync ffmpeg nodejs sudo youtube-dl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install curl wget python python27 rclone cwrsync ffmpeg nodejs sudo vim youtube-dl</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 CLI 程序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 vcredist2022</span><br></pre></td></tr></table></figure>
 <table>
@@ -352,6 +355,10 @@
 <td></td>
 </tr>
 <tr>
+<td>vim</td>
+<td></td>
+</tr>
+<tr>
 <td>youtube-dl</td>
 <td></td>
 </tr>
@@ -360,8 +367,12 @@
 <td>配合 DirectX 检测工具</td>
 </tr>
 </tbody></table>
+<p>cwrynsc 调用系统 ssh 时会出现兼容问题，报错如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]</span><br><span class="line">rsync error: error in rsync protocol data stream (code 12) at io.c (228) [Receiver&#x3D;3.2.3]</span><br><span class="line">rsync: connection unexpectedly closed (0 bytes received so far) [sender]</span><br><span class="line">rsync error: error in rsync protocol data stream (code 12) at io.c (228) [sender&#x3D;3.2.3]</span><br></pre></td></tr></table></figure>
+<p>需要手动指定 cwrynsc 文件夹内自带的 ssh 文件，<code>- e</code> 后面跟 ssh 文件的路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-e &quot;C:\Users\i\scoop\apps\cwrsync\current\bin\ssh.exe&quot;</span><br></pre></td></tr></table></figure>
 <p>安装 GUI 程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender eac firefox hourglass locale-emulator motrix mpc-hc-fork spotify teamviewer telegram thunderbird zoom aida64extreme dismplusplus everything rainmeter rufus spacesniffer windows-terminal wox anaconda3 github mobaxterm pycharm rstudio sublime-text vscode</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender eac firefox hourglass locale-emulator motrix mpc-hc-fork spotify teamviewer telegram thunderbird zoom aida64extreme dismplusplus everything rainmeter raspberry-pi-imager rufus spacesniffer windows-terminal wox anaconda3 github mobaxterm pycharm rstudio sublime-text vscode</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 GUI 程序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install autohotkey-installer steam madvr</span><br></pre></td></tr></table></figure>
 <table>
@@ -464,6 +475,10 @@
 <td>设置开机自启，右键高分辨率屏幕适配，添加皮肤：<a target="_blank" rel="noopener" href="https://www.deviantart.com/saberakiyama/art/SA-Weather-Cast-849503970">SA Weather Cast</a></td>
 </tr>
 <tr>
+<td>raspberry-pi-imager</td>
+<td>折腾树莓派还得是官方工具</td>
+</tr>
+<tr>
 <td>rufus</td>
 <td></td>
 </tr>
@@ -538,25 +553,17 @@
 <td>和 QuickLook 配合使用</td>
 </tr>
 </tbody></table>
-<p>GUI 部分</p>
+<p>GUI 安装部分</p>
 <table>
 <thead>
 <tr>
-<th>GUI</th>
+<th>GUI 安装</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>aliwangwang</td>
 <td></td>
-</tr>
-<tr>
-<td>AlphaROMdiE</td>
-<td>绕过 Gal 的正版请求</td>
-</tr>
-<tr>
-<td>ariang</td>
-<td>本地 html 文件</td>
 </tr>
 <tr>
 <td>bandizip</td>
@@ -573,10 +580,6 @@
 <tr>
 <td>WD Dashboard</td>
 <td>西数的 SSD 监控程序</td>
-</tr>
-<tr>
-<td>DirectX 检测工具</td>
-<td>配合 vcredist 使用</td>
 </tr>
 <tr>
 <td>Foobar2000</td>
@@ -599,10 +602,6 @@
 <td></td>
 </tr>
 <tr>
-<td>Media CreationTool 21H2</td>
-<td>系统配置出问题的时候的修复工具</td>
-</tr>
-<tr>
 <td>potplayer</td>
 <td></td>
 </tr>
@@ -619,6 +618,39 @@
 <td></td>
 </tr>
 <tr>
+<td>搜狗拼音输入法</td>
+<td>必须在安装中文、日文、西文字体之后进行</td>
+</tr>
+<tr>
+<td>原神</td>
+<td>大陆服与亚服</td>
+</tr>
+</tbody></table>
+<p>GUI 解压部分</p>
+<table>
+<thead>
+<tr>
+<th>GUI 解压</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AlphaROMdiE</td>
+<td>绕过 Gal 的正版请求</td>
+</tr>
+<tr>
+<td>ariang</td>
+<td>本地 html 文件</td>
+</tr>
+<tr>
+<td>DirectX 检测工具</td>
+<td>配合 vcredist 使用</td>
+</tr>
+<tr>
+<td>Media CreationTool 21H2</td>
+<td>系统配置出问题的时候的修复工具</td>
+</tr>
+<tr>
 <td>图吧工具箱 2022</td>
 <td></td>
 </tr>
@@ -627,16 +659,8 @@
 <td></td>
 </tr>
 <tr>
-<td>搜狗拼音输入法</td>
-<td>必须在安装中文、日文、西文字体之后进行</td>
-</tr>
-<tr>
 <td>小丸工具箱</td>
 <td></td>
-</tr>
-<tr>
-<td>原神</td>
-<td>大陆服与亚服</td>
 </tr>
 </tbody></table>
 <h3 id="破解版软件"><a href="# 破解版软件" class="headerlink" title="破解版软件"></a>破解版软件</h3><table>
@@ -651,6 +675,14 @@
 <td></td>
 </tr>
 <tr>
+<td>Mathematica</td>
+<td></td>
+</tr>
+<tr>
+<td>Topaz A.I. Gigapixel 3</td>
+<td></td>
+</tr>
+<tr>
 <td>ccleaner</td>
 <td></td>
 </tr>
@@ -659,16 +691,8 @@
 <td></td>
 </tr>
 <tr>
-<td>mathematica</td>
-<td></td>
-</tr>
-<tr>
 <td>sublime text</td>
 <td>exe 文件替换</td>
-</tr>
-<tr>
-<td>Topaz A.I. Gigapixel 3</td>
-<td></td>
 </tr>
 </tbody></table>
 <h2 id="杂项"><a href="# 杂项" class="headerlink" title="杂项"></a>杂项</h2><ul>
