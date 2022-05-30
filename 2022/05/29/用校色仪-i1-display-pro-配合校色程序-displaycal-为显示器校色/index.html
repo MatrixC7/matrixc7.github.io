@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://pic.imgdb.cn/item/6294cd9509475431293f5b64.png">
 <meta property="og:image" content="https://pic.imgdb.cn/item/6294cb3009475431293bee89.png">
 <meta property="article:published_time" content="2022-05-29T02:07:18.000Z">
-<meta property="article:modified_time" content="2022-05-30T14:18:30.813Z">
+<meta property="article:modified_time" content="2022-05-30T14:23:48.621Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.imgdb.cn/item/62925644094754312934fae2.png">
@@ -208,7 +208,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-30 15:18:30" itemprop="dateModified" datetime="2022-05-30T15:18:30+01:00">2022-05-30</time>
+                <time title="修改时间：2022-05-30 15:23:48" itemprop="dateModified" datetime="2022-05-30T15:23:48+01:00">2022-05-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -346,7 +346,7 @@
 <li>点击创建 3D LUT，即可生成用于 madVR 的 .3dlut 文件。</li>
 </ul>
 <h2 id="校色与配置安装"><a href="#校色与配置安装" class="headerlink" title="校色与配置安装"></a>校色与配置安装</h2><h3 id="校色"><a href="#校色" class="headerlink" title="校色"></a>校色</h3><ul>
-<li><p>笔记本<br>由于笔记本的屏幕本身无法进行调整，因此不开“互动显示器调整”的情况下全部“下一步”就行。蜘蛛系列（至少我用的 Spyder X Elite 会）在每次开始检测时都会有要求校色仪盖上盖子自我校准，而爱色丽的 i1 Display Pro 甚至不需要这步，盖在屏幕上都不用取下来，非常方便。</p>
+<li><p>笔记本的显示屏<br>由于笔记本的屏幕本身无法进行调整，因此不开“互动显示器调整”的情况下全部“下一步”就行。蜘蛛系列（至少我用的 Spyder X Elite 会）在每次开始检测时都会有要求校色仪盖上盖子自我校准，而爱色丽的 i1 Display Pro 甚至不需要这步，盖在屏幕上都不用取下来，非常方便。</p>
 </li>
 <li><p>单独的显示器<br>点击开始后，需要在开始测量的页面中调整屏幕的色彩和亮度直到其符合文字的描述，此时会有绿色的钩出现表示已经准备完成。其后的步骤和笔记本类似，“下一步”检测结束即可。</p>
 </li>
@@ -366,15 +366,15 @@
 <h3 id="色调曲线-Tone-Curve"><a href="#色调曲线-Tone-Curve" class="headerlink" title="色调曲线 / Tone Curve"></a>色调曲线 / Tone Curve</h3><p>不需要修改，选择默认的套用黑位偏移即可。</p>
 <h2 id="为其他程序配置颜色文件"><a href="#为其他程序配置颜色文件" class="headerlink" title="为其他程序配置颜色文件"></a>为其他程序配置颜色文件</h2><h3 id="Windows-内的默认颜色文件"><a href="#Windows-内的默认颜色文件" class="headerlink" title="Windows 内的默认颜色文件"></a>Windows 内的默认颜色文件</h3><p>打开颜色管理，修改 Windows 颜色系统默认值。虽然颜色管理已经由 DisplayCAL Profile Manager 接管，但再做设置可以在开机时避免出现从未配置校色文件到配置校色文件的变色过程，对眼睛更友好。<br><img src="https://pic.imgdb.cn/item/6294cd9509475431293f5b64.png"></p>
 <ul>
-<li>修改设备配置文件为校准的颜色配置文件地址</li>
-<li>修改查看条件配置完文件为 ICC 查看条件的 WCS 配置文件</li>
-<li>在“更改系统默认值”中也进行相同的修改</li>
+<li>修改设备配置文件为校准的颜色配置文件地址。</li>
+<li>修改查看条件配置完文件为 ICC 查看条件的 WCS 配置文件。</li>
+<li>在“更改系统默认值”中也进行相同的修改。</li>
 </ul>
 <h3 id="火狐浏览器"><a href="#火狐浏览器" class="headerlink" title="火狐浏览器"></a>火狐浏览器</h3><p>打开 <a href="about:config">about:config</a>，在搜索栏中输入 color management 修改如图的三个选项<br><img src="https://pic.imgdb.cn/item/6294cb3009475431293bee89.png"></p>
 <ul>
-<li>gfx_color_management_display_profile 内填入校准的颜色配置文件地址</li>
-<li>gfx_color_management_enablev4 修改为 true，打开 ICC v4 profiles</li>
-<li>gfx_color_management_mode 修改为 1，让所有网页及其文件的颜色由火狐处理</li>
+<li>gfx_color_management_display_profile 内填入校准的颜色配置文件地址。</li>
+<li>gfx_color_management_enablev4 修改为 true，打开为 ICC v4 色彩特性文件的支持。</li>
+<li>gfx_color_management_mode 修改为 1，让所有网页及其文件的颜色由火狐处理。</li>
 </ul>
 <p>重启后即可生效。</p>
 
