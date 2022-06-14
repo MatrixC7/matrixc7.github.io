@@ -28,7 +28,7 @@
 <meta property="og:description" content="手头的旧笔记本 ASUS K401UQ 的屏幕偏色偏到了 i1dp + DisplayCAL 都无法拯救的程度，不过 i5-7200U 的 CPU、4G + 4G 的双通道 DDR4 内存和 NVIDIA GeForce 940MX 的独显还是挺靠谱的，所以早上想了想干脆直接把屏幕拆了，替换原来的树莓派用来当 NAS 的主机。 鼓捣了一整天终于算是把东西都整完了，从 arm64 升级到 amd64">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-13T20:57:44.000Z">
-<meta property="article:modified_time" content="2022-06-14T06:53:38.737Z">
+<meta property="article:modified_time" content="2022-06-14T06:56:01.356Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-14 07:53:38" itemprop="dateModified" datetime="2022-06-14T07:53:38+01:00">2022-06-14</time>
+                <time title="修改时间：2022-06-14 07:56:01" itemprop="dateModified" datetime="2022-06-14T07:56:01+01:00">2022-06-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -317,7 +317,7 @@
 <li>将已经挂载的多块硬盘直接整合成一块大硬盘，数据分散地保存在各个盘内，并且单独拔下来也可以使用。</li>
 <li>新建一个 mergerfs 的池子，在文件系统项目选择想要整合的多块硬盘。</li>
 <li>创建策略和最小空余空间按需求选择即可，直接用默认也无大碍。</li>
-<li>勾选 fstab，并且在下面的选项行内将 <code>cache.files=off</code> 修改为 <code>cache.files=on</code>，否则后面的有些服务可能会报错。</li>
+<li>勾选 fstab，并且在下面的选项行内将 <code>cache.files=off</code> 修改为 <code>cache.files=on</code>，否则有些服务（如 jellyfin）会报错。</li>
 </ul>
 </li>
 <li>共享文件夹<ul>
