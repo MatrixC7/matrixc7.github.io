@@ -28,7 +28,7 @@
 <meta property="og:description" content="从 Macbook Pro 2018 的 macOS 平台换回了 Thinkbook 16p 的 Windows 平台，记录一下为 Thinkbook 16p 装系统的过程。 系统与驱动安装 开机进入 BIOS，启动 PE 或者系统安装盘，选择使用的 Windows 版本在格式化之后的硬盘上安装。  安装完重启进入配置界面，此时选择脱机账户而非微软账户，微软账户可以在进入系统之后再绑上。原因在于这">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2022-06-10T04:04:37.115Z">
+<meta property="article:modified_time" content="2022-06-14T17:50:40.507Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-10 05:04:37" itemprop="dateModified" datetime="2022-06-10T05:04:37+01:00">2022-06-10</time>
+                <time title="修改时间：2022-06-14 18:50:40" itemprop="dateModified" datetime="2022-06-14T18:50:40+01:00">2022-06-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,7 +246,7 @@
 <a id="more"></a> 
 
 <h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><p>手动安装 v2ray，之后的程序安装不少需要梯子进行</p>
-<p>软件安装一共分四部分构成：Microsoft Store 应用商店 + 包管理器 scoop + 正常安装 + 破解版软件</p>
+<p>软件安装一共由四部分构成：Microsoft Store 应用商店 + 包管理器 scoop + 正常安装 + 破解版软件</p>
 <h3 id="Microsoft-Store-应用商店"><a href="#Microsoft-Store-应用商店" class="headerlink" title="Microsoft Store 应用商店"></a>Microsoft Store 应用商店</h3><p>在我之前使用 CMWTAT 来进行 Windows 的破解激活时，Microsoft Store 应用商店非常容易在检查许可的时候进行报错 <code>Something happened on our end, Error: 0x87E10BCF</code>。具体什么原因到现在为止还未排查到，但是用正版 Windows 就没有碰到过，所以还是先用正版更为保险。先安装 Microsoft Store 平台上的各项程序。</p>
 <table>
 <thead>
@@ -304,7 +304,7 @@
 <p>先安装基本工具 git，之后添加 scoop 的官方 bucket，即官方提供的各种软件包列表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scoop install git</span><br><span class="line">scoop bucket add extras</span><br><span class="line">scoop bucket add versions</span><br></pre></td></tr></table></figure>
 <p>安装 CLI 程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install curl wget python python27 rclone cwrsync ffmpeg nodejs r sudo vim youtube-dl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install curl wget python python27 rclone cwrsync docker ffmpeg nodejs r sudo vim youtube-dl</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 CLI 程序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 vcredist2022 windowsdesktop-runtime</span><br></pre></td></tr></table></figure>
 <table>
@@ -340,6 +340,10 @@
 </tr>
 <tr>
 <td>cwrsync</td>
+<td></td>
+</tr>
+<tr>
+<td>docker</td>
 <td></td>
 </tr>
 <tr>
@@ -379,6 +383,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]</span><br><span class="line">rsync error: error in rsync protocol data stream (code 12) at io.c(228) [Receiver&#x3D;3.2.3]</span><br><span class="line">rsync: connection unexpectedly closed (0 bytes received so far) [sender]</span><br><span class="line">rsync error: error in rsync protocol data stream (code 12) at io.c(228) [sender&#x3D;3.2.3]</span><br></pre></td></tr></table></figure>
 <p>需要手动指定 cwrynsc 文件夹内自带的 ssh 文件，即 <code>-e</code> 后面跟 ssh 文件的路径</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-e &quot;C:\Users\i\scoop\apps\cwrsync\current\bin\ssh.exe&quot;</span><br></pre></td></tr></table></figure>
+<p>使用 Docker 之前需要先在“程序和功能-启用或关闭 Windows 功能”中打开 Hyper-V 和容器这两个选项，功能安装完成重启电脑后执行 <code>sudo dockerd --register-service</code> 添加 Docker Engine 服务，即可正常运行 Docker。</p>
 <p>安装 GUI 程序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender eac hourglass locale-emulator megasync motrix mpc-hc-fork netch screentogif spotify sumatrapdf teamviewer telegram zoom aida64extreme crystaldiskinfo crystaldiskmark dismplusplus everything fiddler geekuninstaller hwinfo rainmeter raspberry-pi-imager rufus spacesniffer windows-terminal wox-beta anaconda3 github mobaxterm pycharm rstudio vscode</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 GUI 程序</p>
@@ -456,7 +461,7 @@
 </tr>
 <tr>
 <td>thunderbird</td>
-<td><a href="mailto:&#x61;&#100;&#x6d;&#x69;&#110;&#64;&#x6d;&#x61;&#x74;&#x72;&#x69;&#120;&#x63;&#x37;&#46;&#99;&#x6f;&#109;">&#x61;&#100;&#x6d;&#x69;&#110;&#64;&#x6d;&#x61;&#x74;&#x72;&#x69;&#120;&#x63;&#x37;&#46;&#99;&#x6f;&#109;</a> 和 <a href="mailto:&#x73;&#x6f;&#x66;&#x61;&#x72;&#x63;&#104;&#x78;&#x40;&#118;&#x69;&#112;&#x2e;&#113;&#113;&#x2e;&#99;&#111;&#x6d;">&#x73;&#x6f;&#x66;&#x61;&#x72;&#x63;&#104;&#x78;&#x40;&#118;&#x69;&#112;&#x2e;&#113;&#113;&#x2e;&#99;&#111;&#x6d;</a> ，scoop hold 后使用自带更新</td>
+<td><a href="mailto:&#97;&#x64;&#109;&#x69;&#x6e;&#x40;&#109;&#97;&#x74;&#114;&#105;&#x78;&#99;&#55;&#x2e;&#x63;&#x6f;&#x6d;">&#97;&#x64;&#109;&#x69;&#x6e;&#x40;&#109;&#97;&#x74;&#114;&#105;&#x78;&#99;&#55;&#x2e;&#x63;&#x6f;&#x6d;</a> 和 <a href="mailto:&#x73;&#111;&#102;&#x61;&#x72;&#x63;&#104;&#x78;&#64;&#118;&#x69;&#x70;&#x2e;&#x71;&#113;&#x2e;&#99;&#111;&#109;">&#x73;&#111;&#102;&#x61;&#x72;&#x63;&#104;&#x78;&#64;&#118;&#x69;&#x70;&#x2e;&#x71;&#113;&#x2e;&#99;&#111;&#109;</a> ，scoop hold 后使用自带更新</td>
 </tr>
 <tr>
 <td>zoom</td>
@@ -776,7 +781,7 @@
 <td>用破解后的 exe 文件替换</td>
 </tr>
 </tbody></table>
-<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><ul>
+<h2 id="docker-部分"><a href="#docker-部分" class="headerlink" title="docker 部分"></a>docker 部分</h2><h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><ul>
 <li>转移旧电脑 i 文件夹的各项内容</li>
 <li>Chrome 与 Firefox 的扩展插件配置，字体修改等</li>
 <li>转移 MMD 相关资料</li>
@@ -906,7 +911,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">系统与驱动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.1.</span> <span class="nav-text">Microsoft Store 应用商店</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop"><span class="nav-number">2.2.</span> <span class="nav-text">包管理器 scoop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85"><span class="nav-number">2.3.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E9%83%A8%E5%88%86"><span class="nav-number">2.3.1.</span> <span class="nav-text">可执行文件部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E9%83%A8%E5%88%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">压缩包解压部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E7%89%88%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">破解版软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%82%E9%A1%B9"><span class="nav-number">3.</span> <span class="nav-text">杂项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9Ascoop-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.</span> <span class="nav-text">附录：scoop 常用命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA-bucket-%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">对单个 bucket 的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">对单个程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9-scoop-%E6%9C%AC%E4%BD%93%E3%80%81bucket-%E5%92%8C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">对 scoop 本体、bucket 和安装程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">更详尽的说明</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">系统与驱动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.1.</span> <span class="nav-text">Microsoft Store 应用商店</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop"><span class="nav-number">2.2.</span> <span class="nav-text">包管理器 scoop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85"><span class="nav-number">2.3.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E9%83%A8%E5%88%86"><span class="nav-number">2.3.1.</span> <span class="nav-text">可执行文件部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E9%83%A8%E5%88%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">压缩包解压部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E7%89%88%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">破解版软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-%E9%83%A8%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">docker 部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%82%E9%A1%B9"><span class="nav-number">4.</span> <span class="nav-text">杂项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9Ascoop-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.</span> <span class="nav-text">附录：scoop 常用命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA-bucket-%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">5.1.</span> <span class="nav-text">对单个 bucket 的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">对单个程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9-scoop-%E6%9C%AC%E4%BD%93%E3%80%81bucket-%E5%92%8C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">5.3.</span> <span class="nav-text">对 scoop 本体、bucket 和安装程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">5.4.</span> <span class="nav-text">更详尽的说明</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
