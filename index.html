@@ -492,7 +492,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-21 14:55:20" itemprop="dateModified" datetime="2023-03-21T14:55:20Z">2023-03-21</time>
+                <time title="修改时间：2023-05-16 14:25:40" itemprop="dateModified" datetime="2023-05-16T14:25:40+01:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -531,10 +531,13 @@
       
           <p>2022.04.25 从 Macbook Pro 2018 的 macOS 平台换回了 Thinkbook 16p 的 Windows 平台，记录一下为 Thinkbook 16p 装系统的过程。</p>
 <p>2023.03.09 准备在接下来的几个月内购置 i7-13700KF + RTX4090 的 PC，预先在虚拟机内配置安装能够进行大小核分配的 Windows 11。</p>
-<h2 id="系统与驱动安装"><a href="#系统与驱动安装" class="headerlink" title="系统与驱动安装"></a>系统与驱动安装</h2><h3 id="Windows-10"><a href="#Windows-10" class="headerlink" title="Windows 10"></a>Windows 10</h3><ul>
+<p>2023.05.16 Thinkbook 16p 升级至 Windows 11。由于 AMD 的 R7-5800H 开启睿频时待机温度都会在 80°C 左右，所以干脆关闭睿频用性能换静音了。同时台式机的配置修改为 i7-13900K + RTX4090 + RTX4070，购买已经基本完成。</p>
+<h2 id="系统与驱动安装"><a href="#系统与驱动安装" class="headerlink" title="系统与驱动安装"></a>系统与驱动安装</h2><ul>
 <li><p>开机进入 BIOS，启动 PE 或者系统安装盘，选择使用的 Windows 版本在格式化之后的硬盘上安装。</p>
 </li>
 <li><p>安装完重启进入配置界面，此时选择脱机账户而非微软账户。原因在于这里如果直接使用微软账号，系统内个人文件夹的名字会跟随微软账号的名称，相当容易出问题；同时，微软账户完全可以在进入系统之后再绑上，这时个人文件夹的名称已经确定，不会带来任何可能的负面影响。</p>
+</li>
+<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而 Windows 11 又无法在断网的情况下安装。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#x40;&#x69;&#x2e;&#x69;">&#105;&#x40;&#x69;&#x2e;&#x69;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
 </li>
 <li><p>个人文件夹的名字一般习惯直接取 i，不仅自指而且由于不包含中文和空格，以后安装其他程序（例如 nodejs）的时候不会报错，否则会很麻烦。</p>
 </li>
@@ -543,12 +546,6 @@
 <li><p>必须先安装 Windows Update 的更新，再安装官方的驱动程序集，否则驱动的控制面板程序容易出问题。</p>
 </li>
 <li><p>重启后再次进行 Windows Update 的更新，对 Windows Update 安装的 Microsoft Store 版 AMD 控制面板进行基本的设定。</p>
-</li>
-</ul>
-<h3 id="Windows-11"><a href="#Windows-11" class="headerlink" title="Windows 11"></a>Windows 11</h3><ul>
-<li><p>所有 Windows 的安装中，极度推荐使用脱机账户而非微软账户，但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而 Windows 11 又无法在断网的情况下安装。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#x40;&#105;&#x2e;&#105;">&#105;&#x40;&#105;&#x2e;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
-</li>
-<li><p>其余的和 Windows 10 的安装基本保持一致，暂不赘述。</p>
 </li>
 </ul>
           <!--noindex-->
