@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2023-05-18T00:03:01.694Z">
+<meta property="article:modified_time" content="2023-05-18T13:35:24.639Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-18 01:03:01" itemprop="dateModified" datetime="2023-05-18T01:03:01+01:00">2023-05-18</time>
+                <time title="修改时间：2023-05-18 14:35:24" itemprop="dateModified" datetime="2023-05-18T14:35:24+01:00">2023-05-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,27 +233,49 @@
         <p>2022.04.25 从 Macbook Pro 2018 的 macOS 平台换回了 Thinkbook 16p 的 Windows 平台，记录一下为 Thinkbook 16p 装系统的过程。</p>
 <p>2023.03.09 准备在接下来的几个月内购置 i7-13700KF + RTX4090 的 PC，预先在虚拟机内配置安装能够进行大小核分配的 Windows 11。</p>
 <p>2023.05.16 Thinkbook 16p 升级至 Windows 11。由于 AMD 的 R7-5800H 开启睿频时待机温度都会在 80°C 左右，所以干脆关闭睿频用性能换静音了。同时台式机的配置修改为 i7-13900K + RTX4090 + RTX4070，购买已经基本完成。</p>
+<a id="more"></a> 
+
 <h2 id="系统与驱动安装"><a href="#系统与驱动安装" class="headerlink" title="系统与驱动安装"></a>系统与驱动安装</h2><ul>
-<li><p>开机进入 BIOS，启动 PE 或者系统安装盘，选择使用的 Windows 版本在格式化之后的硬盘上安装。</p>
+<li><p>开机进入 BIOS，启动 PE 或者系统安装盘，选择合适的 Windows 版本在格式化之后的硬盘上安装。</p>
 </li>
 <li><p>安装完重启进入配置界面，此时选择脱机账户而非微软账户。原因在于这里如果直接使用微软账号，系统内个人文件夹的名字会跟随微软账号的名称，相当容易出问题；同时，微软账户完全可以在进入系统之后再绑上，这时个人文件夹的名称已经确定，不会带来任何可能的负面影响。</p>
 </li>
-<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而 Windows 11 又无法在断网的情况下安装。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#64;&#x69;&#x2e;&#105;">&#105;&#64;&#x69;&#x2e;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
+<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而 Windows 11 又无法在断网的情况下安装。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#64;&#x69;&#46;&#x69;">&#105;&#64;&#x69;&#46;&#x69;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
 </li>
 <li><p>个人文件夹的名字一般习惯直接取 i，不仅自指而且由于不包含中文和空格，以后安装其他程序（例如 nodejs）的时候不会报错，否则会很麻烦。</p>
 </li>
-<li><p>进入系统，用在 tb 等买的激活码激活 Windows，之后在设置-账户-账户信息中选择使用 Microsoft 账户登录，即可完成绑定。</p>
+<li><p>进入系统，登录微软账号，激活 Windows 11：</p>
+<ul>
+<li><p>激活码：tb 或者正版购买的 Retail 激活码直接激活即可，注意和店家声明要 Retail 版而非 MAK 版或者 OEM 版的。</p>
 </li>
-<li><p>通过 Windows Update 安装基本驱动，再通过后面安装的 ccleaner 安装更新官方的驱动程序集，否则驱动的控制面板程序容易出问题。</p>
+<li><p>基于硬件 ID （HWID）的数字许可证：</p>
+<ul>
+<li><p>手动 HWID：先装 Windows 10，用便宜的 Windows 10 激活码激活后绑定微软账户，升级至 Windows 11。这样微软账户上就会有一个基于硬件 ID 的数字许可证。之后重装系统既可。</p>
 </li>
-<li><p>重启后再次进行 Windows Update 的更新，同时对 Windows Update 安装的各类控制面板进行基本的设定。</p>
+<li><p>第三方程序 HWID：通过<a target="_blank" rel="noopener" href="https://github.com/massgravel/Microsoft-Activation-Scripts">脚本</a>生成欺骗文件使 Microsoft 以为本机的 Windows 11 是从 Windows 10 升级而来，从而授予微软账户一个基于硬件 ID 的数字许可证。不需要重装系统。</p>
 </li>
 </ul>
-<a id="more"></a> 
-
+</li>
+<li><p>笔记本和台式机的授权是不互通的。</p>
+</li>
+<li><p>个人推荐：Retail 激活码 &gt; 手动 HWID &gt; 第三方程序 HWID。</p>
+</li>
+</ul>
+</li>
+<li><p>通过 Windows Update 安装基本驱动。</p>
+</li>
+<li><p>笔记本在 Windows Update 的基本驱动安装完成之后需要安装官网上相应型号的所有驱动，而台式机可以直接下一步。</p>
+</li>
+<li><p>通过后面安装的 ccleaner 更新驱动程序集。</p>
+</li>
+<li><p>上述三者的驱动安装顺序不推荐更改，否则驱动的控制面板程序容易出问题。</p>
+</li>
+<li><p>重启后再次进行 Windows Update 的更新直到所有更新完成。</p>
+</li>
+</ul>
 <h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><p>手动安装 v2ray，之后的程序安装不少需要梯子进行。</p>
 <p>软件安装一共由四部分构成：Microsoft Store 应用商店 + 包管理器 scoop + 正常安装 + 破解版软件。</p>
-<h3 id="Microsoft-Store-应用商店"><a href="#Microsoft-Store-应用商店" class="headerlink" title="Microsoft Store 应用商店"></a>Microsoft Store 应用商店</h3><p>在我之前使用 CMWTAT 来进行 Windows 的破解激活时，Microsoft Store 应用商店非常容易在检查许可的时候进行报错 <code>Something happened on our end, Error: 0x87E10BCF</code>。具体什么原因到现在为止还未排查到，但是用正版 Windows 就没有碰到过，所以还是先用正版更为保险。先安装 Microsoft Store 平台上的各项程序。</p>
+<h3 id="Microsoft-Store-应用商店"><a href="#Microsoft-Store-应用商店" class="headerlink" title="Microsoft Store 应用商店"></a>Microsoft Store 应用商店</h3><p>先安装 Microsoft Store 平台上的各项程序。</p>
 <table>
 <thead>
 <tr>
@@ -263,15 +285,7 @@
 </thead>
 <tbody><tr>
 <td>Powershell</td>
-<td>先装 Powershell，之后配置 Terminal</td>
-</tr>
-<tr>
-<td>Windows Terminal</td>
-<td>调用安装的 Powershell，按照 <a target="_blank" rel="noopener" href="https://qiita.com/yokra9/items/bdd0882268b308cf22ca">此说明</a> 添加 Git Bash 和 Cygwin</td>
-</tr>
-<tr>
-<td>Microsoft Office 2019</td>
-<td>正版的 Office 家庭与学生版</td>
+<td>安装后在 Terminal 内调用，按照 <a target="_blank" rel="noopener" href="https://qiita.com/yokra9/items/bdd0882268b308cf22ca">此说明</a> 添加 Cygwin</td>
 </tr>
 <tr>
 <td>Microsoft To-Do</td>
@@ -279,7 +293,7 @@
 </tr>
 <tr>
 <td>QuickLook</td>
-<td>后面会安装 MicrosoftEdgeWebview2 以支持md文件预览</td>
+<td></td>
 </tr>
 <tr>
 <td>Snipaste</td>
@@ -287,13 +301,15 @@
 </tr>
 </tbody></table>
 <h3 id="包管理器-scoop"><a href="#包管理器-scoop" class="headerlink" title="包管理器 scoop"></a>包管理器 scoop</h3><p>Windows 下的包管理器，我个人不太推荐使用 chocolatey 和 winget 来安装 GUI 程序。这两者默认用 <code>sudo</code> 权限把程序安装到 <code>C:\Program Files</code> 或者 <code>C:\Program Files (x86)</code> 下，并且安装过程中无法进行手动配置，很难判断是否有其他垃圾程序等被安装进电脑，处理起来也相当困难。</p>
-<p>scoop，本意是指用来挖桶装冰淇淋的比较深的勺子。 scoop 在权限控制和安装方面做得实在是非常好，基本上的安装包都无需 <code>sudo</code> 权限，并且安装都在指定的 scoop 文件夹内，而且是清一色的“绿色版”安装。</p>
+<p>scoop，本意是指用来挖桶装冰淇淋的比较深的勺子。 scoop 在权限控制和安装方面做得更好，基本上的安装包都无需 <code>sudo</code> 权限，并且安装都在指定的 scoop 文件夹内，而且是清一色的“绿色版”安装。</p>
 <p>包索引网页 <a target="_blank" rel="noopener" href="https://scoop.sh/">Scoop - A command-line installer for Windows</a> 也做得很棒。</p>
 <h4 id="本体安装"><a href="#本体安装" class="headerlink" title="本体安装"></a>本体安装</h4><p>打开 PowerShell，检查系统内 PowerShell 的版本。Windows 10 自带的是 5，新装的是 7，总之大于等于 5 即可。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$psversiontable.psversion.major</span><br></pre></td></tr></table></figure>
 <p>允许 PowerShell 执行本地脚本。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-executionpolicy remotesigned -scope currentuser</span><br></pre></td></tr></table></figure>
-<p>（可选）设置环境变量，即改变 scoop 安装路径。<br>2023 年 3 月目前版本的 scoop 的默认安装路径已经从原来的 <code>C:\scoop</code> 变为 <code>~\scoop</code>，即当前用户的个人文件夹内 <code>C:\Users\your-user-name\scoop</code>。这个路径也是我以前会手动指定的路径，非常好用，因此不推荐修改。<br>如果需要修改，下列命令中第一行的作用即为指定安装路径，修改时最好保留单引号，如 <code>D:\scoop</code>。注意如果路径内有空格的话，一些程序如 nodejs 等会无法运行。这里略去了 scoop 中很少用的全局安装路径设定（<code>scoop install -g git</code> 中的 <code>-g</code>），有兴趣的可以自行翻阅官方 wiki，</p>
+<p>（可选）设置环境变量，即改变 scoop 安装路径。</p>
+<p>2023 年 3 月目前版本的 scoop 的默认安装路径已经从原来的 <code>C:\scoop</code> 变为 <code>~\scoop</code>，即当前用户的个人文件夹内 <code>C:\Users\your-user-name\scoop</code>。这个路径也是我以前会手动指定的路径，非常好用，因此不推荐修改。</p>
+<p>如果需要修改，下列命令中第一行的作用即为指定安装路径，修改时最好保留单引号，如 <code>D:\scoop</code>。注意如果路径内有空格的话，一些程序如 nodejs 等会无法运行。这里略去了 scoop 中很少用的全局安装路径设定（<code>scoop install -g git</code> 中的 <code>-g</code>），有兴趣的可以自行翻阅官方 wiki，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$env:SCOOP&#x3D;&#39;D:\scoop&#39;</span><br><span class="line">[environment]::setEnvironmentVariable(&#39;SCOOP&#39;,$env:SCOOP,&#39;User&#39;)</span><br></pre></td></tr></table></figure>
 <p>安装脚本被设置为只在非管理员的 PowerShell 中才能运行，因此直接打开 PowerShell 执行安装脚本。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">irm get.scoop.sh | iex</span><br></pre></td></tr></table></figure>
@@ -418,7 +434,7 @@
 </tr>
 <tr>
 <td>vcredist-aio</td>
-<td>之后再配合后文的 DirectX 检测工具补齐</td>
+<td></td>
 </tr>
 <tr>
 <td>windowsdesktop-runtime</td>
@@ -434,9 +450,9 @@
 <p>需要手动指定 cwrynsc 文件夹内自带的 ssh 文件，即 <code>-e</code> 后面跟 ssh 文件的路径：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-e &quot;C:\Users\i\scoop\apps\cwrsync\current\bin\ssh.exe&quot;</span><br></pre></td></tr></table></figure>
 <p>安装 GUI 程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher calibre discord eac hourglass locale-emulator makemkv megasync motrix mpc-hc-fork notion obs-studio openai-translator screentogif spotify sumatrapdf telegram zoom aida64extreme crystaldiskinfo crystaldiskmark cpu-z dismplusplus everything fancontrol fiddler geekuninstaller gpu-z hwinfo quickcpu rainmeter rufus spacesniffer winaero-tweaker wox-beta github mobaxterm pycharm rstudio rtools texstudio vscode</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher calibre discord eac hourglass locale-emulator makemkv megasync motrix mpc-hc-fork notion obs-studio openai-translator screentogif spotify sumatrapdf telegram zoom aida64extreme crystaldiskinfo crystaldiskmark cpu-z dismplusplus everything fancontrol fiddler geekuninstaller gpu-z hwinfo quickcpu rainmeter rufus spacesniffer wox-beta github mobaxterm pycharm rstudio rtools texstudio vscode</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 GUI 程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install madvr</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install madvr winaero-tweaker</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -450,7 +466,7 @@
 </tr>
 <tr>
 <td>blender</td>
-<td></td>
+<td>安装 mmd-tools 插件</td>
 </tr>
 <tr>
 <td>blender-launcher</td>
@@ -662,6 +678,10 @@
 <td></td>
 </tr>
 <tr>
+<td>DirectX End-User Runtime</td>
+<td></td>
+</tr>
+<tr>
 <td>DisplayCAL</td>
 <td>scoop 版本无法开机自启配置文件加载器，而且安装不上某些校色仪需要的 ArgyllCMS 特定驱动程序</td>
 </tr>
@@ -698,8 +718,8 @@
 <td>使用 LCD 配置，通常使用服务模式即可，不用开注册表模式</td>
 </tr>
 <tr>
-<td>MicrosoftEdgeWebview2</td>
-<td>和 QuickLook 配合使用，Windows 11 中已内置</td>
+<td>Microsoft Office 2019</td>
+<td>正版的 Office 家庭与学生版</td>
 </tr>
 <tr>
 <td>Nox</td>
@@ -784,10 +804,6 @@
 <tr>
 <td>火绒</td>
 <td></td>
-</tr>
-<tr>
-<td>卡巴斯基反病毒</td>
-<td>免费版即可</td>
 </tr>
 <tr>
 <td>搜狗拼音输入法</td>
@@ -886,10 +902,6 @@
 <td>解压版，同时用以安装和更新驱动</td>
 </tr>
 <tr>
-<td>CMWTAT</td>
-<td>破解 Windows 备用</td>
-</tr>
-<tr>
 <td>DiskGenius</td>
 <td>单文件版</td>
 </tr>
@@ -916,10 +928,6 @@
 <tr>
 <td>Wolfram Mathematica</td>
 <td></td>
-</tr>
-<tr>
-<td>WPS 2019</td>
-<td>教育部教育考试专用，无广告，备用</td>
 </tr>
 </tbody></table>
 <h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><ul>
