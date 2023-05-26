@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2023-05-26T06:01:28.699Z">
+<meta property="article:modified_time" content="2023-05-26T08:07:38.032Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-26 07:01:28" itemprop="dateModified" datetime="2023-05-26T07:01:28+01:00">2023-05-26</time>
+                <time title="修改时间：2023-05-26 09:07:38" itemprop="dateModified" datetime="2023-05-26T09:07:38+01:00">2023-05-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
 </li>
 <li><p>安装完重启进入配置界面，此时选择脱机账户而非微软账户。原因在于这里如果直接使用微软账号，系统内个人文件夹的名字会跟随微软账号的名称，相当容易出问题；同时，微软账户完全可以在进入系统之后再绑上，这时个人文件夹的名称已经确定，不会带来任何可能的负面影响。</p>
 </li>
-<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而 Windows 11 又无法在断网的情况下安装。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#x40;&#x69;&#46;&#105;">&#105;&#x40;&#x69;&#46;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
+<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而 Windows 11 又无法在断网的情况下安装。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#x69;&#64;&#x69;&#x2e;&#x69;">&#x69;&#64;&#x69;&#x2e;&#x69;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
 </li>
 <li><p>个人文件夹的名字一般习惯直接取 i，不仅自指而且由于不包含中文和空格，以后安装其他程序（例如 nodejs）的时候不会报错，否则会很麻烦。</p>
 </li>
@@ -274,7 +274,7 @@
 </ul>
 <h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><p>先安装中文、西文、日文字体。</p>
 <p>手动安装 v2ray，之后的程序安装不少需要梯子进行。</p>
-<p>软件安装一共由五部分构成：包管理器 scoop + 包管理器 winget + Microsoft Store 应用商店 + 正常安装 + 破解版软件。</p>
+<p>软件安装一共由五部分构成：包管理器 scoop + 包管理器 winget + Windows 命令行 &amp; Microsoft Store 应用商店 + 正常安装 + 破解版软件。</p>
 <h3 id="包管理器-scoop"><a href="#包管理器-scoop" class="headerlink" title="包管理器 scoop"></a>包管理器 scoop</h3><p>Windows 下的包管理器。名称 scoop 的本意是指用来挖桶装冰淇淋的比较深的勺子。 </p>
 <p>优点：</p>
 <ul>
@@ -785,7 +785,18 @@
 <td>必须在安装中文、日文、西文字体之后进行</td>
 </tr>
 </tbody></table>
-<h3 id="Microsoft-Store-应用商店"><a href="#Microsoft-Store-应用商店" class="headerlink" title="Microsoft Store 应用商店"></a>Microsoft Store 应用商店</h3><table>
+<h3 id="Windows-命令行-amp-Microsoft-Store-应用商店"><a href="#Windows-命令行-amp-Microsoft-Store-应用商店" class="headerlink" title="Windows 命令行 &amp; Microsoft Store 应用商店"></a>Windows 命令行 &amp; Microsoft Store 应用商店</h3><h4 id="Windows-命令行"><a href="#Windows-命令行" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h4><p>在系统功能中打开 Hyper-V 后，安装 wsl2 的 Ubuntu。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
+<p>安装完成的 Ubuntu 运行时很大概率出现类似以下的报错：</p>
+<ul>
+<li><p><code>libcuda.so.1 is not a symbolic link</code></p>
+</li>
+<li><p><code>&lt;3&gt;WSL (11) ERROR: UtilTranslatePathList:2671: Failed to translate</code></p>
+</li>
+</ul>
+<p>执行以下命令以排除报错。来源参考自 <a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/5548">#5548</a> 和 <a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/9360">#9360</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;[interop]\nappendWindowsPath &#x3D; false&quot; | sudo tee -a &#x2F;etc&#x2F;wsl.conf</span><br><span class="line">sudo mkdir &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2</span><br><span class="line">sudo ln -s &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib&#x2F;* &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2</span><br><span class="line">echo &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2 | sudo tee &#x2F;etc&#x2F;ld.so.conf.d&#x2F;ld.wsl.conf</span><br><span class="line"></span><br><span class="line">echo -e &quot;[interop]\nappendWindowsPath &#x3D; false&quot; | sudo tee -a &#x2F;etc&#x2F;wsl.conf</span><br></pre></td></tr></table></figure>
+<h4 id="Microsoft-Store-应用商店"><a href="#Microsoft-Store-应用商店" class="headerlink" title="Microsoft Store 应用商店"></a>Microsoft Store 应用商店</h4><table>
 <thead>
 <tr>
 <th>应用</th>
@@ -986,7 +997,7 @@
 </tr>
 </tbody></table>
 <h2 id="软件配置"><a href="#软件配置" class="headerlink" title="软件配置"></a>软件配置</h2><h3 id="包管理器-scoop-部分"><a href="#包管理器-scoop-部分" class="headerlink" title="包管理器 scoop 部分"></a>包管理器 scoop 部分</h3><h4 id="exiftool"><a href="#exiftool" class="headerlink" title="exiftool"></a>exiftool</h4><p>添加对图片右键后的 exiftool 菜单，单击既可直接在终端内显示图片的所有 exif 信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\ExifTool]</span><br><span class="line">&quot;icon&quot;&#x3D;&quot;C:\\Users\\i\\scoop\\apps\\exiftool\\current\\exiftool(-k).exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\ExifTool\command]</span><br><span class="line">@&#x3D;&quot;C:\\Users\\i\\scoop\\apps\\exiftool\\current\\exiftool(-k).exe -charset filename&#x3D;utf8 &quot;%1&quot;&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\ExifTool]</span><br><span class="line">&quot;icon&quot;&#x3D;&quot;C:\\Users\\i\\scoop\\apps\\exiftool\\current\\exiftool(-k).exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\ExifTool\command]</span><br><span class="line">@&#x3D;&quot;C:\\Users\\i\\scoop\\apps\\exiftool\\current\\exiftool(-k).exe &quot;%1&quot;&quot;</span><br></pre></td></tr></table></figure>
 <h4 id="frp-nssm"><a href="#frp-nssm" class="headerlink" title="frp-nssm"></a>frp-nssm</h4><p>使用 nssm 添加并启用 frp 的客户端模式为系统服务。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">nssm.exe install frpc &quot;C:\Users\i\scoop\apps\frp\current\frpc.exe&quot;</span><br><span class="line"></span><br><span class="line">nssm.exe set frpc AppParameters &quot;-c C:\Users\i\scoop\apps\frp\current\frpc.ini&quot;</span><br><span class="line">nssm.exe set frpc AppDirectory C:\Users\i\scoop\apps\frp\current</span><br><span class="line">nssm.exe set frpc AppExit Default Restart</span><br><span class="line">nssm.exe set frpc Description &quot;A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.&quot;</span><br><span class="line">nssm.exe set frpc DisplayName frpc</span><br><span class="line">nssm.exe set frpc ObjectName .\i &quot;your-user-password&quot;</span><br><span class="line">nssm.exe set frpc Start SERVICE_AUTO_START</span><br><span class="line">nssm.exe set frpc Type SERVICE_WIN32_OWN_PROCESS</span><br></pre></td></tr></table></figure>
 <h4 id="python-nssm"><a href="#python-nssm" class="headerlink" title="python-nssm"></a>python-nssm</h4><p>使用 pip 安装 jupyter notebook。</p>
@@ -1000,9 +1011,51 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nssm.exe set render AppParameters &#39;-b &quot;D:\3DCG\test-project.blend&quot; -o &quot;D:\test-####&quot; -E CYCLES -x 1 -F PNG -f 1230 -- --cycles-device OPTIX&#39;</span><br></pre></td></tr></table></figure>
 <p>获取当前设定的渲染参数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nssm.exe get render AppParameters</span><br></pre></td></tr></table></figure>
-<h4 id="quickcpu"><a href="#quickcpu" class="headerlink" title="quickcpu"></a>quickcpu</h4><h4 id="winaero-tweaker"><a href="#winaero-tweaker" class="headerlink" title="winaero-tweaker"></a>winaero-tweaker</h4><h3 id="包管理器-winget-1"><a href="#包管理器-winget-1" class="headerlink" title="包管理器 winget"></a>包管理器 winget</h3><h4 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h4><p>颜色管理：打开 <code>chrome://flags/#force-color-profile</code>，调整为 <code>sRGB</code></p>
+<h4 id="quickcpu"><a href="#quickcpu" class="headerlink" title="quickcpu"></a>quickcpu</h4><p>对于台式机 + 13 代 CPU 大小核架构，推荐对 Windows 11 的电源模式进行以下改动以完全发挥性能：</p>
+<ul>
+<li><p>点击 QuickCPU 顶部的电源控制按钮，跳出单独的电源计划管理页面。</p>
+</li>
+<li><p>点击左侧 Power Settings 所属三栏中的第二栏 Power plan management，随后选中右侧下方栏 System Default Power Plans 中末尾的“卓越性能”（e9a42b02-d5df-448d-aa00-03f14749eb61），点击 Install Power Plan 启用。此时该电源计划的状态已经切换至 Active。</p>
+</li>
+<li><p>在右侧上方栏 Available Power Plans 中选中刚才启用的“卓越性能”计划，点击 Rename 进行改名，例如改为“卓越性能（大小核）”。这样做可以尽可能地防止电源计划的相互混淆。</p>
+</li>
+<li><p>回到左侧 Power Settings 中所属三栏中的第一栏 Power plan settings 后，在右侧的文本框内输入“异类”二字进行检索。检索到的三个可修改选项分别为：</p>
+<ul>
+<li><p>生效的异类策略（7f2f5cfa-f10c-4823-b5e1-e93ae85f46b5）</p>
+</li>
+<li><p>异类线程调度策略（93b8b6dc-0698-4d1c-9ee4-0644e900c85d）</p>
+</li>
+<li><p>异类短运行线程调度策略（bae08b81-2d5e-4688-ad6a-13243356654b）</p>
+</li>
+</ul>
+</li>
+<li><p>对这三个选项分别进行修改：</p>
+<ul>
+<li><p>生效的异类策略：外接供电和电池供电均从<code>使用异度策略 4 (4)</code> 改为<code>使用异度策略 0 (0)</code>。</p>
+</li>
+<li><p>异类线程调度策略：外接供电和电池供电均从<code>自动 (5)</code> 改为 <code>首选高性能处理器 (2)</code>。</p>
+</li>
+<li><p>异类短运行线程调度策略：外接供电不变，电池供电从<code>自动 (5)</code> 改为 <code>首选高性能处理器 (2)</code>。即外接供电和电为池供电均为<code>首选高性能处理器 (2)</code>。</p>
+</li>
+</ul>
+</li>
+<li><p>修改完成后应用，随后关闭 QuickCPU 既可。</p>
+</li>
+</ul>
+<h4 id="winaero-tweaker"><a href="#winaero-tweaker" class="headerlink" title="winaero-tweaker"></a>winaero-tweaker</h4><p>这款程序能修改 Windows 的地方实在太多太多了：</p>
+<ul>
+<li><p>Windows 11-Disable Bakcground Apps</p>
+</li>
+<li><p>Behavior-Keep Thumbnail Cache</p>
+</li>
+<li><p>Context Menu-File Hash Menu</p>
+</li>
+<li><p>File Explorer-Customize This PC Folders-Restore Windows 10 Folders</p>
+</li>
+</ul>
+<h3 id="包管理器-winget-1"><a href="#包管理器-winget-1" class="headerlink" title="包管理器 winget"></a>包管理器 winget</h3><h4 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h4><p>颜色管理：打开 <code>chrome://flags/#force-color-profile</code>，调整为 <code>sRGB</code></p>
 <h4 id="Mozilla-Firefox"><a href="#Mozilla-Firefox" class="headerlink" title="Mozilla Firefox"></a>Mozilla Firefox</h4><ul>
-<li><p>Firefox 的个人配置文件全部储存在 <code>C:\Users\i\AppData\Roaming\Mozilla\Firefox\Profiles\arufwjt6.default-release</code> 文件夹内，其中 <code>arufwjt6</code> 部分为每位用户特有的八位辨识码。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。</p>
+<li><p>Firefox 的个人配置文件全部储存在 <code>%AppData%\Mozilla\Firefox\Profiles\arufwjt6.default-release</code> 文件夹内，其中 <code>arufwjt6</code> 部分为每位用户特有的八位辨识码。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。</p>
 </li>
 <li><p>颜色管理：</p>
 <ul>
@@ -1013,7 +1066,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="Mozilla-Thunderbird"><a href="#Mozilla-Thunderbird" class="headerlink" title="Mozilla Thunderbird"></a>Mozilla Thunderbird</h4><p>Thunderbird 和 Firefox 的逻辑完全一致，个人配置文件同样全部储存在 <code>C:\Users\i\AppData\Roaming\Thunderbird\Profiles\iriktu0w.default-release</code> 文件夹内。恢复时的操作也都一致。</p>
+<h4 id="Mozilla-Thunderbird"><a href="#Mozilla-Thunderbird" class="headerlink" title="Mozilla Thunderbird"></a>Mozilla Thunderbird</h4><p>Thunderbird 和 Firefox 的逻辑完全一致，个人配置文件同样全部储存在 <code>%AppData%\Thunderbird\Profiles\iriktu0w.default-release</code> 文件夹内。恢复时的操作也都一致。</p>
 <h4 id="StartAllBack"><a href="#StartAllBack" class="headerlink" title="StartAllBack"></a>StartAllBack</h4><p>修改如下：</p>
 <ul>
 <li><p>“开始”菜单-启用</p>
@@ -1159,7 +1212,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">系统与驱动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop"><span class="nav-number">2.1.</span> <span class="nav-text">包管理器 scoop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget"><span class="nav-number">2.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.</span> <span class="nav-text">Microsoft Store 应用商店</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E9%83%A8%E5%88%86"><span class="nav-number">2.4.1.</span> <span class="nav-text">可执行文件部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E9%83%A8%E5%88%86"><span class="nav-number">2.4.2.</span> <span class="nav-text">压缩包解压部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E7%89%88%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">破解版软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop-%E9%83%A8%E5%88%86"><span class="nav-number">3.1.</span> <span class="nav-text">包管理器 scoop 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#exiftool"><span class="nav-number">3.1.1.</span> <span class="nav-text">exiftool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#frp-nssm"><span class="nav-number">3.1.2.</span> <span class="nav-text">frp-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-nssm"><span class="nav-number">3.1.3.</span> <span class="nav-text">python-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rclone"><span class="nav-number">3.1.4.</span> <span class="nav-text">rclone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#blender-nssm"><span class="nav-number">3.1.5.</span> <span class="nav-text">blender-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quickcpu"><span class="nav-number">3.1.6.</span> <span class="nav-text">quickcpu</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#winaero-tweaker"><span class="nav-number">3.1.7.</span> <span class="nav-text">winaero-tweaker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget-1"><span class="nav-number">3.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Google-Chrome"><span class="nav-number">3.2.1.</span> <span class="nav-text">Google Chrome</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Firefox"><span class="nav-number">3.2.2.</span> <span class="nav-text">Mozilla Firefox</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Thunderbird"><span class="nav-number">3.2.3.</span> <span class="nav-text">Mozilla Thunderbird</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StartAllBack"><span class="nav-number">3.2.4.</span> <span class="nav-text">StartAllBack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85-1"><span class="nav-number">3.3.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FanController-nssm"><span class="nav-number">3.3.1.</span> <span class="nav-text">FanController-nssm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9Ascoop-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.</span> <span class="nav-text">附录：scoop 常用命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA-bucket-%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">对单个 bucket 的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">对单个程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9-scoop-%E6%9C%AC%E4%BD%93%E3%80%81bucket-%E5%92%8C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">对 scoop 本体、bucket 和安装程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">更详尽的说明</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">系统与驱动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop"><span class="nav-number">2.1.</span> <span class="nav-text">包管理器 scoop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget"><span class="nav-number">2.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-amp-Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.</span> <span class="nav-text">Windows 命令行 &amp; Microsoft Store 应用商店</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">2.3.1.</span> <span class="nav-text">Windows 命令行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.2.</span> <span class="nav-text">Microsoft Store 应用商店</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E9%83%A8%E5%88%86"><span class="nav-number">2.4.1.</span> <span class="nav-text">可执行文件部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E9%83%A8%E5%88%86"><span class="nav-number">2.4.2.</span> <span class="nav-text">压缩包解压部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E7%89%88%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">破解版软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop-%E9%83%A8%E5%88%86"><span class="nav-number">3.1.</span> <span class="nav-text">包管理器 scoop 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#exiftool"><span class="nav-number">3.1.1.</span> <span class="nav-text">exiftool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#frp-nssm"><span class="nav-number">3.1.2.</span> <span class="nav-text">frp-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-nssm"><span class="nav-number">3.1.3.</span> <span class="nav-text">python-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rclone"><span class="nav-number">3.1.4.</span> <span class="nav-text">rclone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#blender-nssm"><span class="nav-number">3.1.5.</span> <span class="nav-text">blender-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quickcpu"><span class="nav-number">3.1.6.</span> <span class="nav-text">quickcpu</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#winaero-tweaker"><span class="nav-number">3.1.7.</span> <span class="nav-text">winaero-tweaker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget-1"><span class="nav-number">3.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Google-Chrome"><span class="nav-number">3.2.1.</span> <span class="nav-text">Google Chrome</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Firefox"><span class="nav-number">3.2.2.</span> <span class="nav-text">Mozilla Firefox</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Thunderbird"><span class="nav-number">3.2.3.</span> <span class="nav-text">Mozilla Thunderbird</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StartAllBack"><span class="nav-number">3.2.4.</span> <span class="nav-text">StartAllBack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85-1"><span class="nav-number">3.3.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FanController-nssm"><span class="nav-number">3.3.1.</span> <span class="nav-text">FanController-nssm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9Ascoop-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.</span> <span class="nav-text">附录：scoop 常用命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA-bucket-%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">对单个 bucket 的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">对单个程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9-scoop-%E6%9C%AC%E4%BD%93%E3%80%81bucket-%E5%92%8C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">对 scoop 本体、bucket 和安装程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">更详尽的说明</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
