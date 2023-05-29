@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2023-05-29T09:15:38.086Z">
+<meta property="article:modified_time" content="2023-05-29T09:31:21.100Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-29 10:15:38" itemprop="dateModified" datetime="2023-05-29T10:15:38+01:00">2023-05-29</time>
+                <time title="修改时间：2023-05-29 10:31:21" itemprop="dateModified" datetime="2023-05-29T10:31:21+01:00">2023-05-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
 </li>
 <li><p>安装完重启进入配置界面，此时选择脱机账户而非微软账户。原因在于这里如果直接使用微软账号，系统内个人文件夹的名字会跟随微软账号的名称，相当容易出问题；同时，微软账户完全可以在进入系统之后再绑上，这时个人文件夹的名称已经确定，不会带来任何可能的负面影响。</p>
 </li>
-<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而 Windows 11 又无法在断网的情况下安装。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#x69;&#64;&#x69;&#x2e;&#x69;">&#x69;&#64;&#x69;&#x2e;&#x69;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
+<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而 Windows 11 又无法在断网的情况下安装。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#x40;&#x69;&#x2e;&#105;">&#105;&#x40;&#x69;&#x2e;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
 </li>
 <li><p>个人文件夹的名字一般习惯直接取 i，不仅自指而且由于不包含中文和空格，以后安装其他程序（例如 nodejs）的时候不会报错，否则会很麻烦。</p>
 </li>
@@ -1202,6 +1202,8 @@
 <li><p>在注册表 <code>HKLM\System\CurrentControlSet\Control\Session Manager\Kernel</code> 内新建项 <code>KGroups</code>，随后再在其内新建项 <code>00</code>。<code>00</code> 代表的是使用的拥有大小核的单颗 CPU，若有多颗 CPU 则按顺序 <code>01</code> 等添加即可。</p>
 </li>
 <li><p>在 <code>00</code> 项下新建名为 <code>SmallProcessorMask</code> 的 DWORD 值。数值数据为十六进制下的 CPU 亲和掩码（Affinity mask）。这个掩码在二进制下为从左往后，以每个小核心的线程为 1，每个大核心的线程为 00 组成。之后将这个数字转为十六进制即可。比如：</p>
+</li>
+</ol>
 <ul>
 <li><p>i9-13900K，8 大核 16 小核 32 线程：</p>
 <ul>
@@ -1220,10 +1222,9 @@
 </ul>
 </li>
 </ul>
-</li>
-<li><p>配置异构调度的六个变量：</p>
-<ul>
-<li><p>注册表类：</p>
+<ol start="3">
+<li>配置异构调度的六个变量：</li>
+</ol>
 <ul>
 <li><p>返回 <code>KGroups</code> 所在的 <code>Kernel</code> 添加变量与值，注意变量开头的 Ki 字母需要去除。</p>
 </li>
@@ -1231,27 +1232,27 @@
 </li>
 <li><p>添加 <code>KiDefaultDynamicHeteroCpuPolicy</code> 的 DWORD 值为 3。</p>
 </li>
+<li><p>添加 <code>KiDynamicHeteroCpuPolicyImportant</code> 的 DWORD 值为 2。</p>
+</li>
+<li><p>添加 <code>KiDynamicHeterCpuPolicyImportantShort</code> 的 DWORD 值为 3。</p>
+</li>
+<li><p>添加 <code>KiDynamicCpuPolicyExpectedRuntime</code> 的 DWORD 值为 5200（十进制）。</p>
+</li>
 <li><p>添加 <code>KiDynamicHeteroCpuPolicyImportantPriority</code> 的 DWORD 值为 8。</p>
 </li>
 </ul>
-</li>
-<li><p>电源策略类：</p>
+<p>因为有三个变量在电源策略类有完全等效的选项，保险起见，将这三个对应的电源策略也做相应的修改。</p>
 <ul>
 <li><p>进入 QuickCPU 的电源计划中修改。</p>
 </li>
-<li><p>修改“异类线程调度策略（93b8b6dc-0698-4d1c-9ee4-0644e900c85d）”中外接供电和电池供电为“首选高性能处理器 (2)”。</p>
+<li><p>对应变量 <code>KiDynamicHeteroCpuPolicyImportant</code>，修改“异类线程调度策略（93b8b6dc-0698-4d1c-9ee4-0644e900c85d）”中外接供电和电池供电为“首选高性能处理器 (2)”。</p>
 </li>
-<li><p>修改“异类短运行线程调度策略（bae08b81-2d5e-4688-ad6a-13243356654b）”中外接供电和电池供电为“高效处理器 (3)”。</p>
+<li><p>对应变量 <code>KiDynamicHeterCpuPolicyImportantShort</code>，修改“异类短运行线程调度策略（bae08b81-2d5e-4688-ad6a-13243356654b）”中外接供电和电池供电为“高效处理器 (3)”。</p>
 </li>
-<li><p>修改“短与长时间运行线程阈值（d92998c2-6a48-49ca-85d4-8cceec294570）”中外接供电和电池供电的值为“5200”。</p>
-</li>
-</ul>
+<li><p>对应变量 <code>KiDynamicCpuPolicyExpectedRuntime</code>，修改“短与长时间运行线程阈值（d92998c2-6a48-49ca-85d4-8cceec294570）”中外接供电和电池供电的值为“5200”。</p>
 </li>
 </ul>
-</li>
-</ol>
-<p>| KiDynamicHeteroCpuPolicyMask | 7 |<br>| KiDefaultDynamicHeteroCpuPolicy | Small (3) |<br>| KiDynamicHeteroCpuPolicyImportant | LargeOrIdle (2) |<br>| KiDynamicHeterCpuPolicyImportantShort | Small (3) |<br>| KiDynamicCpuPolicyExpectedRuntime | 5,200 msec |<br>| KiDynamicHeteroCpuPolicyImportantPriority | 8 |</p>
-<p>注：有兴趣的可以再核对一下微软的官方文档的 286-287 页，即第四章线程-线程调度-大小核异构调度：<a target="_blank" rel="noopener" href="https://ftp.yuuta.moe/Library/Tech/Windows/Windows%20Internals_7ed_Part_1.pdf">Catlin, B., Hanrahan, J.E., Russinovich, M.E., Solomon, D.A. and Ionescu, A. (2017). <em>Windows Internals, Part 1: System architecture, processes, threads, memory managment, and more.</em> Redmond: Microsoft, pp. 286-287.</a></p>
+<p>注：有兴趣的可以再核对一下微软的官方文档的 286-287 页，即第四章线程-线程调度-异构调度（大小核）：<a target="_blank" rel="noopener" href="https://ftp.yuuta.moe/Library/Tech/Windows/Windows%20Internals_7ed_Part_1.pdf">Catlin, B., Hanrahan, J.E., Russinovich, M.E., Solomon, D.A. and Ionescu, A. (2017). <em>Windows Internals, Part 1: System architecture, processes, threads, memory managment, and more.</em> Redmond: Microsoft, pp. 286-287.</a></p>
 <h4 id="winaero-tweaker"><a href="#winaero-tweaker" class="headerlink" title="winaero-tweaker"></a>winaero-tweaker</h4><p>这款程序能修改 Windows 的地方实在太多太多了，自己常用的几项如下：</p>
 <ul>
 <li><p>Windows 11-Disable Bakcground Apps</p>
