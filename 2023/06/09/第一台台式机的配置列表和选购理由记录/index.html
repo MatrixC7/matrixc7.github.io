@@ -28,7 +28,7 @@
 <meta property="og:description" content="筹备了很长时间终于装了自己的第一台台式机，还是有必要记录下来。 配置列表主设备由于是第一台台式机，除了 1TB 的 KC3000 是从笔记本里拆出来的，其他全是买的全新。    设备 设备型号 价格    主板与电源     主板 MSI MEG Z690 UNIFY £360   电源 Corsair AX1600i Digital 80 PLUS TITANIUM £450   CPU 相关">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-09T09:16:10.000Z">
-<meta property="article:modified_time" content="2023-06-09T20:45:47.756Z">
+<meta property="article:modified_time" content="2023-06-09T21:44:50.085Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 
@@ -185,7 +185,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-06-09 10:16:10 / 修改时间：21:45:47" itemprop="dateCreated datePublished" datetime="2023-06-09T10:16:10+01:00">2023-06-09</time>
+              <time title="创建时间：2023-06-09 10:16:10 / 修改时间：22:44:50" itemprop="dateCreated datePublished" datetime="2023-06-09T10:16:10+01:00">2023-06-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -424,7 +424,7 @@
 </li>
 <li><p>最好能支持双显卡直连 CPU。</p>
 <ul>
-<li><p>但这首先就要求主板上的前两条 PCI.e x 16 通道均以 PCI.e 4.0 x 8 的形式直连 CPU，而不是第一条以 PCI.e 5.0 x 16 直连 CPU，而第二条只剩下 PCI.e 4.0 x 4 连接 PCH。这需要主板方能够在说明书里给出主板的 Block Diagram，而华硕的主板无论哪个型号都没有这个，所以即使华硕的板子能够看 CPU 的 SP 分，也还是不考虑了；微星的主板里能够满足这个要求从而支持双显卡直连 CPU 的都是 DDR5 的主板。</p>
+<li><p>但这首先就要求主板上的前两条 PCI.e x 16 通道均以 PCI.e 4.0 x 8 的形式直连 CPU，而不是第一条以 PCI.e 5.0 x 16 直连 CPU，而第二条只剩下 PCI.e 4.0 x 4 连接 PCH。这需要主板方能够在说明书里给出主板的 Block Diagram，而华硕的主板无论哪个型号都没有 Block Diagram，所以即使华硕的板子能够看 CPU 的 SP 分，也还是不考虑了；微星的主板里有 Block Diagram 从而支持双显卡直连 CPU 的都是 DDR5 的主板。</p>
 </li>
 <li><p>其次，双显卡对于头两条 PCI.e x 16 通道之间的间距也有要求：虽说不是硬性要求，但自 3090 和 3090 Ti 一来非公版的显卡的厚度都已经超过了三槽，而对于目前的所谓旗舰主板而言，其大部分的头两条通道之间的间距还是三槽整，这就意味着如果除非将显卡吊装或以其他特殊方式安装，第二条 PCI.e 通道必然会被挡住。连用都不能用，就更何谈插第二块显卡了。</p>
 </li>
@@ -464,8 +464,8 @@
 <li><p>4090 这个 12VHPWR 烧接口是真的搞得我很慌。毕竟显卡到时候带回国之后，且不说 12VHPWR 会不会保修，一个非国行的显卡有没有保修都不好说，更何况我买的还是 Palit 同德的卡，在大陆地区都没有展开销售。安钛克这个电源虽然质量是没问题的，但是没有监控软件，我根本无法确定 12VHPWR 的线的运作到底是否正常。</p>
 </li>
 </ol>
-<p>所以思来想去，最后还是狠心买了拥有各个接口电流监控功能的海盗船 AX1600i。虽然贵，但本身质量非常好，1600W 足够，最重要的还是监控功能能够让我最大程度确保 4090 不出因为电流分配不平而可能产生的烧接口问题。</p>
-<h4 id="CPU（Intel-i9-13900K，£580）"><a href="#CPU（Intel-i9-13900K，£580）" class="headerlink" title="CPU（Intel i9-13900K，£580）"></a>CPU（Intel i9-13900K，£580）</h4><p>Intel 阵营和 AMD 阵营我个人还是倾向于 Intel 一侧。大小核的问题不算是问题，因为通过对电源策略的管理和注册表的修改是可以很完美解决这个问题的：无论是直接关闭大小核机制，还是将程序前后台状态不纳入大小核的调度策略中，都不是非常困难的事情。</p>
+<p>所以思来想去，最后还是狠心买了拥有各个接口电流监控功能的海盗船 AX1600i。虽然贵，但本身质量非常好，1600W 足够，最重要的还是监控功能能够让我最大程度确保 4090 不出因为电流分配不平而可能产生的烧接口问题。至于 Antec Signature Titanium 1000W，还是带回国内出二手吧，虽然其实是全新的。</p>
+<h4 id="CPU（Intel-i9-13900K，£580）"><a href="#CPU（Intel-i9-13900K，£580）" class="headerlink" title="CPU（Intel i9-13900K，£580）"></a>CPU（Intel i9-13900K，£580）</h4><p>Intel 阵营和 AMD 阵营我个人还是倾向于 Intel 一侧。大小核的问题不算是问题，因为通过对电源策略的管理和注册表的修改是可以解决这个问题的：无论是直接关闭大小核机制，还是将程序前后台状态不纳入大小核的调度策略中，都不是非常困难的事情。</p>
 <p>那首先肯定是要买 K 系列的处理器的，毕竟非 K 系列的处理器会锁内存的 SA 电压。本就需要大容量内存 + 兼顾频率，锁了 SA 电压可就真的可能连基频都跑不动了。</p>
 <p>一开始准备买的 i7-13700K，而同租一间屋子的兄弟手上正好有一颗 i7-13700K，于是就借来先和当时买的 Z790 EDGE WIFI DDR4 主板进行预装机测试。然后问题就来了：Z790 EDGE WIFI DDR4 + i7-13700K，手头的非 QVL DDR4 2x(32GBx2) 3600MHz 点不亮进不了系统。我把四条内存排列组合了很多次，只有一次将第一组内存的两根都插在 DIMMA 中、而第二组内存的两根都插在 DIMMB 中的时候成功开机了，但是很不稳定。</p>
 <p>我明白大容量内存同时兼顾频率的时候是需要同时考虑主板 + 内存本身颗粒 + CPU 的内存控制器的，从而最好是根据主板官方页面给出的 QVL 列表来选购内存。但由于这次亲身体验的不开机折腾实在过于心累，为了稳妥起见，确保最大可能性的不出问题，选择买 i9-13900K 了。</p>
@@ -473,8 +473,7 @@
 <h4 id="水冷散热器（DeepCool-LS720，¥635）"><a href="#水冷散热器（DeepCool-LS720，¥635）" class="headerlink" title="水冷散热器（DeepCool LS720，¥635）"></a>水冷散热器（DeepCool LS720，¥635）</h4><p>原本是想买利民的，但是首先中意的整体表现都不错的冰封远景 V2 只有白色款，其次也还有扣具压力过大的问题。在给定黑色机箱的情况下，最后选择了九州风神的冰堡垒  LS720。五年质保 + 各方面表现均衡的表现，我还是相当满意的。</p>
 <h4 id="显卡-1（Palit-RTX-4090-GameRock-OC，£1465）"><a href="#显卡-1（Palit-RTX-4090-GameRock-OC，£1465）" class="headerlink" title="显卡 #1（Palit RTX 4090 GameRock OC，£1465）"></a>显卡 #1（Palit RTX 4090 GameRock OC，£1465）</h4><p>亚马逊官方二手 Amazon Warehouse 上买的 £1465，捡漏是这样的。但说实话虽然官方标了东西是 Like New，但拿到手的状态确实有点不那么 Like New，无论是外包装还是内包装上，当然卡是正常能跑完全没问题的。现在看亚马逊上全新的索泰 Trinity £1560，全新的同德 Gamerock £1600，真的算是捡到漏了吗…</p>
 <p>当然，买都买了就不在意这些了。</p>
-<p>正如前面主板环节提到过的，三槽半的厚度，若是想装在 Z690 Unify 这块主板的第一条 PCI.e 槽上，必然是会完全挡住第二条 PCI.e 槽的，所以只能选用吊装——所幸同德这张 4090 的散热是做得和公版同样好，在联力官方页面上只有公版和同德这块是同时支持机箱正置和倒置的吊装。同时为了吊装用的 PCI.e 延长线不和另一块显卡打架，这块 4090 安装在第二条 PCI.e 槽内。</p>
-<p>12VHPWR 接口可能出现的问题主要还是交给电源的 AX1600i 来处理，而线材方面为了保险起见这里也买了海盗船的 12VHPWR 转 8-pin 线材。</p>
+<p>正如前面主板环节提到过的，三槽半的厚度，若是想装在 Z690 UNIFY 这块主板的第一条 PCI.e 槽上，必然是会完全挡住第二条 PCI.e 槽的，所以只能选用吊装——所幸同德这张 4090 的散热是做得和公版同样好，在联力官方页面上只有公版和同德这块是同时支持机箱正置和倒置的吊装。同时为了吊装用的 PCI.e 延长线不和另一块显卡打架，这块 4090 安装在第二条 PCI.e 槽内。<br>UNIFY<br>12VHPWR 接口可能出现的问题主要还是交给电源的海盗船 AX1600i 来处理，而线材方面为了保险起见这里也买了海盗船的 12VHPWR 转 8-pin 线材。</p>
 <p>保修…尽人事听天命吧。</p>
 <h4 id="显卡-2（Palit-RTX-4070-Dual-OC，£580）"><a href="#显卡-2（Palit-RTX-4070-Dual-OC，£580）" class="headerlink" title="显卡 #2（Palit RTX 4070 Dual OC，£580）"></a>显卡 #2（Palit RTX 4070 Dual OC，£580）</h4><p>说实话，最理想的状态必然是上两张 4090，但问题是机箱装不下，不过当然更重要的原因当然还是资金…</p>
 <p>有微星万图师的“珠玉在前”，对于 4070 的散热问题实在还是怠慢不得。手头能买到的双风扇 4070 一共有如下四种：</p>
@@ -521,27 +520,27 @@
 </ul>
 <h4 id="内存（Hynix-A-die-DDR5，¥1145）"><a href="#内存（Hynix-A-die-DDR5，¥1145）" class="headerlink" title="内存（Hynix A-die DDR5，¥1145）"></a>内存（Hynix A-die DDR5，¥1145）</h4><p>内存其实也折腾了很长时间。</p>
 <p>一开始是决定用 Z790 EDGE WIFI DDR4 主板的，所以先买了非 QVL 的两组 Patriot Viper Steel DDR4 64GB (2 x 32GB) 3600MHz CL18 - PVS464G360C8K。正如 CPU 环节里叙述过的那样，点不亮，于是退了换 QVL 内认证的 TEAMGROUP T-Create Expert DDR4 OC10L 2x32GB 3600MHz CL18。</p>
-<p>然后正如所周知的，后来为了双显卡换了 DDR5 的主板，而这时手头的十铨内存已经过了能退货的时间了，就只能带回国内卖个二手了，虽然其实还是全新的状态。</p>
+<p>然后正如前面提过的那样，后来为了双显卡换了 DDR5 的主板，而这时手头的十铨内存已经过了能退货的时间了，就只能带回国内卖个二手了，虽然其实也同样还是全新的状态。</p>
 <p>至于 DDR5，由于四根 32GB 插满的情况下频率实在太僵硬了，何况主板的芯片组还是 Z690。最终选择退一步，还是先 2x32GB 的小绿条凑合着过吧，要是真的 64GB 内存不够用了的话，那就再买一组小绿条，虽然感觉 4800MHz 能不能开起来都不好说。</p>
 <h4 id="SSD-1（KINGSTON-KC3000-2TB，£125）"><a href="#SSD-1（KINGSTON-KC3000-2TB，£125）" class="headerlink" title="SSD #1（KINGSTON KC3000 2TB，£125）"></a>SSD #1（KINGSTON KC3000 2TB，£125）</h4><p>SSD 是最省心的，无非就是背刺比较严重。这边 Solidigm P44 Pro 2TB 的价格一直比较离谱，就还是选用稳妥一些的 KC3000 2TB 了，本身笔记本上也一直是 KC3000 1TB，有使用经验还是能比较放心。</p>
 <p>不过其实还是很想用长江的 SSD，有机会一定入一根致态或者长江原厂颗粒封装的达墨。</p>
 <h4 id="SSD-2（WD-Ultrastar-DC-SN640-7-68TB，¥2100）"><a href="#SSD-2（WD-Ultrastar-DC-SN640-7-68TB，¥2100）" class="headerlink" title="SSD #2（WD Ultrastar DC SN640 7.68TB，¥2100）"></a>SSD #2（WD Ultrastar DC SN640 7.68TB，¥2100）</h4><p>现在都只要 1900 就能买得到了，被背刺那是这样的嘛…</p>
-<p>由于 Z690 Unify 这板子除了第一个 M.2 位直连 CPU，其他四个 M.2 全部共享一个通道走 PCH。作为常用的数据储存盘，走第三条 PCI.e 槽也正好能算是独立连在 PCH 上。以及这条 PCI.e 槽正好是 3.0 x 4，算是也完全利用起来没有浪费了。</p>
+<p>由于 Z690 UNIFY 这板子除了第一个 M.2 位直连 CPU，其他四个 M.2 全部共享一个通道走 PCH。作为常用的数据储存盘，走第三条 PCI.e 槽也正好能算是独立连在 PCH 上。以及这条 PCI.e 槽正好是 3.0 x 4，算是也完全利用起来没有浪费了。</p>
 <p>至于数据安全性，数据中心用的企业盘，还是挺靠谱的。当然最重要还是得靠备份。</p>
 <h4 id="SSD-3（KINGSTON-KC3000-1TB，-）"><a href="#SSD-3（KINGSTON-KC3000-1TB，-）" class="headerlink" title="SSD #3（KINGSTON KC3000 1TB，/）"></a>SSD #3（KINGSTON KC3000 1TB，/）</h4><p>笔记本上拆出来的，主要原因还是在于笔记本的 M.2 位其实只支持 PCI.e 3.0 x 4。当时说是为了追求顶级的 4K 性能，4.0 的盘跑 3.0 肯定会性能更好，不过自从我把这块 KC3000 拆出来换上 SN750 之后是真没感觉出啥区别…</p>
 <p>这块 SSD 用来装 Ubuntu，到时候用来跑机器学习和 Blender 渲染用。</p>
-<h4 id="机箱-（Lian-Li-O11D-EVO-Black-，¥770）"><a href="#机箱-（Lian-Li-O11D-EVO-Black-，¥770）" class="headerlink" title="机箱 （Lian Li O11D EVO (Black)，¥770）"></a>机箱 （Lian Li O11D EVO (Black)，¥770）</h4><p>都说海景房主要是为外观而生，而我单纯是看上了 O11D EVO 的能够吊装显卡的特点。除了像 O11D EVO 这样处理，似乎其他确实就只能上追风者 PK620 这种全塔机箱才能容纳得下双显卡了。</p>
-<p>O11D EVO 有个很重要的点导致我否决了性价比极高的 Z690 ACE：这款机箱虽然可以装 E-ATX 版型的主板，但是如果显卡需要吊装的话，E-ATX 主板在宽度上多出的部分是会有冲突的，从而只能选择 ATX 版型的主板，也就是目前我使用的 Z690 Unify了。没办法，只能说是唯一的选择了。</p>
+<h4 id="机箱-（Lian-Li-O11D-EVO-Black-，¥770）"><a href="#机箱-（Lian-Li-O11D-EVO-Black-，¥770）" class="headerlink" title="机箱 （Lian Li O11D EVO (Black)，¥770）"></a>机箱 （Lian Li O11D EVO (Black)，¥770）</h4><p>都说海景房主要是为外观而生，而我单纯是看上了 O11D EVO 能够吊装显卡的特点。除了像 O11D EVO 这样处理，似乎其他确实就只能上追风者 PK620 这种全塔机箱才能容纳得下双显卡了。</p>
+<p>O11D EVO 有个很重要的点导致我否决了性价比极高的 Z690 ACE：这款机箱虽然可以装 E-ATX 版型的主板，但是如果显卡需要吊装的话，E-ATX 主板在宽度上多出的部分是会有冲突的，从而只能选择 ATX 版型的主板，也就是目前我使用的 Z690 UNIFY 了。没办法，只能说是唯一的选择了。</p>
 <p>附件上选了 40 系显卡吊装组件和前网孔面板，通气性能还是很重要的。</p>
 <h4 id="机箱风扇（7-x-Cooler-Master-SickleFlow-120，¥215）"><a href="#机箱风扇（7-x-Cooler-Master-SickleFlow-120，¥215）" class="headerlink" title="机箱风扇（7 x Cooler Master SickleFlow 120，¥215）"></a>机箱风扇（7 x Cooler Master SickleFlow 120，¥215）</h4><p>由于自己对外观以及发光实在兴趣不大，于是选择了性价比优先的 7 个无光漩涡 120。虽说吊装显卡的汉堡是不准备夹，但正面、底面和背后的 3 + 3 + 1 个风扇还是要安排齐全的。</p>
 <h4 id="操作系统（Windows-11-Pro-64-bit-for-Retail，¥90）"><a href="#操作系统（Windows-11-Pro-64-bit-for-Retail，¥90）" class="headerlink" title="操作系统（Windows 11 Pro 64-bit for Retail，¥90）"></a>操作系统（Windows 11 Pro 64-bit for Retail，¥90）</h4><p>虽然确实很久没用过盗版系统了，但一直用的也是零售版的纯激活码，这次买个盒装感受一下。</p>
 <p>相对于 Windows 10，Windows 11 最让我满意的是对 Windows Terminal 在系统内集成度的优化。终于不需要在控制台主机的简陋界面和终端界面之间来回切了，统一的终端界面是多么让人愉快。</p>
 <p>至于右键菜单、开始键和任务栏内程序的排布，都交给 StartAllBack 来还原成旧 Windows 款式就行啦。虽说确实要付钱，但不贵，¥25 可以接受。</p>
 <h3 id="外设备-1"><a href="#外设备-1" class="headerlink" title="外设备"></a>外设备</h3><h4 id="显示器（LG-LM270QQ2-SPA3-27”-5K-，¥2800）"><a href="#显示器（LG-LM270QQ2-SPA3-27”-5K-，¥2800）" class="headerlink" title="显示器（LG LM270QQ2-SPA3 (27”, 5K)，¥2800）"></a>显示器（LG LM270QQ2-SPA3 (27”, 5K)，¥2800）</h4><p>虽然我对 MacBook Pro 的诸多不满可以细说上好几个小时，但那块 Retina 显示屏也的确是切切实实地告诉了我 PPI 的重要性：如果想要追求足够的细腻度以实现最棒的观感，那么对于非手机的电脑显示器，打底的 PPI 200 几乎是必须的。</p>
-<p>市面上主流的 27” 4K 的 PPI 只能达到 163，因此就必须考虑更高的分辨率，因此就自然来到了 27” 5K。到了这个规格的显示器，就已经是清一色的 60Hz 了。所幸自己没有什么 FPS 游戏的高刷硬需求，虽然我也亲眼见过 144Hz 的极流畅观感，但毕竟 60Hz 够用了，而且 PPI 的限制下也只有 60Hz 的显示器能买。</p>
-<p>在市面上仔细找找 27” 5K 的显示器，其实本身恐怕也只有两个选项：</p>
+<p>市面上主流的 27” 4K 的 PPI 只能达到 163，因此就必须考虑更高的分辨率，因此就自然来到了 27” 5K，PPI 218。到了这个规格的显示器，就已经是清一色的 60Hz 了。所幸自己没有什么 FPS 游戏的高刷硬需求，虽然我也亲眼见过 144Hz 的极流畅观感，但毕竟 60Hz 够用了，而且 PPI 的限制下也只有 60Hz 的显示器能买。</p>
+<p>不过在市面上仔细找找 27” 5K 的显示器，其实本身恐怕也只有两个选项：</p>
 <ul>
-<li><p>LG 27” UltraFine 5K (27MD5KL)：LM270QQ2-SPA3 面板 + RTD2799 主芯片 + RTD2185 支持 DP 一线通芯片（实际上就是把双 DP 给合并了）。</p>
+<li><p>LG 27” UltraFine 5K (27MD5KL)：LM270QQ2-SPA3 面板 + RTD2799 主芯片 + RTD2185 支持 DP 一线通芯片（实际上就是把 RTD2799 主芯片输出的双 DP 1.2 给合并了）。</p>
 </li>
 <li><p>Apple Studio Display：LM270QQ2-SDA1 面板 + A13 主芯片。</p>
 </li>
@@ -558,14 +557,14 @@
 <ul>
 <li><p>MST9835 作为主芯片主要是用在 4K 显示器上面的，比如你可以在钛度 M34HWW-ST/M34HWW-Pro 的 MiniLED 中见到它，而这款显示器的分辨率是 3440 x 1440 @144Hz。</p>
 </li>
-<li><p>“mst的芯片特点就是兼容性牛逼，啥都可以做，但是带宽不够，实际对比后你就发现完全两个效果了”——引用自一位我询问过的、做 27” 5K 显示器的人。</p>
+<li><p>“mst 的芯片特点就是兼容性牛逼，啥都可以做，但是带宽不够，实际对比后你就发现完全两个效果了”——引用自一位我询问过的、做 27” 5K 显示器的人。</p>
 </li>
 </ul>
 <p>淘宝上著名的模拟 Apple Studio Display 外壳的 Kuycon 用的就是这个方案。根据我所询问到的，淘宝上的“星华辰显示器直营店”用的也是这套方案。</p>
 <h4 id="校色仪（Calibrite-ColorChecker-Display，£130）"><a href="#校色仪（Calibrite-ColorChecker-Display，£130）" class="headerlink" title="校色仪（Calibrite ColorChecker Display，£130）"></a>校色仪（Calibrite ColorChecker Display，£130）</h4><p>Calibrite ColorChecker Display = X-Rite i1 Display。</p>
 <p>对我而言校色仪是必备的，毕竟能够明确校准到 5000K 或者 6500K 的屏幕实在是太重要了。没有校色仪的情况下总有种虽然买了屏幕但却完全没有对屏幕的掌控感。</p>
-<p>就是 X-Rite 干的事儿太鸡贼了，i1 Display 这个色度仪家族里一共三款产品，无后缀、Plus 后缀、Pro 后缀，三款产品在硬件上是完全相同的，纯粹是通过人为限定三款产品的校色速度来强行将产品分级。这三款产品在 DisplayCAL 都是被统一认定为 i1 Display Pro 的，根本没有差别。</p>
-<h4 id="摄像头（Logitech-Brio-C1000E-4K-Business，£125）"><a href="#摄像头（Logitech-Brio-C1000E-4K-Business，£125）" class="headerlink" title="摄像头（Logitech Brio C1000E 4K Business，£125）"></a>摄像头（Logitech Brio C1000E 4K Business，£125）</h4><p>其实买这个摄像头的主要目的是 Windows Hello，毕竟能够支持扫描脸部还是比每次开机都要输密码便捷多了。</p>
+<p>就是 X-Rite 干的事儿太鸡贼了，i1 Display 这个色度仪家族里一共三款产品，无后缀、Plus 后缀、Pro 后缀，三款产品在硬件上是完全相同的，纯粹是通过人为限定三款产品的校色速度来强行将产品分级，定下不同的价格，甚至价格差距还不小。而这三款产品在 DisplayCAL 都是被统一认定为 i1 Display Pro 的，根本没有差别。</p>
+<h4 id="摄像头（Logitech-Brio-C1000E-4K-Business，£125）"><a href="#摄像头（Logitech-Brio-C1000E-4K-Business，£125）" class="headerlink" title="摄像头（Logitech Brio C1000E 4K Business，£125）"></a>摄像头（Logitech Brio C1000E 4K Business，£125）</h4><p>其实买这个摄像头的主要目的是 Windows Hello，毕竟能够支持扫描脸部开机还是比每次都要输密码开机便捷多了。</p>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>剩下的鼠标键盘耳机都是些老古董，就不多费口舌介绍了。</p>
 
     </div>
