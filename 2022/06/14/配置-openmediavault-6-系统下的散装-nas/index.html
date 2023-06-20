@@ -23,7 +23,7 @@
   <meta name="description" content="手头的旧笔记本 ASUS K401UQ 的屏幕偏色偏到了 i1dp + DisplayCAL 都无法拯救的程度，不过 i5-7200U 的 CPU、4G + 4G 的双通道 DDR4 内存和 NVIDIA GeForce 940MX 的独显还是挺靠谱的，所以早上想了想干脆直接把屏幕拆了，替换原来的树莓派用来当 NAS 的主机。 鼓捣了一整天终于算是把东西都整完了，从 arm64 升级到 amd64">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置 Openmediavault 6 系统下的散装 NAS">
-<meta property="og:url" content="https://matrixc7.com/2022/06/13/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/index.html">
+<meta property="og:url" content="https://matrixc7.com/2022/06/14/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/index.html">
 <meta property="og:site_name" content="MatrixC7&#39;s">
 <meta property="og:description" content="手头的旧笔记本 ASUS K401UQ 的屏幕偏色偏到了 i1dp + DisplayCAL 都无法拯救的程度，不过 i5-7200U 的 CPU、4G + 4G 的双通道 DDR4 内存和 NVIDIA GeForce 940MX 的独显还是挺靠谱的，所以早上想了想干脆直接把屏幕拆了，替换原来的树莓派用来当 NAS 的主机。 鼓捣了一整天终于算是把东西都整完了，从 arm64 升级到 amd64">
 <meta property="og:locale" content="zh_CN">
@@ -32,7 +32,7 @@
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://matrixc7.com/2022/06/13/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/">
+<link rel="canonical" href="https://matrixc7.com/2022/06/14/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/">
 
 
 <script id="page-configurations">
@@ -161,7 +161,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://matrixc7.com/2022/06/13/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/">
+    <link itemprop="mainEntityOfPage" href="https://matrixc7.com/2022/06/14/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/method-draw-image.jpg">
@@ -212,8 +212,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2022/06/13/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/06/13/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/06/14/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/06/14/%E9%85%8D%E7%BD%AE-openmediavault-6-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E6%95%A3%E8%A3%85-nas/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -405,7 +405,7 @@
       <i class="fa fa-chevron-left"></i> 用校色仪 i1 Display Pro 配合校色程序 DisplayCAL 为显示器校色
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/09/20/%E9%9F%A9%E5%9B%BD%E8%AF%AD-%E6%A0%87%E5%87%86%E5%8F%91%E9%9F%B3%E6%B3%95%EF%BC%882017%E5%B9%B4%EF%BC%89/" rel="next" title="韩国语 标准发音法（2017年）">
+    <a href="/2022/09/21/%E9%9F%A9%E5%9B%BD%E8%AF%AD-%E6%A0%87%E5%87%86%E5%8F%91%E9%9F%B3%E6%B3%95%EF%BC%882017%E5%B9%B4%EF%BC%89/" rel="next" title="韩国语 标准发音法（2017年）">
       韩国语 标准发音法（2017年） <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
