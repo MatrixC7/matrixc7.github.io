@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|EB Garamond:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"matrixc7.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。 先介绍一下整体流程，一共分两个部分： 第一部分为 rom 层面，共八步：  解锁手机 刷入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录小米 13 Pro 的配置流程">
+<meta property="og:url" content="https://matrixc7.com/2023/07/11/%E8%AE%B0%E5%BD%95%E5%B0%8F%E7%B1%B3-13-pro-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/index.html">
+<meta property="og:site_name" content="MatrixC7&#39;s">
+<meta property="og:description" content="实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。 先介绍一下整体流程，一共分两个部分： 第一部分为 rom 层面，共八步：  解锁手机 刷入">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-11T10:45:22.000Z">
+<meta property="article:modified_time" content="2023-07-12T08:36:46.607Z">
+<meta property="article:author" content="Fangru Shao">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://matrixc7.com/2023/07/11/%E8%AE%B0%E5%BD%95%E5%B0%8F%E7%B1%B3-13-pro-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>记录小米 13 Pro 的配置流程 | MatrixC7's</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MatrixC7's</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Harmonic Analysis</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://matrixc7.com/2023/07/11/%E8%AE%B0%E5%BD%95%E5%B0%8F%E7%B1%B3-13-pro-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/method-draw-image.jpg">
+      <meta itemprop="name" content="Fangru Shao">
+      <meta itemprop="description" content="fs319@ic.ac.uk">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MatrixC7's">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          记录小米 13 Pro 的配置流程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-07-11 11:45:22" itemprop="dateCreated datePublished" datetime="2023-07-11T11:45:22+01:00">2023-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-07-12 09:36:46" itemprop="dateModified" datetime="2023-07-12T09:36:46+01:00">2023-07-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2023/07/11/%E8%AE%B0%E5%BD%95%E5%B0%8F%E7%B1%B3-13-pro-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/07/11/%E8%AE%B0%E5%BD%95%E5%B0%8F%E7%B1%B3-13-pro-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。</p>
+<p>先介绍一下整体流程，一共分两个部分：</p>
+<p>第一部分为 rom 层面，共八步：</p>
+<ol>
+<li>解锁手机</li>
+<li>刷入 xiaomi.eu rom</li>
+<li>刷入 magisk-delta 获得 root 权限</li>
+<li>启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</li>
+<li>安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix</li>
+<li>打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表</li>
+<li>隐藏 magisk-delta 和 LSPosed</li>
+<li>将官方的恢复模式替换为 twrp</li>
+</ol>
+<p>第二部分为程序层面，共四步：</p>
+<ol>
+<li>Google Play 商店内进行软件安装</li>
+<li>安装小米商城后，进行软件安装</li>
+<li>系统设置</li>
+<li>各个软件的内部设置<a id="more"></a> 
+<h2 id="rom-层面"><a href="#rom-层面" class="headerlink" title="rom 层面"></a>rom 层面</h2></li>
+</ol>
+<h3 id="解锁手机"><a href="#解锁手机" class="headerlink" title="解锁手机"></a>解锁手机</h3><ul>
+<li><p>因为不解锁手机是无法刷 rom 的，所以这一步是前提。</p>
+</li>
+<li><p>如果手机已在使用中，则必须先备份数据，因为解锁时会清除所有手机数据。</p>
+</li>
+<li><p>解锁工具 miflash unlock 只有 Windows 端，所以并不能在 Linux 中进行解锁。在<a target="_blank" rel="noopener" href="https://www.miui.com/unlock/download.html">小米官网</a>下载并更新到最新版本的 miflash unlock，目前 2023 年 6 月底的最新版本为 7.6.602.42。</p>
+</li>
+<li><p>在手机开机或重启的开机阶段，保持按住音量下键，进入 fastboot 模式。</p>
+</li>
+<li><p>将 fastboot 模式下的手机连接到 Windows 主机，打开 miflash unlock。</p>
+</li>
+<li><p>对于从未解锁过的手机，并不能直接解锁，需要此时在 miflash unlock 中申请解锁并等待 168 小时才能正式解锁。</p>
+</li>
+<li><p>对于已经解锁过或者等待 168 小时之后的手机，此时直接在 miflash unlock 解锁手机即可。</p>
+</li>
+<li><p>解锁完成后，手机会自动重启。</p>
+</li>
+</ul>
+<h3 id="刷入-xiaomi-eu-rom"><a href="#刷入-xiaomi-eu-rom" class="headerlink" title="刷入 xiaomi.eu rom"></a>刷入 xiaomi.eu rom</h3><ul>
+<li><p>选择的是非官方的 xiaomi.eu rom，由 <a target="_blank" rel="noopener" href="https://xiaomi.eu/community/">xiaomi.eu</a> 维护。这个版本的 rom 自大陆的原始 rom 修改而来，去除了广告和为大陆服务的本地化内容（例如手机黄页、小爱同学等），同时引入了原生的 Google 框架。</p>
+</li>
+<li><p>根据手机型号，下载开发版的 weekly roms 或稳定版 stable roms。</p>
+</li>
+<li><p>解压下载的 rom 压缩包后，将手机以 fastboot 模式连接电脑，执行解压内的对应 bat。</p>
+<ul>
+<li><p>windows_fastboot_first_install_with_data_format.bat：新安装 rom 或者降级时用，会抹除手机上的所有数据。</p>
+</li>
+<li><p>windows_fastboot_update_rom：rom 更新时用，不会抹除数据。</p>
+</li>
+</ul>
+</li>
+<li><p>选择新安装 rom 时会有以下提示，输入 <code>Y</code> 安装即可。安装完成后手机会自动重启。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Waiting for device...</span><br><span class="line">You are going to wipe your data and internal storage.</span><br><span class="line">It will delete all your files and photos stored on internal storage.</span><br><span class="line">Do you agree? (Y&#x2F;N)</span><br></pre></td></tr></table></figure>
+<h3 id="刷入-magisk-delta-获得-root-权限"><a href="#刷入-magisk-delta-获得-root-权限" class="headerlink" title="刷入 magisk-delta 获得 root 权限"></a>刷入 magisk-delta 获得 root 权限</h3><ul>
+<li><p>由于 xiaomi.eu rom 去除了为大陆服务的本地化程序，而这对于大陆用户而言是相当不便的，唯一的补救措施是安装社群管理的本地化工具箱，而本地化工具箱要求手机安装了 magisk 和 LSPosed，并取得手机的 root 权限。</p>
+</li>
+<li><p>使用 magisk-delta 而非原生 magisk 的原因是 delta 版本拥有更好的防 root 检测功能。原生的 magisk 即使安装了防 root 检测模块，仍然有部分程序（例如数字人民币、Barclays 等银行类程序）能检测出手机已经被 root 从而无法启动。</p>
+</li>
+<li><p>开机，执行 Google 账号登录和对应设定。连接 Google 的通常做法是打开 Windows 主机的 v2rayn 内的“允许局域网连接”功能，随后将手机连接到 Windows 主机所在的无线网络，选择无线网络选项内的“代理”，调整为手动模式并填入 Windows 主机的本地 ip 和使用的 http/https 或 socks 端口。Windows 主机的本地 ip 一般可以在路由器中查看。</p>
+</li>
+<li><p>将手机直接连接 Windows 主机，USB 模式允许文件传输。将 <a target="_blank" rel="noopener" href="https://github.com/HuskyDG/magisk-files">magisk-delta</a> 的 apk 安装文件和 xiaomi.eu rom 的 images 文件夹内的 init_boot.img 传入手机。</p>
+</li>
+<li><p>在手机内打开 apk 文件安装 magisk-delta 后，打开 magisk-delta 的界面。此时界面内 magisk 的“当前”状态为无法获取。</p>
+</li>
+<li><p>点击 界面内 magisk 右侧的安装按钮，点击“选择并修补一个文件”选项，选中传入的 init_boot.rom。</p>
+</li>
+<li><p>magisk-delta 会生成一个 magisk_patched 前缀的 img 文件，将这个文件从手机中取出放入 Windows 主机内。</p>
+</li>
+<li><p>重启手机并进入 fastboot 模式。在 Windows 主机中使用 <code>scoop install adb</code> 安装 adb 工具后，在终端内执行 fastboot 命令如下，将 magisk-delta 生成的 img 文件刷入手机。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe flash init_boot .\magisk_patched-25210_8WUy3.img</span><br><span class="line">Sending &#39;init_boot&#39; (8192 KB)                      OKAY [  0.193s]</span><br><span class="line">Writing &#39;init_boot&#39;                                OKAY [  0.003s]</span><br><span class="line">Finished. Total time: 0.231s</span><br><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe reboot</span><br><span class="line">Rebooting                                          OKAY [  0.001s]</span><br><span class="line">Finished. Total time: 0.002s</span><br></pre></td></tr></table></figure>
+<h3 id="启用-magisk-delta-中的-Zygisk-和-Zygisk-LSPosed"><a href="#启用-magisk-delta-中的-Zygisk-和-Zygisk-LSPosed" class="headerlink" title="启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed"></a>启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</h3><ul>
+<li><p>这一步的目的是启用 magisk-delta 内的 Zygisk 和 Zygisk 下的 LSPosed，这两个工具都是使用本地化模块的必要前提。</p>
+</li>
+<li><p>打开 magisk-delta，此时会显示“需要修复运行环境”。点击继续，完成后会自动重启手机。</p>
+</li>
+<li><p>再次打开 magisk-delta，界面内的 magisk 的“当前”会显示安装的 magisk-delta 版本，目前 2023.07 为 fdac22ba0delta (25210)。</p>
+</li>
+<li><p>主页右上角齿轮设置中启用 Zygisk 和 Bootloop 保护，暂时不要打开 magiskhide。</p>
+</li>
+<li><p>在 magisk-delta 的模块标签页中选中 Zygisk-LSPosed 的 zip 安装包进行安装，安装完成后重启手机。</p>
+</li>
+</ul>
+<h3 id="安装适配-xiaomi-eu-rom-的本地化模块和修复-FCM-推送的-fcmfix"><a href="#安装适配-xiaomi-eu-rom-的本地化模块和修复-FCM-推送的-fcmfix" class="headerlink" title="安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix"></a>安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix</h3><ul>
+<li><p>通过在 magisk-delta 中安装本地化模块和在 LSPosed 中启用本地化工具箱来完成对 xiaomi.eu rom 中去除的本地化部分的还原。</p>
+</li>
+<li><p>对于 xiaomi.eu rom 而言 FCM 消息推送是完全正常的，而在安装了本地化模块后，FCM 消息推送会出现和大陆版原 rom 一样的 FCM 无法推送已经停止的应用的消息这个问题，在 FCM diagnostic 内可以看到类似 <code>fcm failed to broadcast to stopped app</code> 的报错信息。因此需要安装 fcmfix 并在 LSPosed 启用来修复这个问题。</p>
+</li>
+<li><p>下载 <a target="_blank" rel="noopener" href="https://blog.minamigo.moe/archives/184">MIUI EU 欧洲版 本地化 Magisk 模块</a>，解压出其中的 <code>MiuiEuLocalization.ini</code> 文件，打开并根据想要恢复的应用进行所需的修改。</p>
+</li>
+<li><p>下载 <a target="_blank" rel="noopener" href="https://github.com/kooritea/fcmfix">fcmfix</a>。</p>
+</li>
+<li><p>将手机连接至 Windows 主机，将本地化模块压缩包、ini 文件和 fcmfix 的安装文件一并放入手机的 Download 文件夹内。在 magisk-delta 中的模块页面安装本地化模块，而 fcmfix 直接打开安装即可。</p>
+</li>
+</ul>
+<h3 id="打开-magisk-delta-中的-magiskhide-并强制使用超级用户列表"><a href="#打开-magisk-delta-中的-magiskhide-并强制使用超级用户列表" class="headerlink" title="打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表"></a>打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表</h3><ul>
+<li><p>这一步的目的相当于开启 magisk-delta，或者说 root 权限的白名单。通过这个方法开启的白名单是目前效果最好的。</p>
+</li>
+<li><p>进入 magisk-delta，主页右上角齿轮设置中启用 magiskhide 并打开“强制使用超级用户列表”，重启手机。</p>
+</li>
+<li><p>此时手机开机会发现本地化模块所安装的天气等一系列应用程序全部都会报错，包括桌面上的应用程序也无法正确显示名称。这正是由于已经打开了 root 权限的白名单，而这些需要 root 权限的程序均不在白名单内。</p>
+</li>
+<li><p>为了保险起见，此时进入 magisk-delta 并在主页右上齿轮设置中选择“配置 magiskhide”，在配置页面的右上角三点内勾选“显示系统应用”和“显示系统程序”，然后为当前系统内安装的所有程序的所有部分全部授予 root 权限。虽然比较麻烦，但这是最保险的做法，而且这个时间点也是最合适的，没有任何其他另外安装程序的干扰，只有系统必须的程序，从而不会出现误给 root 权限的情况。</p>
+</li>
+<li><p>重启手机，本地化模块即可以重新恢复正常。打开 LSPosed，此时会提示创建快捷方式，暂时先点击确认，随后在模块页面中启用本地化工具箱和刚安装的 fcmfix。</p>
+</li>
+</ul>
+<h3 id="隐藏-magisk-delta-和-LSPosed"><a href="#隐藏-magisk-delta-和-LSPosed" class="headerlink" title="隐藏 magisk-delta 和 LSPosed"></a>隐藏 magisk-delta 和 LSPosed</h3><ul>
+<li><p>这一步是隐藏手机 root 的最后一步。</p>
+</li>
+<li><p>打开 magisk-delta，主页右上齿轮设置中选择“隐藏 magisk 应用”，此时会弹出安装未知应用的权限确认页面，在列表内中找到 magisk-delta 并“允许来自此来源的应用”。安装后打开隐藏后的 magisk-delta，提示是否需要添加原始的 magisk-delta 的快捷方式到桌面，此处选择取消即可。</p>
+</li>
+<li><p>打开 LSPosed，在设置页面中创建打开寄生管理器的快捷方式，随后关闭状态通知，即完成了 LSPosed 的隐藏。</p>
+</li>
+</ul>
+<h3 id="将官方的恢复模式替换为-twrp"><a href="#将官方的恢复模式替换为-twrp" class="headerlink" title="将官方的恢复模式替换为 twrp"></a>将官方的恢复模式替换为 twrp</h3><ul>
+<li><p>由于 twrp 比小米官方的恢复模式有更多的功能，其中包括非常实用的整机备份，而这种备份是类似 Windows 的 wim 或者老 Ghost 备份的，比手动的小米云备份或者钛备份之类的都要好用很多，所以很有必要安装。</p>
+</li>
+<li><p>将 fastboot 模式下的手机连接到 Windows 主机，打开终端并执行如下命令：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\Downloads\xiaomi 13 pro&gt; fastboot.exe flash recovery_ab .\twrp-3.7.0_12-v7.8_A13-nuwa-skkk.img</span><br><span class="line">Sending &#39;recovery_ab&#39; (102400 KB)                  OKAY [  2.379s]</span><br><span class="line">Writing &#39;recovery_ab&#39;                              (bootloader) Partition recovery_a flashed successfully</span><br><span class="line">(bootloader) Partition recovery_b flashed successfully</span><br><span class="line">OKAY [  0.078s]</span><br><span class="line">Finished. Total time: 2.478s</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>如果想要进入恢复模式，有两种方法：</p>
+<ul>
+<li><p>打开手机内的系统更新程序，右上角选择重启进入恢复模式即可进入。</p>
+</li>
+<li><p>将 fastboot 模式的手机连接到 Windows 主机，执行以下命令：</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\Downloads\xiaomi 13 pro&gt; fastboot.exe reboot recovery</span><br><span class="line">Rebooting into recovery                            OKAY [  0.002s]</span><br><span class="line">Finished. Total time: 0.004s</span><br></pre></td></tr></table></figure>
+<h2 id="程序层面"><a href="#程序层面" class="headerlink" title="程序层面"></a>程序层面</h2><p>程序层面的前两步没啥好讲的，一个个装就完事了。主要是配置</p>
+<h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><ul>
+<li><p>个人账号</p>
+<ul>
+<li><p>云服务-关闭云备份</p>
+</li>
+<li><p>云服务-打开小米云盘</p>
+</li>
+<li><p>云服务-打开所有应用数据同步</p>
+</li>
+<li><p>查找设备-打开查找设备</p>
+</li>
+<li><p>查找设备-电量耗尽前定位</p>
+</li>
+<li><p>关于小米账号-系统广告-关闭系统工具广告</p>
+</li>
+</ul>
+</li>
+<li><p>我的设备-备份与恢复-Google 备份打开</p>
+</li>
+<li><p>个人热点</p>
+<ul>
+<li><p>修改密码</p>
+</li>
+<li><p>选择 AP 频段</p>
+</li>
+</ul>
+</li>
+<li><p>VPN-v2rayNG 始终开启的VPN</p>
+</li>
+<li><p>壁纸与个性化-壁纸，锁屏布局显示农历+增加签名</p>
+</li>
+<li><p>息屏与锁屏</p>
+<ul>
+<li><p>其他-极速相机</p>
+</li>
+<li><p>侧边栏快捷方式-笔记-推特-notion-米家-原-蚌</p>
+</li>
+</ul>
+</li>
+<li><p>显示</p>
+<ul>
+<li><p>定时开启深色</p>
+</li>
+<li><p>更多深色模式设置-单独设置中关闭其他应用</p>
+</li>
+<li><p>色彩风格-原色（有可能自定义校色）</p>
+</li>
+<li><p>屏幕分辨率-WQHD+</p>
+</li>
+<li><p>字体设置-小号</p>
+</li>
+</ul>
+</li>
+<li><p>声音与触感</p>
+<ul>
+<li><p>通知提醒-Tethys</p>
+</li>
+<li><p>电话铃声-跳跃</p>
+</li>
+</ul>
+</li>
+<li><p>桌面</p>
+<ul>
+<li><p>负一屏-隐私设置-关闭个性化推荐</p>
+</li>
+<li><p>负一屏-关闭推荐卡面和热门活动</p>
+</li>
+<li><p>负一屏-最近任务样式-显示内存信息</p>
+</li>
+</ul>
+</li>
+<li><p>安全-打开关机验证密码</p>
+</li>
+<li><p>更多设置-内存扩展-7GB</p>
+</li>
+<li><p>通知与控制中心</p>
+<ul>
+<li><p>锁屏通知-最下方打开所有未允许通知权限的程序并允许桌面角标</p>
+</li>
+<li><p>悬浮通知-不屏蔽</p>
+</li>
+<li><p>桌面角标-打开所有</p>
+</li>
+<li><p>通知显示设置-（待观察）</p>
+</li>
+<li><p>状态栏-status bar icons-关闭 VPN 符号</p>
+</li>
+</ul>
+</li>
+<li><p>隐私保护</p>
+<ul>
+<li><p>了解隐私-照明弹-关闭所有程序读取剪切板</p>
+</li>
+<li><p>保护隐私-应用权限设置-关闭所有短信与彩信、电话与联系人里的权限</p>
+</li>
+<li><p>保护隐私-应用权限设置-获取手机信息-全部返回空</p>
+</li>
+<li><p>保护隐私-应用权限设置-读取应用列表-全部拒绝</p>
+</li>
+<li><p>保护隐私-应用权限设置-访问日历-全部拒绝</p>
+</li>
+<li><p>保护隐私-应用权限设置-访问手机账户-全部拒绝</p>
+</li>
+<li><p>保护隐私-应用权限设置-身体传感器-全部拒绝</p>
+</li>
+<li><p>保护隐私-应用权限设置-读取剪贴板-全部拒绝</p>
+</li>
+<li><p>保护隐私-应用权限设置-系统设置-全部拒绝</p>
+</li>
+<li><p>保护隐私-应用权限设置-开启 WLAN-全部拒绝</p>
+</li>
+<li><p>保护隐私-应用权限设置-开启蓝牙-全部拒绝</p>
+</li>
+<li><p>保护隐私-应用权限设置-锁屏显示-全部打开</p>
+</li>
+<li><p>保护隐私-应用权限设置-后台弹出界面-全部打开</p>
+</li>
+<li><p>保护隐私-应用权限设置-显示悬浮窗-全部打开</p>
+</li>
+</ul>
+</li>
+<li><p>省电与电池-电池-快充加速-默认使用打开</p>
+</li>
+</ul>
+<h3 id="应用配置"><a href="#应用配置" class="headerlink" title="应用配置"></a>应用配置</h3><ul>
+<li><p>邮箱</p>
+<ul>
+<li><p><a href="mailto:&#115;&#x6f;&#102;&#97;&#114;&#x63;&#104;&#120;&#x40;&#x76;&#105;&#112;&#x2e;&#x71;&#x71;&#46;&#99;&#x6f;&#109;">&#115;&#x6f;&#102;&#97;&#114;&#x63;&#104;&#120;&#x40;&#x76;&#105;&#112;&#x2e;&#x71;&#x71;&#46;&#99;&#x6f;&#109;</a></p>
+<ul>
+<li><p>发信昵称：MatrixC7</p>
+</li>
+<li><p>签名：From Xiaomi 13 Pro</p>
+</li>
+<li><p>文件夹设置：这个选项是同步时会直接下载的文件夹，其余可以手动下载。仅打开收件箱。</p>
+</li>
+<li><p>新邮件提醒设置，开启：收件箱、文件夹</p>
+</li>
+</ul>
+</li>
+<li><p><a href="mailto:&#97;&#x64;&#x6d;&#105;&#x6e;&#64;&#x6d;&#x61;&#x74;&#114;&#105;&#120;&#99;&#55;&#x2e;&#x63;&#x6f;&#x6d;">&#97;&#x64;&#x6d;&#105;&#x6e;&#64;&#x6d;&#x61;&#x74;&#114;&#105;&#120;&#99;&#55;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<ul>
+<li><p>手动设置</p>
+</li>
+<li><p>用户名：Fangru Shao</p>
+</li>
+<li><p>imap.yandex.com SSL 993</p>
+</li>
+<li><p>smtp.yandex.com SSL 465</p>
+</li>
+<li><p>发信昵称：Fangru Shao</p>
+</li>
+<li><p>签名：From Xiaomi 13 Pro</p>
+</li>
+<li><p>文件夹设置：这个选项是同步时会直接下载的文件夹，其余可以手动下载。仅打开收件箱。</p>
+</li>
+</ul>
+</li>
+<li><p>设置-通知设置：关闭勿扰模式、关闭降低收件频率</p>
+</li>
+</ul>
+</li>
+<li><p>Synology Photos</p>
+<ul>
+<li>备份所有照片</li>
+</ul>
+</li>
+<li><p>短信</p>
+<ul>
+<li>免费网络短信：SIM1、SIM2 打开</li>
+</ul>
+</li>
+<li><p>Google Play 商店</p>
+<ul>
+<li>icon-设置-身份验证-生物识别身份验证</li>
+</ul>
+</li>
+<li><p>小米应用商店</p>
+<ul>
+<li>永久忽略 Outlook</li>
+</ul>
+</li>
+<li><p>小米文件管理</p>
+<ul>
+<li>最近页不显示相机与截屏文件</li>
+</ul>
+</li>
+<li><p>钱包</p>
+<ul>
+<li><p>我的-右上角设置-添加指纹解锁</p>
+</li>
+<li><p>功能设置-只打开首页快速出示和个人中心资产区</p>
+</li>
+<li><p>个人账户-实名认证</p>
+</li>
+<li><p>我的证件夹-添加身份证-右上角三点设为常用证件</p>
+</li>
+<li><p>mi pay 添加银行卡</p>
+</li>
+</ul>
+</li>
+<li><p>支付宝</p>
+<ul>
+<li><p>登录-指纹信息-短信验证-重新开通指纹登录</p>
+</li>
+<li><p>我的-右上角设置-通用-字体大小-拖到小</p>
+</li>
+<li><p>允许位置权限</p>
+</li>
+</ul>
+</li>
+<li><p>小爱同学</p>
+<ul>
+<li><p>小爱语音</p>
+<ul>
+<li><p>语音唤醒-定制唤醒词</p>
+</li>
+<li><p>方言与音色-待定</p>
+</li>
+<li><p>小爱实验室-小爱闹铃打开</p>
+</li>
+</ul>
+</li>
+<li><p>小爱通话-自动接听打开</p>
+</li>
+</ul>
+</li>
+<li><p>MT 管理器</p>
+<ul>
+<li><p>左侧栏右上方三点设置-添加网络存储-通过 ftp 连接 nas</p>
+</li>
+<li><p>主机填入 nas.matrixc7.com 即可</p>
+</li>
+</ul>
+</li>
+<li><p>通话-联系人-营业厅</p>
+<ul>
+<li>停用营业厅</li>
+</ul>
+</li>
+<li><p>浏览器</p>
+<ul>
+<li><p>设置地址栏搜索引擎-Google</p>
+</li>
+<li><p>关闭热点通知</p>
+</li>
+</ul>
+</li>
+<li><p>下载管理</p>
+<ul>
+<li><p>关闭迅雷下载引擎</p>
+</li>
+<li><p>信息流设置-关闭热榜推荐</p>
+</li>
+</ul>
+</li>
+<li><p>手机管家</p>
+<ul>
+<li><p>右上角设置-网络助手-打开显示当前网速</p>
+</li>
+<li><p>右上角设置-骚扰拦截-短信拦截-彩信-拦截</p>
+</li>
+<li><p>右上角设置-病毒扫描</p>
+<ul>
+<li><p>打开云端杀毒</p>
+</li>
+<li><p>自动更新引擎</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Gmail</p>
+<ul>
+<li><p>设置-常规设置-归档前先确认</p>
+</li>
+<li><p>设置-邮箱账号-收件箱通知-每收到一封电子邮件通知一次</p>
+</li>
+<li><p>设置-邮箱账号-管理标签-动态-标签通知+每收到一封电子邮件通知一次</p>
+</li>
+<li><p>设置-邮箱账号-管理标签-主要、动态、已发送更改为全部同步</p>
+</li>
+</ul>
+</li>
+<li><p>Google</p>
+<ul>
+<li><p>右上角个人头像-设置</p>
+<ul>
+<li><p>常规-关闭探索</p>
+</li>
+<li><p>常规-自动播放视频预览-一律不播放</p>
+</li>
+<li><p>关闭安全搜索</p>
+</li>
+<li><p>Google 助理-所有设置-常规-关闭 Google 助理</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>淘宝</p>
+<ul>
+<li>设置-通用-关闭所有播放设置和辅助功能</li>
+</ul>
+</li>
+<li><p>飞猪</p>
+<ul>
+<li>消息页面右上角齿轮-只打开行程服务</li>
+</ul>
+</li>
+<li><p>飞常准</p>
+<ul>
+<li>设置-消息推送与个性化推荐-只打开航班动态通知</li>
+</ul>
+</li>
+<li><p>TIM</p>
+<ul>
+<li><p>通用-字体大小-小</p>
+</li>
+<li><p>通用-回车键发送消息</p>
+</li>
+</ul>
+</li>
+<li><p>v2rayng</p>
+<ul>
+<li>打开分应用代理和绕行模式</li>
+</ul>
+</li>
+<li><p>Outlook</p>
+<ul>
+<li>学校邮箱需要启用“设备管理应用”权限</li>
+</ul>
+</li>
+<li><p>12123</p>
+<ul>
+<li>进入前需要先打开飞行模式，随后再关闭，这样才能避免闪退。</li>
+</ul>
+</li>
+<li><p>电话</p>
+<ul>
+<li>打开所有录音</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/09/%E7%AC%AC%E4%B8%80%E5%8F%B0%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%9A%84%E9%85%8D%E7%BD%AE%E5%88%97%E8%A1%A8%E5%92%8C%E9%80%89%E8%B4%AD%E7%90%86%E7%94%B1%E8%AE%B0%E5%BD%95/" rel="prev" title="第一台台式机的配置列表和选购理由记录">
+      <i class="fa fa-chevron-left"></i> 第一台台式机的配置列表和选购理由记录
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rom-%E5%B1%82%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">rom 层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%94%81%E6%89%8B%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">解锁手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E5%85%A5-xiaomi-eu-rom"><span class="nav-number">1.2.</span> <span class="nav-text">刷入 xiaomi.eu rom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E5%85%A5-magisk-delta-%E8%8E%B7%E5%BE%97-root-%E6%9D%83%E9%99%90"><span class="nav-number">1.3.</span> <span class="nav-text">刷入 magisk-delta 获得 root 权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-magisk-delta-%E4%B8%AD%E7%9A%84-Zygisk-%E5%92%8C-Zygisk-LSPosed"><span class="nav-number">1.4.</span> <span class="nav-text">启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%80%82%E9%85%8D-xiaomi-eu-rom-%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%8C%96%E6%A8%A1%E5%9D%97%E5%92%8C%E4%BF%AE%E5%A4%8D-FCM-%E6%8E%A8%E9%80%81%E7%9A%84-fcmfix"><span class="nav-number">1.5.</span> <span class="nav-text">安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80-magisk-delta-%E4%B8%AD%E7%9A%84-magiskhide-%E5%B9%B6%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8"><span class="nav-number">1.6.</span> <span class="nav-text">打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F-magisk-delta-%E5%92%8C-LSPosed"><span class="nav-number">1.7.</span> <span class="nav-text">隐藏 magisk-delta 和 LSPosed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%AE%98%E6%96%B9%E7%9A%84%E6%81%A2%E5%A4%8D%E6%A8%A1%E5%BC%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA-twrp"><span class="nav-number">1.8.</span> <span class="nav-text">将官方的恢复模式替换为 twrp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%B1%82%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">程序层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">应用配置</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fangru Shao"
+      src="/images/method-draw-image.jpg">
+  <p class="site-author-name" itemprop="name">Fangru Shao</p>
+  <div class="site-description" itemprop="description">fs319@ic.ac.uk</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/MatrixC7" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;MatrixC7" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://open.spotify.com/user/kxh1vuaegnnujzztlvazbe9al" title="Spotify → https:&#x2F;&#x2F;open.spotify.com&#x2F;user&#x2F;kxh1vuaegnnujzztlvazbe9al" rel="noopener" target="_blank"><i class="fab fa-spotify fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fas fa-angle-right"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fangru Shao</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'rf1sBk95K7OM6DrrbXAybebJ-MdYXbMMI',
+      appKey     : 'WQqoRCJKiq18T8lCWxS5d8xI',
+      placeholder: "",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
