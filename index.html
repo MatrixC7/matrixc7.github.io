@@ -158,6 +158,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://matrixc7.com/2023/10/04/%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-manjaro-%E6%88%96-ubuntu-%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/method-draw-image.jpg">
+      <meta itemprop="name" content="Fangru Shao">
+      <meta itemprop="description" content="fs319@ic.ac.uk">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MatrixC7's">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/04/%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-manjaro-%E6%88%96-ubuntu-%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">安装并配置 Manjaro 或 Ubuntu 系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-10-03 17:19:30 / 修改时间：10:20:32" itemprop="dateCreated datePublished" datetime="2023-10-03T17:19:30+01:00">2023-10-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2023/10/04/%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-manjaro-%E6%88%96-ubuntu-%E7%B3%BB%E7%BB%9F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/10/04/%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-manjaro-%E6%88%96-ubuntu-%E7%B3%BB%E7%BB%9F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://matrixc7.com/2023/07/11/%E8%AE%B0%E5%BD%95%E5%B0%8F%E7%B1%B3-13-pro-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -189,7 +270,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-07-12 09:42:46" itemprop="dateModified" datetime="2023-07-12T09:42:46+01:00">2023-07-12</time>
+                <time title="修改时间：2023-10-07 22:58:25" itemprop="dateModified" datetime="2023-10-07T22:58:25+01:00">2023-10-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -227,24 +308,9 @@
 
       
           <p>实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。</p>
-<p>先介绍一下整体流程，一共分两个部分：</p>
-<p>第一部分为 rom 层面，共八步：</p>
-<ol>
-<li>解锁手机</li>
-<li>刷入 xiaomi.eu rom</li>
-<li>刷入 magisk-delta 获得 root 权限</li>
-<li>启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</li>
-<li>安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix</li>
-<li>打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表</li>
-<li>隐藏 magisk-delta 和 LSPosed</li>
-<li>将官方的恢复模式替换为 twrp</li>
-</ol>
-<p>第二部分为程序层面，共四步：</p>
-<ol>
-<li>Google Play 商店内进行软件安装</li>
-<li>安装小米商城后，进行软件安装</li>
-<li>系统设置</li>
-<li>各个软件的内部设置
+<p>2023.10.03 手头有一台红米 Note 13 Pro+，几天体验下来意识到实际上国行 rom 在打开 GMS 服务 + root-fcmfix 之后，再稍微关一关系统广告，就和安装了本地化工具箱的 EU rom 几乎没有任何差别了，而且还不用担心奇奇怪怪的 bug 问题。因此我不再推荐刷 EU rom，下文部分也会删除所有和 EU rom 有关的内容。</p>
+<p>对于目前的小米手机，即使是需要全套的 GMS 服务，在解锁系统之后只要刷入 magisk 保证 root 就完全足够了。如果对 GMS 服务没有要求的话，出厂 rom 真的完全够用了，不折腾才是最好的。</p>
+<p>以及 Apple 果然没让人失望，新出的玩意一个比一个拉。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/11/%E8%AE%B0%E5%BD%95%E5%B0%8F%E7%B1%B3-13-pro-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/#more" rel="contents">
@@ -302,7 +368,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-26 10:44:30" itemprop="dateModified" datetime="2023-08-26T10:44:30+01:00">2023-08-26</time>
+                <time title="修改时间：2023-10-03 11:37:34" itemprop="dateModified" datetime="2023-10-03T11:37:34+01:00">2023-10-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -340,7 +406,7 @@
 
       
           <p>筹备了很长时间终于装了自己的第一台台式机，还是有必要记录下来。</p>
-<h2 id="配置列表"><a href="#配置列表" class="headerlink" title="配置列表"></a>配置列表</h2><h3 id="主设备"><a href="#主设备" class="headerlink" title="主设备"></a>主设备</h3><p>由于是第一台台式机，除了 1TB 的 KC3000 是从笔记本里拆出来的，其他全是买的全新。</p>
+<h2 id="配置列表"><a href="#配置列表" class="headerlink" title="配置列表"></a>配置列表</h2><h3 id="主设备"><a href="#主设备" class="headerlink" title="主设备"></a>主设备</h3><p>由于是第一台台式机，除了 1TB 的 SN750 是从笔记本里拆出来的，其他全是买的全新。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/06/09/%E7%AC%AC%E4%B8%80%E5%8F%B0%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%9A%84%E9%85%8D%E7%BD%AE%E5%88%97%E8%A1%A8%E5%92%8C%E9%80%89%E8%B4%AD%E7%90%86%E7%94%B1%E8%AE%B0%E5%BD%95/#more" rel="contents">
@@ -570,102 +636,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://matrixc7.com/2022/05/29/%E7%94%A8%E6%A0%A1%E8%89%B2%E4%BB%AA-i1-display-pro-%E9%85%8D%E5%90%88%E6%A0%A1%E8%89%B2%E7%A8%8B%E5%BA%8F-displaycal-%E4%B8%BA%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/method-draw-image.jpg">
-      <meta itemprop="name" content="Fangru Shao">
-      <meta itemprop="description" content="fs319@ic.ac.uk">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MatrixC7's">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/29/%E7%94%A8%E6%A0%A1%E8%89%B2%E4%BB%AA-i1-display-pro-%E9%85%8D%E5%90%88%E6%A0%A1%E8%89%B2%E7%A8%8B%E5%BA%8F-displaycal-%E4%B8%BA%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2/" class="post-title-link" itemprop="url">用校色仪 i1 Display Pro 配合校色程序 DisplayCAL 为显示器校色</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-29 03:07:18" itemprop="dateCreated datePublished" datetime="2022-05-29T03:07:18+01:00">2022-05-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-06-06 21:51:30" itemprop="dateModified" datetime="2023-06-06T21:51:30+01:00">2023-06-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/05/29/%E7%94%A8%E6%A0%A1%E8%89%B2%E4%BB%AA-i1-display-pro-%E9%85%8D%E5%90%88%E6%A0%A1%E8%89%B2%E7%A8%8B%E5%BA%8F-displaycal-%E4%B8%BA%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/29/%E7%94%A8%E6%A0%A1%E8%89%B2%E4%BB%AA-i1-display-pro-%E9%85%8D%E5%90%88%E6%A0%A1%E8%89%B2%E7%A8%8B%E5%BA%8F-displaycal-%E4%B8%BA%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这几天折腾了一下校色，在这里简单记录一下大致的流程：</p>
-<h2 id="确保-Windows-系统的颜色校准已关闭"><a href="#确保-Windows-系统的颜色校准已关闭" class="headerlink" title="确保 Windows 系统的颜色校准已关闭"></a>确保 Windows 系统的颜色校准已关闭</h2><p>打开 Windows 的“颜色管理”，在“高级”选项卡中点击“更改系统默认值”。<br><img src="https://pic.imgdb.cn/item/62925644094754312934fae2.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/29/%E7%94%A8%E6%A0%A1%E8%89%B2%E4%BB%AA-i1-display-pro-%E9%85%8D%E5%90%88%E6%A0%A1%E8%89%B2%E7%A8%8B%E5%BA%8F-displaycal-%E4%B8%BA%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%A1%E8%89%B2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -737,7 +707,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

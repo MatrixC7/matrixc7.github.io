@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"matrixc7.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。 先介绍一下整体流程，一共分两个部分： 第一部分为 rom 层面，共八步：  解锁手机 刷入">
+  <meta name="description" content="实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。 2023.10.03 手头有一台红米 Note 13 Pro+，几天体验下来意识到实际上国">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录小米 13 Pro 的配置流程">
 <meta property="og:url" content="https://matrixc7.com/2023/07/11/%E8%AE%B0%E5%BD%95%E5%B0%8F%E7%B1%B3-13-pro-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="MatrixC7&#39;s">
-<meta property="og:description" content="实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。 先介绍一下整体流程，一共分两个部分： 第一部分为 rom 层面，共八步：  解锁手机 刷入">
+<meta property="og:description" content="实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。 2023.10.03 手头有一台红米 Note 13 Pro+，几天体验下来意识到实际上国">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-11T10:45:22.000Z">
-<meta property="article:modified_time" content="2023-07-12T08:42:46.968Z">
+<meta property="article:modified_time" content="2023-10-07T21:58:25.731Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-07-12 09:42:46" itemprop="dateModified" datetime="2023-07-12T09:42:46+01:00">2023-07-12</time>
+                <time title="修改时间：2023-10-07 22:58:25" itemprop="dateModified" datetime="2023-10-07T22:58:25+01:00">2023-10-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,115 +229,144 @@
 
       
         <p>实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。</p>
+<p>2023.10.03 手头有一台红米 Note 13 Pro+，几天体验下来意识到实际上国行 rom 在打开 GMS 服务 + root-fcmfix 之后，再稍微关一关系统广告，就和安装了本地化工具箱的 EU rom 几乎没有任何差别了，而且还不用担心奇奇怪怪的 bug 问题。因此我不再推荐刷 EU rom，下文部分也会删除所有和 EU rom 有关的内容。</p>
+<p>对于目前的小米手机，即使是需要全套的 GMS 服务，在解锁系统之后只要刷入 magisk 保证 root 就完全足够了。如果对 GMS 服务没有要求的话，出厂 rom 真的完全够用了，不折腾才是最好的。</p>
+<p>以及 Apple 果然没让人失望，新出的玩意一个比一个拉。</p>
+<a id="more"></a> 
+
 <p>先介绍一下整体流程，一共分两个部分：</p>
-<p>第一部分为 rom 层面，共八步：</p>
+<p>第一部分为系统层面，共八步：</p>
 <ol>
 <li>解锁手机</li>
-<li>刷入 xiaomi.eu rom</li>
+<li>用线刷包（fastboot）或者卡刷包（recovery）刷入或者更新指定的 rom</li>
+<li>将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）</li>
 <li>刷入 magisk-delta 获得 root 权限</li>
 <li>启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</li>
-<li>安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix</li>
+<li>安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</li>
 <li>打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表</li>
 <li>隐藏 magisk-delta 和 LSPosed</li>
-<li>将官方的恢复模式替换为 twrp</li>
 </ol>
 <p>第二部分为程序层面，共四步：</p>
 <ol>
-<li>Google Play 商店内进行软件安装</li>
-<li>安装小米商城后，进行软件安装</li>
+<li>在小米商城内进行软件安装</li>
+<li>在小米商城内搜索 Google Play 商店，安装后在 Play 商店内进行软件安装</li>
 <li>系统设置</li>
-<li>各个软件的内部设置<a id="more"></a> 
-
-</li>
+<li>各个软件的内部设置</li>
 </ol>
-<h2 id="rom-层面"><a href="#rom-层面" class="headerlink" title="rom 层面"></a>rom 层面</h2><h3 id="解锁手机"><a href="#解锁手机" class="headerlink" title="解锁手机"></a>解锁手机</h3><ul>
-<li><p>因为不解锁手机是无法刷 rom 的，所以这一步是前提。</p>
+<h2 id="系统层面"><a href="#系统层面" class="headerlink" title="系统层面"></a>系统层面</h2><h3 id="解锁手机"><a href="#解锁手机" class="headerlink" title="解锁手机"></a>解锁手机</h3><ul>
+<li><p>不解锁手机是无法 root 的，所以解锁手机是一切的前提。</p>
 </li>
-<li><p>如果手机已在使用中，则必须先备份数据，因为解锁时会清除所有手机数据。</p>
-</li>
-<li><p>解锁工具 miflash unlock 只有 Windows 端，所以并不能在 Linux 中进行解锁。在<a target="_blank" rel="noopener" href="https://www.miui.com/unlock/download.html">小米官网</a>下载并更新到最新版本的 miflash unlock，目前 2023 年 6 月底的最新版本为 7.6.602.42。</p>
-</li>
-<li><p>在手机开机或重启的开机阶段，保持按住音量下键，进入 fastboot 模式。</p>
-</li>
-<li><p>将 fastboot 模式下的手机连接到 Windows 主机，打开 miflash unlock。</p>
+<li><p>解锁手机前必须先备份数据，因为解锁时会清除所有手机数据。</p>
 </li>
 <li><p>对于从未解锁过的手机，并不能直接解锁，需要此时在 miflash unlock 中申请解锁并等待 168 小时才能正式解锁。</p>
 </li>
 <li><p>对于已经解锁过或者等待 168 小时之后的手机，此时直接在 miflash unlock 解锁手机即可。</p>
 </li>
+<li><p>解锁工具 miflash unlock 只有 Windows 端，所以并不能在 Linux 中进行解锁。在<a target="_blank" rel="noopener" href="https://www.miui.com/unlock/download.html">小米官网</a>下载并更新到最新版本的 miflash unlock。</p>
+</li>
+<li><p>在手机的开启阶段，保持按住音量下键，进入 fastboot 模式。</p>
+</li>
+<li><p>将 fastboot 模式下的手机连接到 Windows 主机，打开 miflash unlock 进行解锁。</p>
+</li>
 <li><p>解锁完成后，手机会自动重启。</p>
 </li>
 </ul>
-<h3 id="刷入-xiaomi-eu-rom"><a href="#刷入-xiaomi-eu-rom" class="headerlink" title="刷入 xiaomi.eu rom"></a>刷入 xiaomi.eu rom</h3><ul>
-<li><p>选择的是非官方的 xiaomi.eu rom，由 <a target="_blank" rel="noopener" href="https://xiaomi.eu/community/">xiaomi.eu</a> 维护。这个版本的 rom 自大陆的原始 rom 修改而来，去除了广告和为大陆服务的本地化内容（例如手机黄页、小爱同学等），同时引入了原生的 Google 框架。</p>
+<h3 id="用线刷包（fastboot）或者卡刷包（recovery）刷入或者更新指定的-rom"><a href="#用线刷包（fastboot）或者卡刷包（recovery）刷入或者更新指定的-rom" class="headerlink" title="用线刷包（fastboot）或者卡刷包（recovery）刷入或者更新指定的 rom"></a>用线刷包（fastboot）或者卡刷包（recovery）刷入或者更新指定的 rom</h3><ul>
+<li><p>可以在 <a target="_blank" rel="noopener" href="https://mifirm.net/">MiFirm</a> 上寻找和手机型号对应的 rom 以及其他等。</p>
 </li>
-<li><p>根据手机型号，下载开发版的 weekly roms 或稳定版 stable roms。</p>
+<li><p>线刷包的使用：适用于各种情况，包括降级、重刷、升级等。将手机启动至 fastboot 模式，直接选择合适的脚本执行即可。</p>
 </li>
-<li><p>解压下载的 rom 压缩包后，将手机以 fastboot 模式连接电脑，执行解压内的对应 bat。</p>
+<li><p>卡刷包的使用：只能用于在升级，并且需要在手机系统内执行。打开 MIUI 版本，多次点击 MIUI 图标，即可打开系统更新扩展功能。之后右上角选择传入手机的卡刷包即可安装。</p>
+</li>
+</ul>
+<h3 id="将官方的恢复模式替换为-twrp（如果机型对应的-twrp-尚未推出，则跳过）"><a href="#将官方的恢复模式替换为-twrp（如果机型对应的-twrp-尚未推出，则跳过）" class="headerlink" title="将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）"></a>将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）</h3><ul>
+<li><p>由于 twrp 比小米官方的恢复模式有更多的功能，其中包括接下来要提到的 root 与非常实用的整机备份。这种整机备份是类似 Windows 的 wim 或者老 Ghost 备份的，比手动的小米云备份或者钛备份之类的都要好用很多。</p>
+</li>
+<li><p>根据机型代号在 <a target="_blank" rel="noopener" href="https://mifirm.net/">MiFirm</a> 或者 <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/">Source Forge 上的 Recovery for Xiaomi devices Files</a> 中寻找对应的 twrp 镜像。</p>
+</li>
+<li><p>我们需要知道手机的恢复分区到底在哪里，最保险的做法是直接在手机对应的线刷包的刷机脚本内寻找。</p>
 <ul>
-<li><p>windows_fastboot_first_install_with_data_format.bat：新安装 rom 或者降级时用，会抹除手机上的所有数据。</p>
+<li><p>以手头的小米 13 Pro 为例，在脚本中可以找到这一行 <code>fastboot %* flash recovery_ab %~dp0images/recovery.img || @echo &quot;Flash recovery error&quot; &amp;&amp; exit 1</code>。恢复分区即为 <code>recovery_ab</code>。</p>
 </li>
-<li><p>windows_fastboot_update_rom：rom 更新时用，不会抹除数据。</p>
-</li>
-</ul>
-</li>
-<li><p>选择新安装 rom 时会有以下提示，输入 <code>Y</code> 安装即可。安装完成后手机会自动重启。</p>
+<li><p>以手头的红米 Note 13 Pro+ 为例，脚本中并没有和 recovery 相关的命令，但能看到所有分区都是 <code>ab</code> 型的，所有恢复分区也是 <code>recovery_ab</code>。</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Waiting for device...</span><br><span class="line">You are going to wipe your data and internal storage.</span><br><span class="line">It will delete all your files and photos stored on internal storage.</span><br><span class="line">Do you agree? (Y&#x2F;N)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将手机启动至 fastboot 模式，执行 <code>fastboot.exe flash recovery_ab twrp.img</code>。</p>
+</li>
+<li><p>完成后执行 <code>fastboot.exe reboot recovery</code> 即可进入恢复模式，而执行 <code>fastboot.exe reboot</code> 则直接为直接重启。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\Downloads\xiaomi 13 pro&gt; fastboot.exe flash recovery_ab .\twrp-3.7.0_12-v7.8_A13-nuwa-skkk.img</span><br><span class="line">Sending &#39;recovery_ab&#39; (102400 KB)                  OKAY [  2.379s]</span><br><span class="line">Writing &#39;recovery_ab&#39;                              (bootloader) Partition recovery_a flashed successfully</span><br><span class="line">(bootloader) Partition recovery_b flashed successfully</span><br><span class="line">OKAY [  0.078s]</span><br><span class="line">Finished. Total time: 2.478s</span><br><span class="line"></span><br><span class="line">PS C:\Users\i\Downloads\xiaomi 13 pro&gt; fastboot.exe reboot recovery</span><br><span class="line">Rebooting into recovery                            OKAY [  0.002s]</span><br><span class="line">Finished. Total time: 0.004s</span><br></pre></td></tr></table></figure>
 <h3 id="刷入-magisk-delta-获得-root-权限"><a href="#刷入-magisk-delta-获得-root-权限" class="headerlink" title="刷入 magisk-delta 获得 root 权限"></a>刷入 magisk-delta 获得 root 权限</h3><ul>
-<li><p>由于 xiaomi.eu rom 去除了为大陆服务的本地化程序，而这对于大陆用户而言是相当不便的，唯一的补救措施是安装社群管理的本地化工具箱，而本地化工具箱要求手机安装了 magisk 和 LSPosed，并取得手机的 root 权限。</p>
+<li><p>虽然大陆版 rom 自带了完整的 GMS 服务，但是与之对应的 FCM 信息推送却有稳定的断连现象。这个问题在 EU rom 中虽然不会出现，但是在其之中安装了还原国内 rom 的本地化工具箱，那么同样会出现 FCM 无法正常后台推送的情况。如果要使 FCM 正常工作，则必须手机安装一个名为 fcmfix 的程序，而这个程序要求手机拥有 root 权限。</p>
 </li>
 <li><p>使用 magisk-delta 而非原生 magisk 的原因是 delta 版本拥有更好的防 root 检测功能。原生的 magisk 即使安装了防 root 检测模块，仍然有部分程序（例如数字人民币、Barclays 等银行类程序）能检测出手机已经被 root 从而无法启动。</p>
 </li>
-<li><p>开机，执行 Google 账号登录和对应设定。连接 Google 的通常做法是打开 Windows 主机的 v2rayn 内的“允许局域网连接”功能，随后将手机连接到 Windows 主机所在的无线网络，选择无线网络选项内的“代理”，调整为手动模式并填入 Windows 主机的本地 ip 和使用的 http/https 或 socks 端口。Windows 主机的本地 ip 一般可以在路由器中查看。</p>
+<li><p>对于第二步中已经刷入了 twrp 的手机：</p>
+<ul>
+<li><p>将手机重启至 twrp，下载 <a target="_blank" rel="noopener" href="https://github.com/HuskyDG/magisk-files">magisk-delta</a> 的 apk 安装文件并改后缀名为 zip，然后直接刷入手机。</p>
 </li>
-<li><p>将手机直接连接 Windows 主机，USB 模式允许文件传输。将 <a target="_blank" rel="noopener" href="https://github.com/HuskyDG/magisk-files">magisk-delta</a> 的 apk 安装文件和 xiaomi.eu rom 的 images 文件夹内的 init_boot.img 传入手机。</p>
+<li><p>重启打开手机后直接安装 magisk-delta 即可看到其已经拥有超级用户权限。</p>
+</li>
+</ul>
+</li>
+<li><p>而对于第二步中无法刷入 twrp 的手机：</p>
+<ul>
+<li><p>线刷包的情况：</p>
+<ul>
+<li><p>将手机直接连接 Windows 主机，USB 模式允许文件传输。将 <a target="_blank" rel="noopener" href="https://github.com/HuskyDG/magisk-files">magisk-delta</a> 的 apk 安装文件和线刷包 images 文件夹内的 init_boot.img 传入手机。</p>
 </li>
 <li><p>在手机内打开 apk 文件安装 magisk-delta 后，打开 magisk-delta 的界面。此时界面内 magisk 的“当前”状态为无法获取。</p>
 </li>
-<li><p>点击 界面内 magisk 右侧的安装按钮，点击“选择并修补一个文件”选项，选中传入的 init_boot.rom。</p>
+<li><p>点击界面内 magisk 右侧的安装按钮，点击“选择并修补一个文件”选项，选中传入的 init_boot.rom。</p>
 </li>
 <li><p>magisk-delta 会生成一个 magisk_patched 前缀的 img 文件，将这个文件从手机中取出放入 Windows 主机内。</p>
 </li>
 <li><p>重启手机并进入 fastboot 模式。在 Windows 主机中使用 <code>scoop install adb</code> 安装 adb 工具后，在终端内执行 fastboot 命令如下，将 magisk-delta 生成的 img 文件刷入手机。</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe flash init_boot .\magisk_patched-25210_8WUy3.img</span><br><span class="line">Sending &#39;init_boot&#39; (8192 KB)                      OKAY [  0.193s]</span><br><span class="line">Writing &#39;init_boot&#39;                                OKAY [  0.003s]</span><br><span class="line">Finished. Total time: 0.231s</span><br><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe reboot</span><br><span class="line">Rebooting                                          OKAY [  0.001s]</span><br><span class="line">Finished. Total time: 0.002s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>卡刷包的情况：</p>
+<ul>
+<li><p>由于卡刷包内没有单独的 images 文件夹，只有一个单独整合的 payload.bin 文件，所以我们需要借助第三方软件提取出其中的 init_boot.img 文件。</p>
+</li>
+<li><p>在电脑端下载 <a target="_blank" rel="noopener" href="https://github.com/ssut/payload-dumper-go">Payload Dumper</a>，使用 <code>payload-dumper-go.exe -partitions init_boot payload.bin</code> 提取卡刷包中 payload.bin 文件中的 init_boot.img 文件。</p>
+</li>
+<li><p>其余部分与线刷包的 root 方式保持一致。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe flash init_boot .\magisk_patched-25210_8WUy3.img</span><br><span class="line">Sending &#39;init_boot&#39; (8192 KB)                      OKAY [  0.193s]</span><br><span class="line">Writing &#39;init_boot&#39;                                OKAY [  0.003s]</span><br><span class="line">Finished. Total time: 0.231s</span><br><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe reboot</span><br><span class="line">Rebooting                                          OKAY [  0.001s]</span><br><span class="line">Finished. Total time: 0.002s</span><br><span class="line"></span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0&gt; .\payload-dumper-go.exe -partitions init_boot payload.bin</span><br><span class="line">payload.bin: payload.bin</span><br><span class="line">Payload Version: 2</span><br><span class="line">Payload Manifest Length: 224381</span><br><span class="line">Payload Manifest Signature Length: 267</span><br><span class="line">Found partitions:</span><br><span class="line">apusys (1.5 MB), audio_dsp (3.6 MB), boot (67 MB), ccu (115 kB), connsys_bt (741 kB), connsys_gnss (528 kB), connsys_wifi (1.7 MB), dpm (336 kB), dtbo (74 kB), gpueb (479 kB), gz (1.7 MB), init_boot (8.4 MB), lk (2.9 MB), logo (3.5 MB), mcf_ota (30 MB), mcupm (655 kB), md1img (79 MB), mvpu_algo (61 kB), odm (188 MB), odm_dlkm (348 kB), pi_img (86 kB), preloader_raw (623 kB), product (4.2 GB), scp (1.8 MB), spmfw (20 kB), sspm (946 kB), system (871 MB), system_dlkm (348 kB), system_ext (428 MB), tee (3.5 MB), vbmeta (8.2 kB), vbmeta_system (4.1 kB), vbmeta_vendor (4.1 kB), vcp (1.3 MB), vendor (2.1 GB), vendor_boot (67 MB), vendor_dlkm (28 MB), mi_ext (45 kB)</span><br><span class="line">Number of workers: 4</span><br><span class="line">init_boot (8.4 MB)  [&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;] 100 %</span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0\extracted_20231004_110826&gt; fastboot.exe flash init_boot_ab .\magisk_patched-26301_d0JpE.img</span><br><span class="line">Warning: skip copying init_boot_ab image avb footer (init_boot_ab partition size: 0, init_boot_ab image size: 8388608).</span><br><span class="line">Sending &#39;init_boot_ab&#39; (8192 KB)                   OKAY [  0.231s]</span><br><span class="line">Writing &#39;init_boot_ab&#39;                             OKAY [  0.040s]</span><br><span class="line">Finished. Total time: 0.355s</span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0\extracted_20231004_110826&gt; fastboot.exe reboot</span><br><span class="line">Rebooting                                          OKAY [  0.013s]</span><br><span class="line">Finished. Total time: 0.015s</span><br></pre></td></tr></table></figure>
 <h3 id="启用-magisk-delta-中的-Zygisk-和-Zygisk-LSPosed"><a href="#启用-magisk-delta-中的-Zygisk-和-Zygisk-LSPosed" class="headerlink" title="启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed"></a>启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</h3><ul>
-<li><p>这一步的目的是启用 magisk-delta 内的 Zygisk 和 Zygisk 下的 LSPosed，这两个工具都是使用本地化模块的必要前提。</p>
+<li><p>fcmfix 和其他相关程序都是通过 LSPosed 加载的，所以需要配置。</p>
 </li>
 <li><p>打开 magisk-delta，此时会显示“需要修复运行环境”。点击继续，完成后会自动重启手机。</p>
 </li>
-<li><p>再次打开 magisk-delta，界面内的 magisk 的“当前”会显示安装的 magisk-delta 版本，目前 2023.07 为 fdac22ba0delta (25210)。</p>
+<li><p>再次打开 magisk-delta，界面内的 magisk 的“当前”会显示安装的 magisk-delta 版本。</p>
 </li>
-<li><p>主页右上角齿轮设置中启用 Zygisk 和 Bootloop 保护，暂时不要打开 magiskhide。</p>
+<li><p>主页右上角齿轮设置中启用 Zygisk 和 Bootloop 保护，暂时不要打开 Unmount Modules（即旧 magiskhide）。</p>
 </li>
 <li><p>在 magisk-delta 的模块标签页中选中 Zygisk-LSPosed 的 zip 安装包进行安装，安装完成后重启手机。</p>
 </li>
 </ul>
-<h3 id="安装适配-xiaomi-eu-rom-的本地化模块和修复-FCM-推送的-fcmfix"><a href="#安装适配-xiaomi-eu-rom-的本地化模块和修复-FCM-推送的-fcmfix" class="headerlink" title="安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix"></a>安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix</h3><ul>
-<li><p>通过在 magisk-delta 中安装本地化模块和在 LSPosed 中启用本地化工具箱来完成对 xiaomi.eu rom 中去除的本地化部分的还原。</p>
+<h3 id="安装修复-FCM-推送的-fcmfix-和禁止-Google-Play-应用更新的-UpdateLocker"><a href="#安装修复-FCM-推送的-fcmfix-和禁止-Google-Play-应用更新的-UpdateLocker" class="headerlink" title="安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker"></a>安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</h3><ul>
+<li><p>如之前所言，大陆版 rom 有 FCM 无法推送已经停止的应用的消息这个问题，具体表现为在 FCM diagnostic 内可以看到类似 <code>fcm failed to broadcast to stopped app</code> 的报错信息。安装 fcmfix 并在 LSPosed 启用可以解决。下载 <a target="_blank" rel="noopener" href="https://github.com/kooritea/fcmfix">fcmfix</a>，直接打开安装即可。</p>
 </li>
-<li><p>对于 xiaomi.eu rom 而言 FCM 消息推送是完全正常的，而在安装了本地化模块后，FCM 消息推送会出现和大陆版原 rom 一样的 FCM 无法推送已经停止的应用的消息这个问题，在 FCM diagnostic 内可以看到类似 <code>fcm failed to broadcast to stopped app</code> 的报错信息。因此需要安装 fcmfix 并在 LSPosed 启用来修复这个问题。</p>
+<li><p>安装禁止 Twitter 自动更新为 X 的 UpdateLocker。下载 <a target="_blank" rel="noopener" href="https://xdaforums.com/t/mod-xposed-4-1-update-locker-stop-update-your-apps.4433253/">UpdateLocker</a>，直接打开安装即可。</p>
 </li>
-<li><p>下载 <a target="_blank" rel="noopener" href="https://blog.minamigo.moe/archives/184">MIUI EU 欧洲版 本地化 Magisk 模块</a>，解压出其中的 <code>MiuiEuLocalization.ini</code> 文件，打开并根据想要恢复的应用进行所需的修改。</p>
-</li>
-<li><p>下载 <a target="_blank" rel="noopener" href="https://github.com/kooritea/fcmfix">fcmfix</a>。</p>
-</li>
-<li><p>将手机连接至 Windows 主机，将本地化模块压缩包、ini 文件和 fcmfix 的安装文件一并放入手机的 Download 文件夹内。在 magisk-delta 中的模块页面安装本地化模块，而 fcmfix 直接打开安装即可。</p>
+<li><p>不要忘记在 LSPosed 启用这两个模块。</p>
 </li>
 </ul>
-<h3 id="打开-magisk-delta-中的-magiskhide-并强制使用超级用户列表"><a href="#打开-magisk-delta-中的-magiskhide-并强制使用超级用户列表" class="headerlink" title="打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表"></a>打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表</h3><ul>
-<li><p>这一步的目的相当于开启 magisk-delta，或者说 root 权限的白名单。通过这个方法开启的白名单是目前效果最好的。</p>
+<h3 id="打开-magisk-delta-中的-Unmount-Modules-并强制使用超级用户列表"><a href="#打开-magisk-delta-中的-Unmount-Modules-并强制使用超级用户列表" class="headerlink" title="打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表"></a>打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表</h3><ul>
+<li><p>相当于开启 root 权限的白名单。通过 magisk-delta 所开启的白名单是目前效果最好的。</p>
 </li>
-<li><p>进入 magisk-delta，主页右上角齿轮设置中启用 magiskhide 并打开“强制使用超级用户列表”，重启手机。</p>
+<li><p>进入 magisk-delta，主页右上角齿轮设置中启用 Unmount Modules 并打开 Unmount modules by default，重启手机。</p>
 </li>
-<li><p>此时手机开机会发现本地化模块所安装的天气等一系列应用程序全部都会报错，包括桌面上的应用程序也无法正确显示名称。这正是由于已经打开了 root 权限的白名单，而这些需要 root 权限的程序均不在白名单内。</p>
-</li>
-<li><p>为了保险起见，此时进入 magisk-delta 并在主页右上齿轮设置中选择“配置 magiskhide”，在配置页面的右上角三点内勾选“显示系统应用”和“显示系统程序”，然后为当前系统内安装的所有程序的所有部分全部授予 root 权限。虽然比较麻烦，但这是最保险的做法，而且这个时间点也是最合适的，没有任何其他另外安装程序的干扰，只有系统必须的程序，从而不会出现误给 root 权限的情况。</p>
-</li>
-<li><p>重启手机，本地化模块即可以重新恢复正常。打开 LSPosed，此时会提示创建快捷方式，暂时先点击确认，随后在模块页面中启用本地化工具箱和刚安装的 fcmfix。</p>
+<li><p>由于是大陆版原生 rom，而非 EU rom + 本地化工具箱，此时不需要额外操作，直接 Configure modules 中打开想要赋予 root 权限的应用即可。</p>
 </li>
 </ul>
 <h3 id="隐藏-magisk-delta-和-LSPosed"><a href="#隐藏-magisk-delta-和-LSPosed" class="headerlink" title="隐藏 magisk-delta 和 LSPosed"></a>隐藏 magisk-delta 和 LSPosed</h3><ul>
@@ -348,25 +377,7 @@
 <li><p>打开 LSPosed，在设置页面中创建打开寄生管理器的快捷方式，随后关闭状态通知，即完成了 LSPosed 的隐藏。</p>
 </li>
 </ul>
-<h3 id="将官方的恢复模式替换为-twrp"><a href="#将官方的恢复模式替换为-twrp" class="headerlink" title="将官方的恢复模式替换为 twrp"></a>将官方的恢复模式替换为 twrp</h3><ul>
-<li><p>由于 twrp 比小米官方的恢复模式有更多的功能，其中包括非常实用的整机备份，而这种备份是类似 Windows 的 wim 或者老 Ghost 备份的，比手动的小米云备份或者钛备份之类的都要好用很多，所以很有必要安装。</p>
-</li>
-<li><p>将 fastboot 模式下的手机连接到 Windows 主机，打开终端并执行如下命令：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\Downloads\xiaomi 13 pro&gt; fastboot.exe flash recovery_ab .\twrp-3.7.0_12-v7.8_A13-nuwa-skkk.img</span><br><span class="line">Sending &#39;recovery_ab&#39; (102400 KB)                  OKAY [  2.379s]</span><br><span class="line">Writing &#39;recovery_ab&#39;                              (bootloader) Partition recovery_a flashed successfully</span><br><span class="line">(bootloader) Partition recovery_b flashed successfully</span><br><span class="line">OKAY [  0.078s]</span><br><span class="line">Finished. Total time: 2.478s</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>如果想要进入恢复模式，有两种方法：</p>
-<ul>
-<li><p>打开手机内的系统更新程序，右上角选择重启进入恢复模式即可进入。</p>
-</li>
-<li><p>将 fastboot 模式的手机连接到 Windows 主机，执行以下命令：</p>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\Downloads\xiaomi 13 pro&gt; fastboot.exe reboot recovery</span><br><span class="line">Rebooting into recovery                            OKAY [  0.002s]</span><br><span class="line">Finished. Total time: 0.004s</span><br></pre></td></tr></table></figure>
-<h2 id="程序层面"><a href="#程序层面" class="headerlink" title="程序层面"></a>程序层面</h2><p>程序层面的前两步没啥好讲的，一个个装就完事了。主要是配置</p>
+<h2 id="程序层面"><a href="#程序层面" class="headerlink" title="程序层面"></a>程序层面</h2><p>小米应用商店内有 Google Play 商店，直接安装就行。之后就是小米应用商店和 Google Play 商店的应用安装了。这很方便，不过主要麻烦的是配置。</p>
 <h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><ul>
 <li><p>个人账号</p>
 <ul>
@@ -386,6 +397,8 @@
 </li>
 <li><p>我的设备-备份与恢复-Google 备份打开</p>
 </li>
+<li><p>连接与共享-打开个人热点</p>
+</li>
 <li><p>个人热点</p>
 <ul>
 <li><p>修改密码</p>
@@ -394,16 +407,13 @@
 </li>
 </ul>
 </li>
-<li><p>VPN-v2rayNG 始终开启的VPN</p>
+<li><p>VPN-matsuri 始终开启的VPN</p>
 </li>
 <li><p>壁纸与个性化-壁纸，锁屏布局显示农历+增加签名</p>
 </li>
 <li><p>息屏与锁屏</p>
 <ul>
-<li><p>其他-极速相机</p>
-</li>
-<li><p>侧边栏快捷方式-笔记-推特-notion-米家-原-蚌</p>
-</li>
+<li>其他-极速相机</li>
 </ul>
 </li>
 <li><p>显示</p>
@@ -414,32 +424,43 @@
 </li>
 <li><p>色彩风格-原色（有可能自定义校色）</p>
 </li>
-<li><p>屏幕分辨率-WQHD+</p>
+<li><p>屏幕分辨率-WQHD+（13Pro）</p>
+</li>
+<li><p>屏幕刷新率 手动指定120Hz</p>
 </li>
 <li><p>字体设置-小号</p>
 </li>
 </ul>
 <p>声音与触感</p>
 <ul>
-<li><p>通知提醒-Tethys</p>
+<li><p>通知提醒-木琴的提示/咕咚</p>
 </li>
-<li><p>电话铃声-跳跃</p>
+<li><p>电话铃声-跳跃/糖果</p>
 </li>
 </ul>
 </li>
 <li><p>桌面</p>
 <ul>
+<li><p>动画速率 优雅</p>
+</li>
+<li><p>最近任务 显示内存信息</p>
+</li>
 <li><p>负一屏-隐私设置-关闭个性化推荐</p>
 </li>
-<li><p>负一屏-关闭推荐卡面和热门活动</p>
+<li><p>负一屏-关闭推荐卡面和热门活动，搜索框</p>
 </li>
 <li><p>负一屏-最近任务样式-显示内存信息</p>
+</li>
+<li><p>指纹-智能密码管理-关闭自动填充</p>
 </li>
 </ul>
 </li>
 <li><p>安全-打开关机验证密码</p>
 </li>
-<li><p>更多设置-内存扩展-7GB</p>
+<li><p>安全-打开地震预警</p>
+</li>
+<li><p>更多设置-内存扩展-7GB/8GB</p>
+<p>语言与输入法 拼写检查工具 Gboard 自动填充 Google</p>
 </li>
 <li><p>通知与控制中心</p>
 <ul>
@@ -487,13 +508,19 @@
 </li>
 </ul>
 </li>
-<li><p>省电与电池-电池-快充加速-默认使用打开</p>
+<li><p>省电与电池</p>
+<ul>
+<li><p>电池-快充加速-默认使用打开，关闭快充通知</p>
+</li>
+<li><p>设置-低速疾冲</p>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="应用配置"><a href="#应用配置" class="headerlink" title="应用配置"></a>应用配置</h3><ul>
 <li><p>邮箱</p>
 <ul>
-<li><p><a href="mailto:&#x73;&#111;&#x66;&#97;&#114;&#99;&#104;&#x78;&#64;&#x76;&#105;&#x70;&#x2e;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;">&#x73;&#111;&#x66;&#97;&#114;&#99;&#104;&#x78;&#64;&#x76;&#105;&#x70;&#x2e;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;</a></p>
+<li><p><a href="mailto:&#115;&#111;&#102;&#x61;&#x72;&#99;&#x68;&#x78;&#x40;&#x76;&#x69;&#x70;&#46;&#113;&#x71;&#46;&#99;&#111;&#x6d;">&#115;&#111;&#102;&#x61;&#x72;&#99;&#x68;&#x78;&#x40;&#x76;&#x69;&#x70;&#46;&#113;&#x71;&#46;&#99;&#111;&#x6d;</a></p>
 <ul>
 <li><p>发信昵称：MatrixC7</p>
 </li>
@@ -505,7 +532,7 @@
 </li>
 </ul>
 </li>
-<li><p><a href="mailto:&#x61;&#100;&#x6d;&#x69;&#110;&#64;&#109;&#97;&#116;&#x72;&#x69;&#120;&#99;&#55;&#x2e;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#x69;&#110;&#64;&#109;&#97;&#116;&#x72;&#x69;&#120;&#99;&#55;&#x2e;&#x63;&#111;&#x6d;</a></p>
+<li><p><a href="mailto:&#x61;&#100;&#x6d;&#105;&#110;&#64;&#x6d;&#97;&#x74;&#x72;&#x69;&#x78;&#99;&#55;&#x2e;&#99;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#110;&#64;&#x6d;&#97;&#x74;&#x72;&#x69;&#x78;&#99;&#55;&#x2e;&#99;&#111;&#x6d;</a></p>
 <ul>
 <li><p>手动设置</p>
 </li>
@@ -727,7 +754,10 @@
     <a href="/2023/06/09/%E7%AC%AC%E4%B8%80%E5%8F%B0%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%9A%84%E9%85%8D%E7%BD%AE%E5%88%97%E8%A1%A8%E5%92%8C%E9%80%89%E8%B4%AD%E7%90%86%E7%94%B1%E8%AE%B0%E5%BD%95/" rel="prev" title="第一台台式机的配置列表和选购理由记录">
       <i class="fa fa-chevron-left"></i> 第一台台式机的配置列表和选购理由记录
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/10/04/%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-manjaro-%E6%88%96-ubuntu-%E7%B3%BB%E7%BB%9F/" rel="next" title="安装并配置 Manjaro 或 Ubuntu 系统">
+      安装并配置 Manjaro 或 Ubuntu 系统 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -787,7 +817,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rom-%E5%B1%82%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">rom 层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%94%81%E6%89%8B%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">解锁手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E5%85%A5-xiaomi-eu-rom"><span class="nav-number">1.2.</span> <span class="nav-text">刷入 xiaomi.eu rom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E5%85%A5-magisk-delta-%E8%8E%B7%E5%BE%97-root-%E6%9D%83%E9%99%90"><span class="nav-number">1.3.</span> <span class="nav-text">刷入 magisk-delta 获得 root 权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-magisk-delta-%E4%B8%AD%E7%9A%84-Zygisk-%E5%92%8C-Zygisk-LSPosed"><span class="nav-number">1.4.</span> <span class="nav-text">启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%80%82%E9%85%8D-xiaomi-eu-rom-%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%8C%96%E6%A8%A1%E5%9D%97%E5%92%8C%E4%BF%AE%E5%A4%8D-FCM-%E6%8E%A8%E9%80%81%E7%9A%84-fcmfix"><span class="nav-number">1.5.</span> <span class="nav-text">安装适配 xiaomi.eu rom 的本地化模块和修复 FCM 推送的 fcmfix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80-magisk-delta-%E4%B8%AD%E7%9A%84-magiskhide-%E5%B9%B6%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8"><span class="nav-number">1.6.</span> <span class="nav-text">打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F-magisk-delta-%E5%92%8C-LSPosed"><span class="nav-number">1.7.</span> <span class="nav-text">隐藏 magisk-delta 和 LSPosed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%AE%98%E6%96%B9%E7%9A%84%E6%81%A2%E5%A4%8D%E6%A8%A1%E5%BC%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA-twrp"><span class="nav-number">1.8.</span> <span class="nav-text">将官方的恢复模式替换为 twrp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%B1%82%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">程序层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">应用配置</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%B1%82%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">系统层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%94%81%E6%89%8B%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">解锁手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E7%BA%BF%E5%88%B7%E5%8C%85%EF%BC%88fastboot%EF%BC%89%E6%88%96%E8%80%85%E5%8D%A1%E5%88%B7%E5%8C%85%EF%BC%88recovery%EF%BC%89%E5%88%B7%E5%85%A5%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0%E6%8C%87%E5%AE%9A%E7%9A%84-rom"><span class="nav-number">1.2.</span> <span class="nav-text">用线刷包（fastboot）或者卡刷包（recovery）刷入或者更新指定的 rom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%AE%98%E6%96%B9%E7%9A%84%E6%81%A2%E5%A4%8D%E6%A8%A1%E5%BC%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA-twrp%EF%BC%88%E5%A6%82%E6%9E%9C%E6%9C%BA%E5%9E%8B%E5%AF%B9%E5%BA%94%E7%9A%84-twrp-%E5%B0%9A%E6%9C%AA%E6%8E%A8%E5%87%BA%EF%BC%8C%E5%88%99%E8%B7%B3%E8%BF%87%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E5%85%A5-magisk-delta-%E8%8E%B7%E5%BE%97-root-%E6%9D%83%E9%99%90"><span class="nav-number">1.4.</span> <span class="nav-text">刷入 magisk-delta 获得 root 权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-magisk-delta-%E4%B8%AD%E7%9A%84-Zygisk-%E5%92%8C-Zygisk-LSPosed"><span class="nav-number">1.5.</span> <span class="nav-text">启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BF%AE%E5%A4%8D-FCM-%E6%8E%A8%E9%80%81%E7%9A%84-fcmfix-%E5%92%8C%E7%A6%81%E6%AD%A2-Google-Play-%E5%BA%94%E7%94%A8%E6%9B%B4%E6%96%B0%E7%9A%84-UpdateLocker"><span class="nav-number">1.6.</span> <span class="nav-text">安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80-magisk-delta-%E4%B8%AD%E7%9A%84-Unmount-Modules-%E5%B9%B6%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8"><span class="nav-number">1.7.</span> <span class="nav-text">打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F-magisk-delta-%E5%92%8C-LSPosed"><span class="nav-number">1.8.</span> <span class="nav-text">隐藏 magisk-delta 和 LSPosed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%B1%82%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">程序层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">应用配置</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -803,7 +833,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
