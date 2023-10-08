@@ -28,7 +28,7 @@
 <meta property="og:description" content="实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。 2023.10.03 手头有一台红米 Note 13 Pro+，几天体验下来意识到实际上国">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-11T10:45:22.000Z">
-<meta property="article:modified_time" content="2023-10-07T21:58:25.731Z">
+<meta property="article:modified_time" content="2023-10-08T08:17:19.411Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-07 22:58:25" itemprop="dateModified" datetime="2023-10-07T22:58:25+01:00">2023-10-07</time>
+                <time title="修改时间：2023-10-08 09:17:19" itemprop="dateModified" datetime="2023-10-08T09:17:19+01:00">2023-10-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,14 +242,14 @@
 <li>将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）</li>
 <li>刷入 magisk-delta 获得 root 权限</li>
 <li>启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</li>
-<li>安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</li>
-<li>打开 magisk-delta 中的 magiskhide 并强制使用超级用户列表</li>
+<li>打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表</li>
 <li>隐藏 magisk-delta 和 LSPosed</li>
+<li>安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</li>
 </ol>
 <p>第二部分为程序层面，共四步：</p>
 <ol>
-<li>在小米商城内进行软件安装</li>
 <li>在小米商城内搜索 Google Play 商店，安装后在 Play 商店内进行软件安装</li>
+<li>在小米商城内进行软件安装</li>
 <li>系统设置</li>
 <li>各个软件的内部设置</li>
 </ol>
@@ -282,13 +282,15 @@
 <h3 id="将官方的恢复模式替换为-twrp（如果机型对应的-twrp-尚未推出，则跳过）"><a href="#将官方的恢复模式替换为-twrp（如果机型对应的-twrp-尚未推出，则跳过）" class="headerlink" title="将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）"></a>将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）</h3><ul>
 <li><p>由于 twrp 比小米官方的恢复模式有更多的功能，其中包括接下来要提到的 root 与非常实用的整机备份。这种整机备份是类似 Windows 的 wim 或者老 Ghost 备份的，比手动的小米云备份或者钛备份之类的都要好用很多。</p>
 </li>
-<li><p>根据机型代号在 <a target="_blank" rel="noopener" href="https://mifirm.net/">MiFirm</a> 或者 <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/">Source Forge 上的 Recovery for Xiaomi devices Files</a> 中寻找对应的 twrp 镜像。</p>
+<li><p>不过不是每种机型都有对应的 twrp 可以下载。根据机型代号在 <a target="_blank" rel="noopener" href="https://mifirm.net/">MiFirm</a> 或者 <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/">Source Forge 上的 Recovery for Xiaomi devices Files</a> 中寻找对应的 twrp 镜像。</p>
+</li>
+<li><p>安装 adb 工具，我们需要用到其中的 fastboot 文件执行手机处于 fastboot 模式时的刷入等操作。在 Windows 主机中使用 <code>scoop install adb</code> 即可。</p>
 </li>
 <li><p>我们需要知道手机的恢复分区到底在哪里，最保险的做法是直接在手机对应的线刷包的刷机脚本内寻找。</p>
 <ul>
 <li><p>以手头的小米 13 Pro 为例，在脚本中可以找到这一行 <code>fastboot %* flash recovery_ab %~dp0images/recovery.img || @echo &quot;Flash recovery error&quot; &amp;&amp; exit 1</code>。恢复分区即为 <code>recovery_ab</code>。</p>
 </li>
-<li><p>以手头的红米 Note 13 Pro+ 为例，脚本中并没有和 recovery 相关的命令，但能看到所有分区都是 <code>ab</code> 型的，所有恢复分区也是 <code>recovery_ab</code>。</p>
+<li><p>以手头的红米 Note 13 Pro+ 为例，脚本中并没有和 recovery 相关的命令，但能看到所有分区都是 <code>ab</code> 型的，所以恢复分区也是 <code>recovery_ab</code>。</p>
 </li>
 </ul>
 </li>
@@ -323,7 +325,7 @@
 </li>
 <li><p>magisk-delta 会生成一个 magisk_patched 前缀的 img 文件，将这个文件从手机中取出放入 Windows 主机内。</p>
 </li>
-<li><p>重启手机并进入 fastboot 模式。在 Windows 主机中使用 <code>scoop install adb</code> 安装 adb 工具后，在终端内执行 fastboot 命令如下，将 magisk-delta 生成的 img 文件刷入手机。</p>
+<li><p>重启手机并进入 fastboot 模式。执行 fastboot 命令 <code>fastboot.exe flash init_boot .\magisk_patched-init_boot.img</code>，将 magisk-delta 生成的 img 文件刷入手机。</p>
 </li>
 </ul>
 </li>
@@ -331,7 +333,7 @@
 <ul>
 <li><p>由于卡刷包内没有单独的 images 文件夹，只有一个单独整合的 payload.bin 文件，所以我们需要借助第三方软件提取出其中的 init_boot.img 文件。</p>
 </li>
-<li><p>在电脑端下载 <a target="_blank" rel="noopener" href="https://github.com/ssut/payload-dumper-go">Payload Dumper</a>，使用 <code>payload-dumper-go.exe -partitions init_boot payload.bin</code> 提取卡刷包中 payload.bin 文件中的 init_boot.img 文件。</p>
+<li><p>在电脑端下载 <a target="_blank" rel="noopener" href="https://github.com/ssut/payload-dumper-go">Payload Dumper</a>，使用 <code>payload-dumper-go.exe -partitions init_boot payload.bin</code> 提取卡刷包中 payload.bin 文件内的 init_boot.img 文件。</p>
 </li>
 <li><p>其余部分与线刷包的 root 方式保持一致。</p>
 </li>
@@ -348,9 +350,21 @@
 </li>
 <li><p>再次打开 magisk-delta，界面内的 magisk 的“当前”会显示安装的 magisk-delta 版本。</p>
 </li>
-<li><p>主页右上角齿轮设置中启用 Zygisk 和 Bootloop 保护，暂时不要打开 Unmount Modules（即旧 magiskhide）。</p>
-</li>
 <li><p>在 magisk-delta 的模块标签页中选中 Zygisk-LSPosed 的 zip 安装包进行安装，安装完成后重启手机。</p>
+</li>
+</ul>
+<h3 id="打开-magisk-delta-中的-Unmount-Modules-并强制使用超级用户列表"><a href="#打开-magisk-delta-中的-Unmount-Modules-并强制使用超级用户列表" class="headerlink" title="打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表"></a>打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表</h3><ul>
+<li><p>Unmount Modules 即旧 magiskhide，为 magisk-delta 的独有功能。打开时相当于开启 root 权限的白名单。通过 magisk-delta 所开启的白名单是目前效果最好的。</p>
+</li>
+<li><p>进入 magisk-delta，主页右上角齿轮设置中启用 Unmount Modules 并打开 Unmount modules by default，重启手机。</p>
+</li>
+<li><p>由于是大陆版原生 rom，而非 EU rom + 本地化工具箱，此时不需要额外操作，直接 Configure modules 中打开想要赋予 root 权限的应用即可。</p>
+</li>
+</ul>
+<h3 id="隐藏-magisk-delta-和-LSPosed"><a href="#隐藏-magisk-delta-和-LSPosed" class="headerlink" title="隐藏 magisk-delta 和 LSPosed"></a>隐藏 magisk-delta 和 LSPosed</h3><ul>
+<li><p>打开 magisk-delta，主页右上齿轮设置中选择“隐藏 magisk 应用”，此时会弹出安装未知应用的权限确认页面，在列表内中找到 magisk-delta 并“允许来自此来源的应用”。安装后打开隐藏后的 magisk-delta，提示是否需要添加原始的 magisk-delta 的快捷方式到桌面，此处选择取消即可。</p>
+</li>
+<li><p>打开 LSPosed，在设置页面中创建打开寄生管理器的快捷方式，随后关闭状态通知，即完成了 LSPosed 的隐藏。</p>
 </li>
 </ul>
 <h3 id="安装修复-FCM-推送的-fcmfix-和禁止-Google-Play-应用更新的-UpdateLocker"><a href="#安装修复-FCM-推送的-fcmfix-和禁止-Google-Play-应用更新的-UpdateLocker" class="headerlink" title="安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker"></a>安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</h3><ul>
@@ -359,22 +373,6 @@
 <li><p>安装禁止 Twitter 自动更新为 X 的 UpdateLocker。下载 <a target="_blank" rel="noopener" href="https://xdaforums.com/t/mod-xposed-4-1-update-locker-stop-update-your-apps.4433253/">UpdateLocker</a>，直接打开安装即可。</p>
 </li>
 <li><p>不要忘记在 LSPosed 启用这两个模块。</p>
-</li>
-</ul>
-<h3 id="打开-magisk-delta-中的-Unmount-Modules-并强制使用超级用户列表"><a href="#打开-magisk-delta-中的-Unmount-Modules-并强制使用超级用户列表" class="headerlink" title="打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表"></a>打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表</h3><ul>
-<li><p>相当于开启 root 权限的白名单。通过 magisk-delta 所开启的白名单是目前效果最好的。</p>
-</li>
-<li><p>进入 magisk-delta，主页右上角齿轮设置中启用 Unmount Modules 并打开 Unmount modules by default，重启手机。</p>
-</li>
-<li><p>由于是大陆版原生 rom，而非 EU rom + 本地化工具箱，此时不需要额外操作，直接 Configure modules 中打开想要赋予 root 权限的应用即可。</p>
-</li>
-</ul>
-<h3 id="隐藏-magisk-delta-和-LSPosed"><a href="#隐藏-magisk-delta-和-LSPosed" class="headerlink" title="隐藏 magisk-delta 和 LSPosed"></a>隐藏 magisk-delta 和 LSPosed</h3><ul>
-<li><p>这一步是隐藏手机 root 的最后一步。</p>
-</li>
-<li><p>打开 magisk-delta，主页右上齿轮设置中选择“隐藏 magisk 应用”，此时会弹出安装未知应用的权限确认页面，在列表内中找到 magisk-delta 并“允许来自此来源的应用”。安装后打开隐藏后的 magisk-delta，提示是否需要添加原始的 magisk-delta 的快捷方式到桌面，此处选择取消即可。</p>
-</li>
-<li><p>打开 LSPosed，在设置页面中创建打开寄生管理器的快捷方式，随后关闭状态通知，即完成了 LSPosed 的隐藏。</p>
 </li>
 </ul>
 <h2 id="程序层面"><a href="#程序层面" class="headerlink" title="程序层面"></a>程序层面</h2><p>小米应用商店内有 Google Play 商店，直接安装就行。之后就是小米应用商店和 Google Play 商店的应用安装了。这很方便，不过主要麻烦的是配置。</p>
@@ -397,6 +395,8 @@
 </li>
 <li><p>我的设备-备份与恢复-Google 备份打开</p>
 </li>
+<li><p>双卡与移动网络-高级设置-关闭场景自适应模式、5G 智能切换、极速模式</p>
+</li>
 <li><p>连接与共享-打开个人热点</p>
 </li>
 <li><p>个人热点</p>
@@ -407,72 +407,80 @@
 </li>
 </ul>
 </li>
-<li><p>VPN-matsuri 始终开启的VPN</p>
+<li><p>壁纸与个性化</p>
+<ul>
+<li><p>壁纸</p>
 </li>
-<li><p>壁纸与个性化-壁纸，锁屏布局显示农历+增加签名</p>
+<li><p>锁屏布局显示农历+增加签名</p>
+</li>
+</ul>
 </li>
 <li><p>息屏与锁屏</p>
 <ul>
-<li>其他-极速相机</li>
+<li>其他-急速相机</li>
 </ul>
 </li>
 <li><p>显示</p>
 <ul>
-<li><p>定时开启深色</p>
+<li><p>定时开启深色模式</p>
 </li>
-<li><p>更多深色模式设置-单独设置中关闭其他应用</p>
+<li><p>更多深色模式设置-应用单独设置-关闭淘宝</p>
 </li>
 <li><p>色彩风格-原色（有可能自定义校色）</p>
 </li>
 <li><p>屏幕分辨率-WQHD+（13Pro）</p>
 </li>
-<li><p>屏幕刷新率 手动指定120Hz</p>
+<li><p>屏幕刷新率-自定义-指定120Hz</p>
 </li>
 <li><p>字体设置-小号</p>
 </li>
 </ul>
-<p>声音与触感</p>
+</li>
+<li><p>声音与触感</p>
 <ul>
 <li><p>通知提醒-木琴的提示/咕咚</p>
 </li>
 <li><p>电话铃声-跳跃/糖果</p>
 </li>
+<li><p>闹钟铃声-小爱智慧铃声</p>
+</li>
+<li><p>声音助手-打开多应用媒体音调节、允许多声音，关闭允许扬声器响铃</p>
+</li>
+</ul>
+</li>
+<li><p>通知与控制中心</p>
+<ul>
+<li><p>打开所有锁屏通知、悬浮通知、桌面角标</p>
+</li>
+<li><p>通知管理-打开所有应用程序通知</p>
+</li>
+<li><p>通知显示设置-关闭通知过滤</p>
+</li>
+<li><p>状态栏-显示实时网速</p>
+</li>
 </ul>
 </li>
 <li><p>桌面</p>
 <ul>
-<li><p>动画速率 优雅</p>
-</li>
-<li><p>最近任务 显示内存信息</p>
-</li>
 <li><p>负一屏-隐私设置-关闭个性化推荐</p>
 </li>
-<li><p>负一屏-关闭推荐卡面和热门活动，搜索框</p>
+<li><p>负一屏-关闭实时动态、推荐卡片、搜索框、热门活动</p>
 </li>
-<li><p>负一屏-最近任务样式-显示内存信息</p>
+<li><p>动画速率-优雅</p>
 </li>
-<li><p>指纹-智能密码管理-关闭自动填充</p>
+<li><p>最近任务-显示内存信息</p>
+</li>
+<li><p>最近任务-模糊预览图-查看相关应用</p>
 </li>
 </ul>
 </li>
-<li><p>安全-打开关机验证密码</p>
+<li><p>指纹、人脸与密码-智能密码管理-关闭自动填充</p>
 </li>
-<li><p>安全-打开地震预警</p>
-</li>
-<li><p>更多设置-内存扩展-7GB/8GB</p>
-<p>语言与输入法 拼写检查工具 Gboard 自动填充 Google</p>
-</li>
-<li><p>通知与控制中心</p>
+<li><p>安全</p>
 <ul>
-<li><p>锁屏通知-最下方打开所有未允许通知权限的程序并允许桌面角标</p>
+<li><p>打开关机验证密码</p>
 </li>
-<li><p>悬浮通知-不屏蔽</p>
-</li>
-<li><p>桌面角标-打开所有</p>
-</li>
-<li><p>通知显示设置-（待观察）</p>
-</li>
-<li><p>状态栏-status bar icons-关闭 VPN 符号</p>
+<li><p>MIUI 预警中心-打开地震预警和自然灾害预警</p>
 </li>
 </ul>
 </li>
@@ -512,15 +520,38 @@
 <ul>
 <li><p>电池-快充加速-默认使用打开，关闭快充通知</p>
 </li>
-<li><p>设置-低速疾冲</p>
+<li><p>设置-低速疾冲（Note 13 Pro+）</p>
+</li>
+</ul>
+</li>
+<li><p>应用设置-授权-自启动管理-关闭所有应用自启动</p>
+</li>
+<li><p>更多设置</p>
+<ul>
+<li><p>语言与输入法-输入法-输入法管理-只启用 Gboard 和 Google 语音输入</p>
+</li>
+<li><p>语言与输入法-输入法-关闭安全键盘</p>
+</li>
+<li><p>语言与输入法-其他输入设置-拼写检查工具-设置为 Gboard 拼写检查工具</p>
+</li>
+<li><p>语言与输入法-其他输入设置-拼写检查工具-自动填充服务-设置为 Google</p>
+</li>
+<li><p>快捷手势-关闭公交/Mi Pay/门卡的双击电源键，打开手电筒的双击电源键</p>
+</li>
+<li><p>快捷手势-轻敲两下为静音，轻敲三下为支付宝扫一扫</p>
+</li>
+<li><p>传送门-开启</p>
+</li>
+<li><p>内存扩展-7GB/8GB</p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="应用配置"><a href="#应用配置" class="headerlink" title="应用配置"></a>应用配置</h3><ul>
+<h3 id="应用配置"><a href="#应用配置" class="headerlink" title="应用配置"></a>应用配置</h3><p>应用的各种配置过于繁杂，只选了一部分写。</p>
+<ul>
 <li><p>邮箱</p>
 <ul>
-<li><p><a href="mailto:&#115;&#111;&#102;&#x61;&#x72;&#99;&#x68;&#x78;&#x40;&#x76;&#x69;&#x70;&#46;&#113;&#x71;&#46;&#99;&#111;&#x6d;">&#115;&#111;&#102;&#x61;&#x72;&#99;&#x68;&#x78;&#x40;&#x76;&#x69;&#x70;&#46;&#113;&#x71;&#46;&#99;&#111;&#x6d;</a></p>
+<li><p><a href="mailto:&#115;&#111;&#102;&#97;&#114;&#x63;&#104;&#120;&#x40;&#x76;&#x69;&#x70;&#x2e;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#115;&#111;&#102;&#97;&#114;&#x63;&#104;&#120;&#x40;&#x76;&#x69;&#x70;&#x2e;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <ul>
 <li><p>发信昵称：MatrixC7</p>
 </li>
@@ -532,7 +563,7 @@
 </li>
 </ul>
 </li>
-<li><p><a href="mailto:&#x61;&#100;&#x6d;&#105;&#110;&#64;&#x6d;&#97;&#x74;&#x72;&#x69;&#x78;&#99;&#55;&#x2e;&#99;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#110;&#64;&#x6d;&#97;&#x74;&#x72;&#x69;&#x78;&#99;&#55;&#x2e;&#99;&#111;&#x6d;</a></p>
+<li><p><a href="mailto:&#97;&#100;&#x6d;&#105;&#110;&#64;&#109;&#x61;&#x74;&#x72;&#x69;&#x78;&#x63;&#x37;&#x2e;&#x63;&#x6f;&#x6d;">&#97;&#100;&#x6d;&#105;&#110;&#64;&#109;&#x61;&#x74;&#x72;&#x69;&#x78;&#x63;&#x37;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <ul>
 <li><p>手动设置</p>
 </li>
@@ -554,9 +585,9 @@
 </li>
 </ul>
 </li>
-<li><p>Synology Photos</p>
+<li><p>Synology Drive</p>
 <ul>
-<li>备份所有照片</li>
+<li>双向同步储存照片的文件夹</li>
 </ul>
 </li>
 <li><p>短信</p>
@@ -588,8 +619,6 @@
 <li><p>个人账户-实名认证</p>
 </li>
 <li><p>我的证件夹-添加身份证-右上角三点设为常用证件</p>
-</li>
-<li><p>mi pay 添加银行卡</p>
 </li>
 </ul>
 </li>
@@ -624,19 +653,6 @@
 <li><p>左侧栏右上方三点设置-添加网络存储-通过 ftp 连接 nas</p>
 </li>
 <li><p>主机填入 nas.matrixc7.com 即可</p>
-</li>
-</ul>
-</li>
-<li><p>通话-联系人-营业厅</p>
-<ul>
-<li>停用营业厅</li>
-</ul>
-</li>
-<li><p>浏览器</p>
-<ul>
-<li><p>设置地址栏搜索引擎-Google</p>
-</li>
-<li><p>关闭热点通知</p>
 </li>
 </ul>
 </li>
@@ -676,22 +692,6 @@
 </li>
 </ul>
 </li>
-<li><p>Google</p>
-<ul>
-<li><p>右上角个人头像-设置</p>
-<ul>
-<li><p>常规-关闭探索</p>
-</li>
-<li><p>常规-自动播放视频预览-一律不播放</p>
-</li>
-<li><p>关闭安全搜索</p>
-</li>
-<li><p>Google 助理-所有设置-常规-关闭 Google 助理</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
 <li><p>淘宝</p>
 <ul>
 <li>设置-通用-关闭所有播放设置和辅助功能</li>
@@ -713,16 +713,6 @@
 </li>
 <li><p>通用-回车键发送消息</p>
 </li>
-</ul>
-</li>
-<li><p>v2rayng</p>
-<ul>
-<li>打开分应用代理和绕行模式</li>
-</ul>
-</li>
-<li><p>Outlook</p>
-<ul>
-<li>学校邮箱需要启用“设备管理应用”权限</li>
 </ul>
 </li>
 <li><p>12123</p>
@@ -817,7 +807,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%B1%82%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">系统层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%94%81%E6%89%8B%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">解锁手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E7%BA%BF%E5%88%B7%E5%8C%85%EF%BC%88fastboot%EF%BC%89%E6%88%96%E8%80%85%E5%8D%A1%E5%88%B7%E5%8C%85%EF%BC%88recovery%EF%BC%89%E5%88%B7%E5%85%A5%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0%E6%8C%87%E5%AE%9A%E7%9A%84-rom"><span class="nav-number">1.2.</span> <span class="nav-text">用线刷包（fastboot）或者卡刷包（recovery）刷入或者更新指定的 rom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%AE%98%E6%96%B9%E7%9A%84%E6%81%A2%E5%A4%8D%E6%A8%A1%E5%BC%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA-twrp%EF%BC%88%E5%A6%82%E6%9E%9C%E6%9C%BA%E5%9E%8B%E5%AF%B9%E5%BA%94%E7%9A%84-twrp-%E5%B0%9A%E6%9C%AA%E6%8E%A8%E5%87%BA%EF%BC%8C%E5%88%99%E8%B7%B3%E8%BF%87%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E5%85%A5-magisk-delta-%E8%8E%B7%E5%BE%97-root-%E6%9D%83%E9%99%90"><span class="nav-number">1.4.</span> <span class="nav-text">刷入 magisk-delta 获得 root 权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-magisk-delta-%E4%B8%AD%E7%9A%84-Zygisk-%E5%92%8C-Zygisk-LSPosed"><span class="nav-number">1.5.</span> <span class="nav-text">启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BF%AE%E5%A4%8D-FCM-%E6%8E%A8%E9%80%81%E7%9A%84-fcmfix-%E5%92%8C%E7%A6%81%E6%AD%A2-Google-Play-%E5%BA%94%E7%94%A8%E6%9B%B4%E6%96%B0%E7%9A%84-UpdateLocker"><span class="nav-number">1.6.</span> <span class="nav-text">安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80-magisk-delta-%E4%B8%AD%E7%9A%84-Unmount-Modules-%E5%B9%B6%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8"><span class="nav-number">1.7.</span> <span class="nav-text">打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F-magisk-delta-%E5%92%8C-LSPosed"><span class="nav-number">1.8.</span> <span class="nav-text">隐藏 magisk-delta 和 LSPosed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%B1%82%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">程序层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">应用配置</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%B1%82%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">系统层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%94%81%E6%89%8B%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">解锁手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E7%BA%BF%E5%88%B7%E5%8C%85%EF%BC%88fastboot%EF%BC%89%E6%88%96%E8%80%85%E5%8D%A1%E5%88%B7%E5%8C%85%EF%BC%88recovery%EF%BC%89%E5%88%B7%E5%85%A5%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0%E6%8C%87%E5%AE%9A%E7%9A%84-rom"><span class="nav-number">1.2.</span> <span class="nav-text">用线刷包（fastboot）或者卡刷包（recovery）刷入或者更新指定的 rom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%AE%98%E6%96%B9%E7%9A%84%E6%81%A2%E5%A4%8D%E6%A8%A1%E5%BC%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA-twrp%EF%BC%88%E5%A6%82%E6%9E%9C%E6%9C%BA%E5%9E%8B%E5%AF%B9%E5%BA%94%E7%9A%84-twrp-%E5%B0%9A%E6%9C%AA%E6%8E%A8%E5%87%BA%EF%BC%8C%E5%88%99%E8%B7%B3%E8%BF%87%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">将官方的恢复模式替换为 twrp（如果机型对应的 twrp 尚未推出，则跳过）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E5%85%A5-magisk-delta-%E8%8E%B7%E5%BE%97-root-%E6%9D%83%E9%99%90"><span class="nav-number">1.4.</span> <span class="nav-text">刷入 magisk-delta 获得 root 权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-magisk-delta-%E4%B8%AD%E7%9A%84-Zygisk-%E5%92%8C-Zygisk-LSPosed"><span class="nav-number">1.5.</span> <span class="nav-text">启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80-magisk-delta-%E4%B8%AD%E7%9A%84-Unmount-Modules-%E5%B9%B6%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8"><span class="nav-number">1.6.</span> <span class="nav-text">打开 magisk-delta 中的 Unmount Modules 并强制使用超级用户列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E8%97%8F-magisk-delta-%E5%92%8C-LSPosed"><span class="nav-number">1.7.</span> <span class="nav-text">隐藏 magisk-delta 和 LSPosed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BF%AE%E5%A4%8D-FCM-%E6%8E%A8%E9%80%81%E7%9A%84-fcmfix-%E5%92%8C%E7%A6%81%E6%AD%A2-Google-Play-%E5%BA%94%E7%94%A8%E6%9B%B4%E6%96%B0%E7%9A%84-UpdateLocker"><span class="nav-number">1.8.</span> <span class="nav-text">安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%B1%82%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">程序层面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">应用配置</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
