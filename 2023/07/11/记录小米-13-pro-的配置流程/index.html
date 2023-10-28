@@ -28,7 +28,7 @@
 <meta property="og:description" content="实在忍受不了 Apple 的 iPhone 12 狗屎玩意了，趁 618 换成了 12GB + 512GB 的小米 13 Pro。虽然安卓的配置确实要比 iOS 复杂不少，无法做到开箱即用，但配置好了之后的体验可太舒服了。也因此在这里对整个配置流程做一个详尽的记录，毕竟这些配置又细又复杂，人脑子确实记不住。 2023.10.03 手头有一台红米 Note 13 Pro+，几天体验下来意识到实际上国">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-11T10:45:22.000Z">
-<meta property="article:modified_time" content="2023-10-08T08:17:19.411Z">
+<meta property="article:modified_time" content="2023-10-10T11:03:20.345Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-08 09:17:19" itemprop="dateModified" datetime="2023-10-08T09:17:19+01:00">2023-10-08</time>
+                <time title="修改时间：2023-10-10 12:03:20" itemprop="dateModified" datetime="2023-10-10T12:03:20+01:00">2023-10-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,7 +299,7 @@
 <li><p>完成后执行 <code>fastboot.exe reboot recovery</code> 即可进入恢复模式，而执行 <code>fastboot.exe reboot</code> 则直接为直接重启。</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\Downloads\xiaomi 13 pro&gt; fastboot.exe flash recovery_ab .\twrp-3.7.0_12-v7.8_A13-nuwa-skkk.img</span><br><span class="line">Sending &#39;recovery_ab&#39; (102400 KB)                  OKAY [  2.379s]</span><br><span class="line">Writing &#39;recovery_ab&#39;                              (bootloader) Partition recovery_a flashed successfully</span><br><span class="line">(bootloader) Partition recovery_b flashed successfully</span><br><span class="line">OKAY [  0.078s]</span><br><span class="line">Finished. Total time: 2.478s</span><br><span class="line"></span><br><span class="line">PS C:\Users\i\Downloads\xiaomi 13 pro&gt; fastboot.exe reboot recovery</span><br><span class="line">Rebooting into recovery                            OKAY [  0.002s]</span><br><span class="line">Finished. Total time: 0.004s</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\Downloads\xiaomi13pro&gt; fastboot.exe flash recovery_ab .\twrp-3.7.0_12-v7.8_A13-nuwa-skkk.img</span><br><span class="line">Sending &#39;recovery_ab&#39; (102400 KB)                  OKAY [  2.379s]</span><br><span class="line">Writing &#39;recovery_ab&#39;                              (bootloader) Partition recovery_a flashed successfully</span><br><span class="line">(bootloader) Partition recovery_b flashed successfully</span><br><span class="line">OKAY [  0.078s]</span><br><span class="line">Finished. Total time: 2.478s</span><br><span class="line"></span><br><span class="line">PS C:\Users\i\Downloads\xiaomi13pro&gt; fastboot.exe reboot recovery</span><br><span class="line">Rebooting into recovery                            OKAY [  0.002s]</span><br><span class="line">Finished. Total time: 0.004s</span><br></pre></td></tr></table></figure>
 <h3 id="刷入-magisk-delta-获得-root-权限"><a href="#刷入-magisk-delta-获得-root-权限" class="headerlink" title="刷入 magisk-delta 获得 root 权限"></a>刷入 magisk-delta 获得 root 权限</h3><ul>
 <li><p>虽然大陆版 rom 自带了完整的 GMS 服务，但是与之对应的 FCM 信息推送却有稳定的断连现象。这个问题在 EU rom 中虽然不会出现，但是在其之中安装了还原国内 rom 的本地化工具箱，那么同样会出现 FCM 无法正常后台推送的情况。如果要使 FCM 正常工作，则必须手机安装一个名为 fcmfix 的程序，而这个程序要求手机拥有 root 权限。</p>
 </li>
@@ -333,7 +333,7 @@
 <ul>
 <li><p>由于卡刷包内没有单独的 images 文件夹，只有一个单独整合的 payload.bin 文件，所以我们需要借助第三方软件提取出其中的 init_boot.img 文件。</p>
 </li>
-<li><p>在电脑端下载 <a target="_blank" rel="noopener" href="https://github.com/ssut/payload-dumper-go">Payload Dumper</a>，使用 <code>payload-dumper-go.exe -partitions init_boot payload.bin</code> 提取卡刷包中 payload.bin 文件内的 init_boot.img 文件。</p>
+<li><p>在电脑端下载 <a target="_blank" rel="noopener" href="https://github.com/ssut/payload-dumper-go">Payload Dumper</a>，执行 <code>payload-dumper-go.exe -partitions init_boot payload.bin</code> 提取卡刷包中 payload.bin 文件内的 init_boot.img 文件。</p>
 </li>
 <li><p>其余部分与线刷包的 root 方式保持一致。</p>
 </li>
@@ -342,13 +342,15 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe flash init_boot .\magisk_patched-25210_8WUy3.img</span><br><span class="line">Sending &#39;init_boot&#39; (8192 KB)                      OKAY [  0.193s]</span><br><span class="line">Writing &#39;init_boot&#39;                                OKAY [  0.003s]</span><br><span class="line">Finished. Total time: 0.231s</span><br><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe reboot</span><br><span class="line">Rebooting                                          OKAY [  0.001s]</span><br><span class="line">Finished. Total time: 0.002s</span><br><span class="line"></span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0&gt; .\payload-dumper-go.exe -partitions init_boot payload.bin</span><br><span class="line">payload.bin: payload.bin</span><br><span class="line">Payload Version: 2</span><br><span class="line">Payload Manifest Length: 224381</span><br><span class="line">Payload Manifest Signature Length: 267</span><br><span class="line">Found partitions:</span><br><span class="line">apusys (1.5 MB), audio_dsp (3.6 MB), boot (67 MB), ccu (115 kB), connsys_bt (741 kB), connsys_gnss (528 kB), connsys_wifi (1.7 MB), dpm (336 kB), dtbo (74 kB), gpueb (479 kB), gz (1.7 MB), init_boot (8.4 MB), lk (2.9 MB), logo (3.5 MB), mcf_ota (30 MB), mcupm (655 kB), md1img (79 MB), mvpu_algo (61 kB), odm (188 MB), odm_dlkm (348 kB), pi_img (86 kB), preloader_raw (623 kB), product (4.2 GB), scp (1.8 MB), spmfw (20 kB), sspm (946 kB), system (871 MB), system_dlkm (348 kB), system_ext (428 MB), tee (3.5 MB), vbmeta (8.2 kB), vbmeta_system (4.1 kB), vbmeta_vendor (4.1 kB), vcp (1.3 MB), vendor (2.1 GB), vendor_boot (67 MB), vendor_dlkm (28 MB), mi_ext (45 kB)</span><br><span class="line">Number of workers: 4</span><br><span class="line">init_boot (8.4 MB)  [&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;] 100 %</span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0\extracted_20231004_110826&gt; fastboot.exe flash init_boot_ab .\magisk_patched-26301_d0JpE.img</span><br><span class="line">Warning: skip copying init_boot_ab image avb footer (init_boot_ab partition size: 0, init_boot_ab image size: 8388608).</span><br><span class="line">Sending &#39;init_boot_ab&#39; (8192 KB)                   OKAY [  0.231s]</span><br><span class="line">Writing &#39;init_boot_ab&#39;                             OKAY [  0.040s]</span><br><span class="line">Finished. Total time: 0.355s</span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0\extracted_20231004_110826&gt; fastboot.exe reboot</span><br><span class="line">Rebooting                                          OKAY [  0.013s]</span><br><span class="line">Finished. Total time: 0.015s</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 线刷包的情况</span><br><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe flash init_boot .\magisk_patched-25210_8WUy3.img</span><br><span class="line">Sending &#39;init_boot&#39; (8192 KB)                      OKAY [  0.193s]</span><br><span class="line">Writing &#39;init_boot&#39;                                OKAY [  0.003s]</span><br><span class="line">Finished. Total time: 0.231s</span><br><span class="line">PS C:\Users\i\xiaomi13pro&gt; fastboot.exe reboot</span><br><span class="line">Rebooting                                          OKAY [  0.001s]</span><br><span class="line">Finished. Total time: 0.002s</span><br><span class="line"></span><br><span class="line"># 卡刷包的情况</span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0&gt; .\payload-dumper-go.exe -partitions init_boot payload.bin</span><br><span class="line">payload.bin: payload.bin</span><br><span class="line">Payload Version: 2</span><br><span class="line">Payload Manifest Length: 224381</span><br><span class="line">Payload Manifest Signature Length: 267</span><br><span class="line">Found partitions:</span><br><span class="line">apusys (1.5 MB), audio_dsp (3.6 MB), boot (67 MB), ccu (115 kB), connsys_bt (741 kB), connsys_gnss (528 kB), connsys_wifi (1.7 MB), dpm (336 kB), dtbo (74 kB), gpueb (479 kB), gz (1.7 MB), init_boot (8.4 MB), lk (2.9 MB), logo (3.5 MB), mcf_ota (30 MB), mcupm (655 kB), md1img (79 MB), mvpu_algo (61 kB), odm (188 MB), odm_dlkm (348 kB), pi_img (86 kB), preloader_raw (623 kB), product (4.2 GB), scp (1.8 MB), spmfw (20 kB), sspm (946 kB), system (871 MB), system_dlkm (348 kB), system_ext (428 MB), tee (3.5 MB), vbmeta (8.2 kB), vbmeta_system (4.1 kB), vbmeta_vendor (4.1 kB), vcp (1.3 MB), vendor (2.1 GB), vendor_boot (67 MB), vendor_dlkm (28 MB), mi_ext (45 kB)</span><br><span class="line">Number of workers: 4</span><br><span class="line">init_boot (8.4 MB)  [&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;] 100 %</span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0\extracted_20231004_110826&gt; fastboot.exe flash init_boot_ab .\magisk_patched-26301_d0JpE.img</span><br><span class="line">Warning: skip copying init_boot_ab image avb footer (init_boot_ab partition size: 0, init_boot_ab image size: 8388608).</span><br><span class="line">Sending &#39;init_boot_ab&#39; (8192 KB)                   OKAY [  0.231s]</span><br><span class="line">Writing &#39;init_boot_ab&#39;                             OKAY [  0.040s]</span><br><span class="line">Finished. Total time: 0.355s</span><br><span class="line">PS C:\Users\i\redminote13pro+\miui_ZIRCON_V14.0.4.0.TNOCNXM_c3eaaec36a_13.0\extracted_20231004_110826&gt; fastboot.exe reboot</span><br><span class="line">Rebooting                                          OKAY [  0.013s]</span><br><span class="line">Finished. Total time: 0.015s</span><br></pre></td></tr></table></figure>
 <h3 id="启用-magisk-delta-中的-Zygisk-和-Zygisk-LSPosed"><a href="#启用-magisk-delta-中的-Zygisk-和-Zygisk-LSPosed" class="headerlink" title="启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed"></a>启用 magisk-delta 中的 Zygisk 和 Zygisk-LSPosed</h3><ul>
 <li><p>fcmfix 和其他相关程序都是通过 LSPosed 加载的，所以需要配置。</p>
 </li>
 <li><p>打开 magisk-delta，此时会显示“需要修复运行环境”。点击继续，完成后会自动重启手机。</p>
 </li>
 <li><p>再次打开 magisk-delta，界面内的 magisk 的“当前”会显示安装的 magisk-delta 版本。</p>
+</li>
+<li><p>在右上角设置齿轮中打开 Zygisk。</p>
 </li>
 <li><p>在 magisk-delta 的模块标签页中选中 Zygisk-LSPosed 的 zip 安装包进行安装，安装完成后重启手机。</p>
 </li>
@@ -362,7 +364,7 @@
 </li>
 </ul>
 <h3 id="隐藏-magisk-delta-和-LSPosed"><a href="#隐藏-magisk-delta-和-LSPosed" class="headerlink" title="隐藏 magisk-delta 和 LSPosed"></a>隐藏 magisk-delta 和 LSPosed</h3><ul>
-<li><p>打开 magisk-delta，主页右上齿轮设置中选择“隐藏 magisk 应用”，此时会弹出安装未知应用的权限确认页面，在列表内中找到 magisk-delta 并“允许来自此来源的应用”。安装后打开隐藏后的 magisk-delta，提示是否需要添加原始的 magisk-delta 的快捷方式到桌面，此处选择取消即可。</p>
+<li><p>打开 magisk-delta，主页右上齿轮设置中选择“隐藏 magisk 应用”，此时会弹出安装未知应用的权限确认页面，在列表内中找到 magisk-delta 并“允许来自此来源的应用”。安装后打开隐藏后的 magisk-delta，提示是否需要添加原始的 magisk-delta 的快捷方式到桌面，此处选择确认即可。</p>
 </li>
 <li><p>打开 LSPosed，在设置页面中创建打开寄生管理器的快捷方式，随后关闭状态通知，即完成了 LSPosed 的隐藏。</p>
 </li>
@@ -370,7 +372,7 @@
 <h3 id="安装修复-FCM-推送的-fcmfix-和禁止-Google-Play-应用更新的-UpdateLocker"><a href="#安装修复-FCM-推送的-fcmfix-和禁止-Google-Play-应用更新的-UpdateLocker" class="headerlink" title="安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker"></a>安装修复 FCM 推送的 fcmfix 和禁止 Google Play 应用更新的 UpdateLocker</h3><ul>
 <li><p>如之前所言，大陆版 rom 有 FCM 无法推送已经停止的应用的消息这个问题，具体表现为在 FCM diagnostic 内可以看到类似 <code>fcm failed to broadcast to stopped app</code> 的报错信息。安装 fcmfix 并在 LSPosed 启用可以解决。下载 <a target="_blank" rel="noopener" href="https://github.com/kooritea/fcmfix">fcmfix</a>，直接打开安装即可。</p>
 </li>
-<li><p>安装禁止 Twitter 自动更新为 X 的 UpdateLocker。下载 <a target="_blank" rel="noopener" href="https://xdaforums.com/t/mod-xposed-4-1-update-locker-stop-update-your-apps.4433253/">UpdateLocker</a>，直接打开安装即可。</p>
+<li><p>安装禁止 Google Play 商店将 Twitter 自动更新为 X 的 UpdateLocker。下载 <a target="_blank" rel="noopener" href="https://xdaforums.com/t/mod-xposed-4-1-update-locker-stop-update-your-apps.4433253/">UpdateLocker</a>，直接打开安装即可。</p>
 </li>
 <li><p>不要忘记在 LSPosed 启用这两个模块。</p>
 </li>
@@ -551,7 +553,7 @@
 <ul>
 <li><p>邮箱</p>
 <ul>
-<li><p><a href="mailto:&#115;&#111;&#102;&#97;&#114;&#x63;&#104;&#120;&#x40;&#x76;&#x69;&#x70;&#x2e;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#115;&#111;&#102;&#97;&#114;&#x63;&#104;&#120;&#x40;&#x76;&#x69;&#x70;&#x2e;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<li><p><a href="mailto:&#x73;&#111;&#x66;&#x61;&#x72;&#99;&#104;&#x78;&#x40;&#x76;&#x69;&#x70;&#46;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#x73;&#111;&#x66;&#x61;&#x72;&#99;&#104;&#x78;&#x40;&#x76;&#x69;&#x70;&#46;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;</a></p>
 <ul>
 <li><p>发信昵称：MatrixC7</p>
 </li>
@@ -563,7 +565,7 @@
 </li>
 </ul>
 </li>
-<li><p><a href="mailto:&#97;&#100;&#x6d;&#105;&#110;&#64;&#109;&#x61;&#x74;&#x72;&#x69;&#x78;&#x63;&#x37;&#x2e;&#x63;&#x6f;&#x6d;">&#97;&#100;&#x6d;&#105;&#110;&#64;&#109;&#x61;&#x74;&#x72;&#x69;&#x78;&#x63;&#x37;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<li><p><a href="mailto:&#97;&#100;&#109;&#105;&#x6e;&#x40;&#x6d;&#97;&#116;&#114;&#x69;&#x78;&#99;&#55;&#x2e;&#99;&#x6f;&#x6d;">&#97;&#100;&#109;&#105;&#x6e;&#x40;&#x6d;&#97;&#116;&#114;&#x69;&#x78;&#99;&#55;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <ul>
 <li><p>手动设置</p>
 </li>
@@ -744,10 +746,7 @@
     <a href="/2023/06/09/%E7%AC%AC%E4%B8%80%E5%8F%B0%E5%8F%B0%E5%BC%8F%E6%9C%BA%E7%9A%84%E9%85%8D%E7%BD%AE%E5%88%97%E8%A1%A8%E5%92%8C%E9%80%89%E8%B4%AD%E7%90%86%E7%94%B1%E8%AE%B0%E5%BD%95/" rel="prev" title="第一台台式机的配置列表和选购理由记录">
       <i class="fa fa-chevron-left"></i> 第一台台式机的配置列表和选购理由记录
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/10/04/%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-manjaro-%E6%88%96-ubuntu-%E7%B3%BB%E7%BB%9F/" rel="next" title="安装并配置 Manjaro 或 Ubuntu 系统">
-      安装并配置 Manjaro 或 Ubuntu 系统 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -823,7 +822,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
