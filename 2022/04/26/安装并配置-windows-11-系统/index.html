@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2024-01-15T04:36:00.738Z">
+<meta property="article:modified_time" content="2024-01-18T08:14:29.150Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-15 04:36:00" itemprop="dateModified" datetime="2024-01-15T04:36:00Z">2024-01-15</time>
+                <time title="修改时间：2024-01-18 08:14:29" itemprop="dateModified" datetime="2024-01-18T08:14:29Z">2024-01-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,7 +242,7 @@
 </li>
 <li><p>安装完重启进入配置界面，此时选择脱机账户而非微软账户。原因在于这里如果直接使用微软账号，系统内个人文件夹的名字会跟随微软账号的名称，相当容易出问题；同时，微软账户完全可以在进入系统之后再绑上，这时个人文件夹的名称已经确定，不会带来任何可能的负面影响。</p>
 </li>
-<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而使 Windows 11 能够在断网的情况下安装的操作非常麻烦。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#x69;&#64;&#x69;&#x2e;&#105;">&#x69;&#64;&#x69;&#x2e;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
+<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而使 Windows 11 能够在断网的情况下安装的操作非常麻烦。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#x69;&#x40;&#x69;&#46;&#x69;">&#x69;&#x40;&#x69;&#46;&#x69;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
 </li>
 <li><p>个人文件夹的名字一般习惯直接取 i，不仅自指而且由于不包含中文和空格，以后安装其他程序（例如 nodejs）的时候不会报错，否则会很麻烦。</p>
 </li>
@@ -309,7 +309,7 @@
 <p>先安装基本工具 git，之后添加 scoop（勺子）的官方 bucket（冰淇淋桶），即官方提供的各种软件包列表。个人推荐只添加 extra 和 versions 这两个列表并指安装这两个列表内的程序，因为这两个列表能保证所有通过 scoop 安装的软件的最高清洁度。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scoop install git</span><br><span class="line">scoop bucket add extras</span><br><span class="line">scoop bucket add versions</span><br></pre></td></tr></table></figure>
 <p>安装 CLI 程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git adb argyllcms cacert cmake curl cwrsync cygwin dark exiftool ffmpeg frp go gpg gsudo innounp lux mambaforge nodejs nssm pandoc phantomjs python310 r rhash rclone tdm-gcc vim vivetool winget yt-dlp   </span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git adb argyllcms cacert cmake cuda curl cwrsync cygwin dark exiftool ffmpeg frp go gpg gsudo innounp lux mambaforge nodejs nssm pandoc phantomjs python311 r rhash rclone tdm-gcc vim vivetool winget yt-dlp   </span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -342,6 +342,10 @@
 <td></td>
 </tr>
 <tr>
+<td>cuda</td>
+<td>果然还是有必要装上</td>
+</tr>
+<tr>
 <td>curl</td>
 <td>查看当前 ip 地址：<code>curl ipinfo.io</code> / <code>curl cip.cc</code> / <code>curl myip.ipip.net</code></td>
 </tr>
@@ -351,7 +355,7 @@
 </tr>
 <tr>
 <td>cygwin</td>
-<td>手动安装 <code>procps-ng</code> 以添加 <code>watch</code>、安装 <code>chere</code> 后参考<a target="_blank" rel="noopener" href="http://www.polarhome.com/service/man/?qf=chere&af=0&tf=2&of=Cygwin">手册页面</a>管理员权限执行 <code>chere -i -t cmd</code>，<code>ca-certificates</code> 的 <code>v7.0.401-1</code> 有报错</td>
+<td>手动安装 <code>procps-ng</code> 以添加 <code>watch</code>、安装 <code>chere</code> 后参考<a target="_blank" rel="noopener" href="http://www.polarhome.com/service/man/?qf=chere&af=0&tf=2&of=Cygwin">手册页面</a>管理员权限执行 <code>chere -i -t cmd</code></td>
 </tr>
 <tr>
 <td>dark</td>
@@ -391,7 +395,7 @@
 </tr>
 <tr>
 <td>mambaforge</td>
-<td>conda/mamba，必须安装在 python310 之前，否则会覆盖 310 版本的调用程序</td>
+<td>conda/mamba，必须安装在 python 之前，否则有可能会覆盖 python 的调用程序</td>
 </tr>
 <tr>
 <td>nodejs</td>
@@ -463,7 +467,7 @@
 <p>由于所有 conda/mamba 包全都是直接属于 MambaForge 版本内的，因此为了不造成混乱，不推荐使用 <code>conda update conda</code> 来更新。只需要等 MambaForge 大版本更新即可。</p>
 <p>MambaForge persist 的只有 env 文件夹，因此 base 环境是不会保存的。</p>
 <p>安装 GUI 程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher capture2text calibre cheat-engine eac hourglass locale-emulator makemkv megasync motrix mpc-hc-fork obs-studio openai-translator screentogif sumatrapdf zoom aida64extreme capframex crystaldiskinfo crystaldiskmark cpu-z ddu dismplusplus everything fancontrol fiddler furmark geekuninstaller gpu-z hwinfo nekoray ocat quickcpu rainmeter rufus spacesniffer wingetui wox-beta github mobaxterm rstudio texstudio vscode</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher capture2text calibre cheat-engine eac hourglass locale-emulator makemkv megasync motrix mpc-hc-fork obs-studio screentogif sumatrapdf aida64extreme capframex crystaldiskinfo crystaldiskmark cpu-z ddu dismplusplus everything fancontrol fiddler furmark geekuninstaller gpu-z hwinfo nekoray ocat quickcpu rainmeter rufus spacesniffer wingetui wox-beta github mobaxterm rstudio texstudio vscode</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 GUI 程序。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install madvr winaero-tweaker</span><br></pre></td></tr></table></figure>
 <table>
@@ -534,10 +538,6 @@
 <td></td>
 </tr>
 <tr>
-<td>openai-translator</td>
-<td></td>
-</tr>
-<tr>
 <td>screentogif</td>
 <td></td>
 </tr>
@@ -546,16 +546,12 @@
 <td></td>
 </tr>
 <tr>
-<td>zoom</td>
-<td></td>
-</tr>
-<tr>
 <td>——————</td>
 <td></td>
 </tr>
 <tr>
 <td>aida64extreme</td>
-<td>序列号可参考 <a target="_blank" rel="noopener" href="https://gist.github.com/bygalacos/d147c5fd8aa296f3d1e240b1dbd04af4">bygalacos/Aida64_Key.txt</a></td>
+<td>序列号可参考 <a target="_blank" rel="noopener" href="https://webcache.googleusercontent.com/search?q=cache:8BEEDLyHjLUJ:https://gist.github.com/bygalacos/d147c5fd8aa296f3d1e240b1dbd04af4?permalink_comment_id=4530396&hl=en&gl=hk">bygalacos/Aida64_Key.txt</a></td>
 </tr>
 <tr>
 <td>capframex</td>
@@ -681,7 +677,7 @@
 </li>
 <li><p>软件的自我更新也会也可以被 winget 检测，因此完美弥补了 scoop 的缺陷。</p>
 </li>
-<li><p>非常适合 Windows 内的必要组件 VCRedist、.Net Runtime、DirectX 等的安装。</p>
+<li><p>非常适合 Windows 内的必要组件 VCRedist、.Net Runtime 等的安装。</p>
 </li>
 </ul>
 <p>缺点：</p>
@@ -701,7 +697,7 @@
 <h4 id="设置代理与程序安装-1"><a href="#设置代理与程序安装-1" class="headerlink" title="设置代理与程序安装"></a>设置代理与程序安装</h4><p>winget 会自动调用系统的代理设置，在 v2ray 内配置即可。</p>
 <p>由于 winget 一行命令只能安装一个程序，winget 的安装命令会较长。</p>
 <p>安装无 GUI 的 Windows 内必要组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">winget install Microsoft.DotNet.DesktopRuntime.6</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.7</span><br><span class="line">winget install Microsoft.DotNet.Framework.DeveloperPack_4</span><br><span class="line">winget install Microsoft.DirectX</span><br><span class="line">winget install Microsoft.VCRedist.2005.x86</span><br><span class="line">winget install Microsoft.VCRedist.2005.x64</span><br><span class="line">winget install Microsoft.VCRedist.2008.x86</span><br><span class="line">winget install Microsoft.VCRedist.2008.x64</span><br><span class="line">winget install Microsoft.VCRedist.2010.x86</span><br><span class="line">winget install Microsoft.VCRedist.2010.x64</span><br><span class="line">winget install Microsoft.VCRedist.2012.x86</span><br><span class="line">winget install Microsoft.VCRedist.2012.x64</span><br><span class="line">winget install Microsoft.VCRedist.2013.x86</span><br><span class="line">winget install Microsoft.VCRedist.2013.x64</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x86</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x64</span><br><span class="line">winget install -i Microsoft.VisualStudio.2022.BuildTools</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">winget install Microsoft.DotNet.DesktopRuntime.6</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.7</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.8</span><br><span class="line">winget install Microsoft.DotNet.Framework.DeveloperPack_4</span><br><span class="line">winget install Microsoft.VCRedist.2005.x86</span><br><span class="line">winget install Microsoft.VCRedist.2005.x64</span><br><span class="line">winget install Microsoft.VCRedist.2008.x86</span><br><span class="line">winget install Microsoft.VCRedist.2008.x64</span><br><span class="line">winget install Microsoft.VCRedist.2010.x86</span><br><span class="line">winget install Microsoft.VCRedist.2010.x64</span><br><span class="line">winget install Microsoft.VCRedist.2012.x86</span><br><span class="line">winget install Microsoft.VCRedist.2012.x64</span><br><span class="line">winget install Microsoft.VCRedist.2013.x86</span><br><span class="line">winget install Microsoft.VCRedist.2013.x64</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x86</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x64</span><br><span class="line">winget install -i Microsoft.VisualStudio.2022.BuildTools</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -711,15 +707,11 @@
 </thead>
 <tbody><tr>
 <td>.NET DesktopRuntime</td>
-<td>6 和 7</td>
+<td>6+7+8</td>
 </tr>
 <tr>
 <td>.Net Framework</td>
 <td>4.8，旧版 3.5 需要去<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/download/details.aspx?id=25150">微软官网</a>手动下载安装</td>
-</tr>
-<tr>
-<td>DirectX</td>
-<td>虽然 Windows 10/11 预装了 DirectX 12，但其并未包含一些旧版本 DirectX 的库文件</td>
 </tr>
 <tr>
 <td>VCRedist</td>
@@ -727,11 +719,12 @@
 </tr>
 <tr>
 <td>VisualStudio BuildTools</td>
-<td>2022，安装时需要指定 <code>-i</code> 参数调出可交互界面，只需选择 C++ 桌面开发</td>
+<td>最好先安装 cuda 再安装 VS 2022，安装时需要指定 <code>-i</code> 参数调出可交互界面，只需选择 C++ 桌面开发</td>
 </tr>
 </tbody></table>
+<p>Windows 10/11 预装了 DirectX 12，不过其并未包含一些旧版本 DirectX 的库文件。如果需要安装旧版 DirectX 9 可以去<a target="_blank" rel="noopener" href="https://download.microsoft.com/download/1/7/1/1718CCC4-6315-4D8E-9543-8E28A4E18C4C/dxwebsetup.exe">微软官网</a>手动下载安装。</p>
 <p>安装 GUI 程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">winget install -i Bandisoft.Bandizip</span><br><span class="line">winget install -i ByteDance.JianyingPro</span><br><span class="line">winget install -i ByteDance.CapCut</span><br><span class="line">winget install -i Discord.Discord</span><br><span class="line">winget install -i FlorianHoech.DisplayCAL</span><br><span class="line">winget install -i PeterPawlowski.foobar2000</span><br><span class="line">winget install -i PeterPawlowski.foobar2000.EncoderPack</span><br><span class="line">winget install -i Google.Chrome</span><br><span class="line">winget install -i Tonec.InternetDownloadManager</span><br><span class="line">winget install -i Nevcairiel.LAVFilters</span><br><span class="line">winget install -i TheDocumentFoundation.LibreOffice</span><br><span class="line">winget install -i Logitech.OptionsPlus</span><br><span class="line">winget install -i MacType.MacType</span><br><span class="line">winget install -i Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget install -i Mozilla.Firefox</span><br><span class="line">winget install -i Guru3D.Afterburner</span><br><span class="line">winget install -i Notion.Notion</span><br><span class="line">winget install -i Nvidia.GeForceExperience</span><br><span class="line">winget install -i Daum.PotPlayer</span><br><span class="line">winget install -i Microsoft.PowerShell</span><br><span class="line">winget install -i Microsoft.PowerToys</span><br><span class="line">winget install -i Sandboxie.Plus</span><br><span class="line">winget install -i Guru3D.RTSS</span><br><span class="line">winget install -i Spotify.Spotify</span><br><span class="line">winget install -i StartIsBack.StartAllBack</span><br><span class="line">winget install -i Valve.Steam</span><br><span class="line">winget install -i tailscale.tailscale</span><br><span class="line">winget install -i Telegram.TelegramDesktop</span><br><span class="line">winget install -i Tencent.TencentMeeting</span><br><span class="line">winget install -i Tencent.TIM</span><br><span class="line">winget install -i Tencent.WeChat</span><br><span class="line">winget install -i VirtualDesktop.Streamer</span><br><span class="line">winget install -i VivaldiTechnologies.Vivaldi</span><br><span class="line">winget install -i VMware.WorkstationPro</span><br><span class="line">winget install -i ZeroTier.ZeroTierOne</span><br><span class="line">winget install -i Sogou.SogouInput</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">winget install -i Bandisoft.Bandizip</span><br><span class="line">winget install -i ByteDance.JianyingPro</span><br><span class="line">winget install -i ByteDance.CapCut</span><br><span class="line">winget install -i Discord.Discord</span><br><span class="line">winget install -i FlorianHoech.DisplayCAL</span><br><span class="line">winget install -i PeterPawlowski.foobar2000</span><br><span class="line">winget install -i PeterPawlowski.foobar2000.EncoderPack</span><br><span class="line">winget install -i Google.Chrome</span><br><span class="line">winget install -i Tonec.InternetDownloadManager</span><br><span class="line">winget install -i Nevcairiel.LAVFilters</span><br><span class="line">winget install -i TheDocumentFoundation.LibreOffice</span><br><span class="line">winget install -i Logitech.OptionsPlus</span><br><span class="line">winget install -i MacType.MacType</span><br><span class="line">winget install -i Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget install -i Mozilla.Firefox</span><br><span class="line">winget install -i Guru3D.Afterburner</span><br><span class="line">winget install -i Notion.Notion</span><br><span class="line">winget install -i Daum.PotPlayer</span><br><span class="line">winget install -i Microsoft.PowerShell</span><br><span class="line">winget install -i Microsoft.PowerToys</span><br><span class="line">winget install -i Sandboxie.Plus</span><br><span class="line">winget install -i Guru3D.RTSS</span><br><span class="line">winget install -i Spotify.Spotify</span><br><span class="line">winget install -i StartIsBack.StartAllBack</span><br><span class="line">winget install -i Valve.Steam</span><br><span class="line">winget install -i tailscale.tailscale</span><br><span class="line">winget install -i Telegram.TelegramDesktop</span><br><span class="line">winget install -i Tencent.TencentMeeting</span><br><span class="line">winget install -i Tencent.TIM</span><br><span class="line">winget install -i Tencent.WeChat</span><br><span class="line">winget install -i VirtualDesktop.Streamer</span><br><span class="line">winget install -i VivaldiTechnologies.Vivaldi</span><br><span class="line">winget install -i ZeroTier.ZeroTierOne</span><br><span class="line">winget install -i Sogou.SogouInput</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -804,10 +797,6 @@
 <td></td>
 </tr>
 <tr>
-<td>NVIDIA GeForce Experience</td>
-<td></td>
-</tr>
-<tr>
 <td>RTSS</td>
 <td>CapFrameX 所需的监控软件</td>
 </tr>
@@ -864,24 +853,20 @@
 <td>Google Pay 浏览器</td>
 </tr>
 <tr>
-<td>VMware Workstation</td>
-<td>密钥：<code>MC60H-DWHD5-H80U9-6V85M-8280D</code></td>
-</tr>
-<tr>
 <td>WeChat</td>
 <td>使用软链接修改个人聊天记录文件夹位置</td>
 </tr>
 <tr>
 <td>ZeroTier</td>
-<td>似乎 ZeroTier 比 Tailscale 效果更好，以及系统服务和 UI 独立生效</td>
+<td>系统服务和 UI 独立生效</td>
 </tr>
 <tr>
 <td>搜狗拼音</td>
-<td>必须在安装中文、日文、西文字体之后进行</td>
+<td>当心流氓修改，以及必须在安装中文、日文、西文字体之后进行</td>
 </tr>
 </tbody></table>
 <h4 id="scoop-和-winget-的日常更新命令"><a href="#scoop-和-winget-的日常更新命令" class="headerlink" title="scoop 和 winget 的日常更新命令"></a>scoop 和 winget 的日常更新命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update * &amp;&amp; winget upgrade -i -r -u --verbose</span><br></pre></td></tr></table></figure>
-<h3 id="Windows-命令行-amp-Microsoft-Store-应用商店"><a href="#Windows-命令行-amp-Microsoft-Store-应用商店" class="headerlink" title="Windows 命令行 &amp; Microsoft Store 应用商店"></a>Windows 命令行 &amp; Microsoft Store 应用商店</h3><h4 id="Windows-命令行"><a href="#Windows-命令行" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h4><p>在系统功能中打开 Hyper-V 后，安装 wsl2 的 Ubuntu。</p>
+<h3 id="Windows-命令行-amp-Microsoft-Store-应用商店"><a href="#Windows-命令行-amp-Microsoft-Store-应用商店" class="headerlink" title="Windows 命令行 &amp; Microsoft Store 应用商店"></a>Windows 命令行 &amp; Microsoft Store 应用商店</h3><h4 id="Windows-命令行"><a href="#Windows-命令行" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h4><p>由于 WSL1 不依赖 Hyper-V，而 WSL2 依赖，因此在系统功能中打开 Hyper-V 后，再安装 wsl2 的 Ubuntu 更为合适。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
 <p>注意事项：</p>
 <ul>
@@ -920,7 +905,10 @@
 <td>笔记本在 Windows 中无法直接在任务栏中显示电量百分比，故使用插件</td>
 </tr>
 </tbody></table>
-<h3 id="正常安装"><a href="#正常安装" class="headerlink" title="正常安装"></a>正常安装</h3><h4 id="可执行文件部分"><a href="#可执行文件部分" class="headerlink" title="可执行文件部分"></a>可执行文件部分</h4><table>
+<h3 id="正常安装"><a href="#正常安装" class="headerlink" title="正常安装"></a>正常安装</h3><h4 id="可执行文件部分"><a href="#可执行文件部分" class="headerlink" title="可执行文件部分"></a>可执行文件部分</h4><ul>
+<li>确定安装部分</li>
+</ul>
+<table>
 <thead>
 <tr>
 <th>程序</th>
@@ -928,20 +916,12 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Adobe Digital Editions</td>
-<td></td>
-</tr>
-<tr>
 <td>Corsair Link 4</td>
 <td>监控 AX1600i 的插口电流情况，以最大程度避免 4090 烧接口</td>
 </tr>
 <tr>
 <td>Daemon Tools Lite</td>
 <td></td>
-</tr>
-<tr>
-<td>EarMaster Pro 7</td>
-<td>以前购买的正版序列号：<code>71009-40B97-TXMKA</code></td>
 </tr>
 <tr>
 <td>Equalizer APO</td>
@@ -960,16 +940,8 @@
 <td>正版的 Office 家庭与学生版</td>
 </tr>
 <tr>
-<td>Ninja Ripper</td>
-<td>3D 游戏的模型提取</td>
-</tr>
-<tr>
 <td>QTTabBar</td>
 <td>使用保存的 xml 文件直接恢复</td>
-</tr>
-<tr>
-<td>renderBeamer</td>
-<td>渲染农场试用</td>
 </tr>
 <tr>
 <td>Sunlogin</td>
@@ -977,7 +949,7 @@
 </tr>
 <tr>
 <td>Synology Active Backup For Business</td>
-<td>配合 NAS 备份</td>
+<td>配合 NAS 备份，以及台式机有线网备份会报错</td>
 </tr>
 <tr>
 <td>Synology Drive</td>
@@ -996,16 +968,8 @@
 <td>管理员模式安装完整版 TeX 到 <code>C:\Program Files\texlive</code>，TeXworks 可以不装</td>
 </tr>
 <tr>
-<td>WPS Office</td>
-<td>Microsoft Office 糟糕的 UI 绘制策略使得其运行速度缓慢，相较之下 WPS Office 的处理速度要快不少，但要注意其修改默认程序</td>
-</tr>
-<tr>
-<td>ThunderMaster</td>
-<td>Palit 的显卡管理程序</td>
-</tr>
-<tr>
-<td>FireStorm</td>
-<td>Zotac 的显卡管理程序</td>
+<td>VMware Workstation</td>
+<td>密钥：<code>MC60H-DWHD5-H80U9-6V85M-8280D</code></td>
 </tr>
 <tr>
 <td>百度云管家</td>
@@ -1017,18 +981,60 @@
 </tr>
 <tr>
 <td>火绒</td>
-<td></td>
+<td>虽然写在后面，这项最好要先装以防 Windows Defender 误删文件</td>
 </tr>
 <tr>
 <td>原神</td>
-<td></td>
+<td>转移游戏本体的时候要注意本体文件内的 <code>config.ini</code>，启动器有时候是会删除这个文件导致无法读取的</td>
 </tr>
 <tr>
 <td>铁道</td>
-<td></td>
+<td>同上，以及这种现象似乎主要发生在国服启动器内</td>
 </tr>
 </tbody></table>
-<h4 id="压缩包解压部分"><a href="#压缩包解压部分" class="headerlink" title="压缩包解压部分"></a>压缩包解压部分</h4><table>
+<ul>
+<li>可选安装部分</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>程序</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Adobe Digital Editions</td>
+<td></td>
+</tr>
+<tr>
+<td>EarMaster Pro 7</td>
+<td>以前购买的正版序列号：<code>71009-40B97-TXMKA</code></td>
+</tr>
+<tr>
+<td>renderBeamer</td>
+<td>渲染农场试用</td>
+</tr>
+<tr>
+<td>Ninja Ripper</td>
+<td>3D 游戏的模型提取</td>
+</tr>
+<tr>
+<td>WPS Office</td>
+<td>Microsoft Office 糟糕的 UI 绘制策略使得其运行速度缓慢，相较之下 WPS Office 的处理速度要快不少，但要注意其修改默认程序</td>
+</tr>
+<tr>
+<td>ThunderMaster</td>
+<td>Palit 的显卡管理程序</td>
+</tr>
+<tr>
+<td>FireStorm</td>
+<td>Zotac 的显卡管理程序</td>
+</tr>
+</tbody></table>
+<h4 id="压缩包解压部分"><a href="#压缩包解压部分" class="headerlink" title="压缩包解压部分"></a>压缩包解压部分</h4><ul>
+<li>确定安装部分</li>
+</ul>
+<table>
 <thead>
 <tr>
 <th>程序</th>
@@ -1042,10 +1048,6 @@
 <tr>
 <td>AlphaROMdiE</td>
 <td>绕过 Gal 的正版请求</td>
-</tr>
-<tr>
-<td>baidupcs-go</td>
-<td>设置系统 <code>PATH</code> 环境变量，修改下载路径 <code>config set -savedir D:\Download</code></td>
 </tr>
 <tr>
 <td>Cheat Menu</td>
@@ -1070,10 +1072,6 @@
 <tr>
 <td>mpv-lazy</td>
 <td>可以一键启用 RIFE 的插帧超分懒人播放器，<a target="_blank" rel="noopener" href="https://github.com/hooke007/MPV_lazy">GitHub 项目地址</a>，下载 exe 本体安装包和 Mega 拓展包后合并使用</td>
-</tr>
-<tr>
-<td>sd-webui-aki</td>
-<td>在<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1sVmVqA2CGUsZwyRdjoA5Vg?pwd=n519">百度网盘</a>或者<a target="_blank" rel="noopener" href="https://pan.quark.cn/s/3a32257a7323">夸克网盘</a>获取更新，后者提取码 284q</td>
 </tr>
 <tr>
 <td>tsMuxeR</td>
@@ -1108,6 +1106,29 @@
 <td></td>
 </tr>
 </tbody></table>
+<ul>
+<li>可选安装部分</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>程序</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>baidupcs-go</td>
+<td>设置系统 <code>PATH</code> 环境变量，修改下载路径 <code>config set -savedir D:\Download</code></td>
+</tr>
+<tr>
+<td>sd-webui-aki</td>
+<td>在<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1sVmVqA2CGUsZwyRdjoA5Vg?pwd=n519">百度网盘</a>获取更新</td>
+</tr>
+<tr>
+<td>sd-comfyui-aki</td>
+<td>在<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1hk_uqhEZCnXeZLgURGw5LQ?pwd=aaki">百度网盘</a>或者<a target="_blank" rel="noopener" href="https://pan.quark.cn/s/64b808baa960">夸克网盘</a>获取更新，后者提取码 284q</td>
+</tr>
+</tbody></table>
 <h3 id="破解版软件"><a href="#破解版软件" class="headerlink" title="破解版软件"></a>破解版软件</h3><table>
 <thead>
 <tr>
@@ -1140,8 +1161,8 @@
 <td></td>
 </tr>
 <tr>
-<td>Marvelous Designer 10</td>
-<td>v6.0.623.33010</td>
+<td>Marvelous Designer 12</td>
+<td>v7.2.209.43690 x64</td>
 </tr>
 <tr>
 <td>RStudio</td>
@@ -1150,10 +1171,6 @@
 <tr>
 <td>sublime text</td>
 <td>用包内已经破解的 exe 替换原生 exe</td>
-</tr>
-<tr>
-<td>Topaz A.I. Gigapixel 3</td>
-<td></td>
 </tr>
 <tr>
 <td>Wolfram Mathematica</td>
@@ -1431,7 +1448,7 @@
 <ul>
 <li><p>以相同的方式，可以将 Intel 或 AMD 的非大小核 CPU 模拟为大小核 CPU 来使用。以笔记本的 AMD R7-5800H 为例，将 8 大核 16 线程模拟为 4 大核 4 小核 16 线程（注意因为是模拟小核，所以是双线程小核，而非 Intel 的单线程小核），CPU 的亲和掩码则为 1111111100000000，即 FF00。</p>
 </li>
-<li><p>有兴趣的可以再核对一下微软的官方文档的 286-287 页，即第四章线程-线程调度-异构调度（大小核）：<a target="_blank" rel="noopener" href="https://ftp.yuuta.moe/Library/Tech/Windows/Windows%20Internals_7ed_Part_1.pdf">Catlin, B., Hanrahan, J.E., Russinovich, M.E., Solomon, D.A. and Ionescu, A. (2017). <em>Windows Internals, Part 1: System architecture, processes, threads, memory managment, and more.</em> Redmond: Microsoft, pp. 286-287.</a></p>
+<li><p>有兴趣的可以再核对一下微软的官方文档的 286-287 页，即第四章线程-线程调度-异构调度（大小核）：Catlin, B., Hanrahan, J.E., Russinovich, M.E., Solomon, D.A. and Ionescu, A. (2017). <em>Windows Internals, Part 1: System architecture, processes, threads, memory managment, and more.</em> Redmond: Microsoft, pp. 286-287.</p>
 </li>
 </ul>
 <h4 id="winaero-tweaker"><a href="#winaero-tweaker" class="headerlink" title="winaero-tweaker"></a>winaero-tweaker</h4><p>这款程序能修改 Windows 的地方实在太多太多了，自己常用的几项如下：</p>
@@ -1449,17 +1466,23 @@
 </ul>
 <p>注：打开 Windows 11-Disable Bakcground Apps 会使更换锁屏壁纸的 Windows 聚焦无法正常使用。</p>
 <h3 id="包管理器-winget-1"><a href="#包管理器-winget-1" class="headerlink" title="包管理器 winget"></a>包管理器 winget</h3><h4 id="winget-pin"><a href="#winget-pin" class="headerlink" title="winget pin"></a>winget pin</h4><p>由于 winget 内的版本错误以及阻止 winget 对软件自动更新，为以下软件添加 winget pin。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">winget pin add Adobe.Acrobat.Reader.64-bit</span><br><span class="line">winget pin add Mozilla.Firefox</span><br><span class="line">winget pin add Google.Chrome</span><br><span class="line">winget pin add Microsoft.Edge</span><br><span class="line">winget pin add Mozilla.Thunderbird</span><br><span class="line">winget pin add Telegram.TelegramDesktop</span><br><span class="line">winget pin add Microsoft.PowerToys</span><br><span class="line">winget pin add Discord.Discord</span><br><span class="line">winget pin add Tonec.InternetDownloadManager</span><br><span class="line">winget pin add Logitech.OptionsPlus</span><br><span class="line">winget pin add Kingsoft.WPSOffice</span><br></pre></td></tr></table></figure>
-<h4 id="DisplayCAL"><a href="#DisplayCAL" class="headerlink" title="DisplayCAL"></a>DisplayCAL</h4><p>由于 DisplayCAL 自 2019 年末的 v3.8.9.3 起已停止更新，其自动下载的 argyllcms 也一直是旧 v2.1.2 的 32 位版。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">winget pin add Adobe.Acrobat.Reader.64-bit</span><br><span class="line">winget pin add Mozilla.Firefox</span><br><span class="line">winget pin add Google.Chrome</span><br><span class="line">winget pin add Microsoft.Edge</span><br><span class="line">winget pin add Mozilla.Thunderbird</span><br><span class="line">winget pin add Telegram.TelegramDesktop</span><br><span class="line">winget pin add Microsoft.PowerToys</span><br><span class="line">winget pin add Discord.Discord</span><br><span class="line">winget pin add Tonec.InternetDownloadManager</span><br><span class="line">winget pin add Logitech.OptionsPlus</span><br><span class="line">winget pin add Sogou.SogouInput</span><br><span class="line">winget pin add Tencent.TencentMeeting</span><br><span class="line">winget pin add Tencent.TIM</span><br><span class="line">winget pin add Tencent.WeChat</span><br></pre></td></tr></table></figure>
+<h4 id="DisplayCAL"><a href="#DisplayCAL" class="headerlink" title="DisplayCAL"></a>DisplayCAL</h4><p>由于 DisplayCAL 自 2019 年末的 v3.8.9.3 起已停止更新，其自动下载的 argyllcms 也一直是旧的 v2.3.1。</p>
 <ul>
 <li><p>如果先通过 scoop 安装 argyllcms，则在使用 winget 安装 DisplayCAL 时会自动调用 scoop 所安装的最新版的 argyllcms。</p>
 </li>
 <li><p>如果 argyllcms 的安装在 DisplayCAL 之后，则需要为其手动指定 argyllcms 路径：点击文件-定位 ArgyllCMS 可执行文件，选择 <code>C:\Users\i\scoop\apps\argyllcms\current\bin</code> 路径即可。</p>
 </li>
 </ul>
-<p>不过在一些笔记本上最新版本的 argyllcms 会出现异常报错，此时将最新版本的 argyllcms 卸载后使用 DisplayCAL 自动下载的 v2.1.2 老版本即可正常运行校色。</p>
+<p>不过在一些笔记本上最新版本的 argyllcms 会出现异常报错，此时将最新版本的 argyllcms 卸载后使用 DisplayCAL 自动下载的 v2.3.1 老版本即可正常运行校色。</p>
+<h4 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h4><ul>
+<li><p>Chrome 的个人配置文件全部储存在 <code>%LocalAppData%\Google\Chrome\User Data</code> 文件夹内。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。</p>
+</li>
+<li><p>账号是需要重新登陆的，不过扩展程序和其配置都会被保留。</p>
+</li>
+</ul>
 <h4 id="Mozilla-Firefox"><a href="#Mozilla-Firefox" class="headerlink" title="Mozilla Firefox"></a>Mozilla Firefox</h4><ul>
-<li><p>Firefox 的个人配置文件全部储存在 <code>%AppData%\Mozilla\Firefox\Profiles\arufwjt6.default-release</code> 文件夹内，其中 <code>arufwjt6</code> 部分为每位用户特有的八位辨识码。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。</p>
+<li><p>Firefox 的个人配置文件全部储存在 <code>%AppData%\Mozilla\Firefox\Profiles\arufwjt6.default-release</code> 文件夹内，其中 <code>arufwjt6</code> 部分为每位用户特有的八位辨识码。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。注意别删除末尾不带 <code>-release</code> 的文件夹，以及最好清空放入而不是删除随后放入重命名后的文件夹，至少这样的一定不会报错的。</p>
 </li>
 <li><p>颜色管理：</p>
 <ul>
@@ -1501,6 +1524,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;[interop]\nappendWindowsPath &#x3D; false&quot; | sudo tee -a &#x2F;etc&#x2F;wsl.conf</span><br></pre></td></tr></table></figure>
 <h4 id="WSL-Ubuntu-在关闭终端后自动退出"><a href="#WSL-Ubuntu-在关闭终端后自动退出" class="headerlink" title="WSL-Ubuntu 在关闭终端后自动退出"></a>WSL-Ubuntu 在关闭终端后自动退出</h4><p>可以在 Windows 主机上运行以下代码使 WSL-Ubuntu 持续在后台运行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl screen</span><br></pre></td></tr></table></figure>
+<h4 id="WSL-Ubuntu-无法连接-Windows-宿主机"><a href="#WSL-Ubuntu-无法连接-Windows-宿主机" class="headerlink" title="WSL-Ubuntu 无法连接 Windows 宿主机"></a>WSL-Ubuntu 无法连接 Windows 宿主机</h4><ul>
+<li><p>防火墙的问题。通常将当前网络从公有转为私有即可。</p>
+</li>
+<li><p>以及要非常谨慎任何重置网络配置的操作。很有可能出现重置之后有些项目就非常再难以添加，从而无法回到重置之前，导致 WSL-Ubuntu 既连不上 Windows 宿主机也连不上外网。</p>
+</li>
+</ul>
 <h4 id="安装与配置-PyTorch"><a href="#安装与配置-PyTorch" class="headerlink" title="安装与配置 PyTorch"></a>安装与配置 PyTorch</h4><p>由于在 Windows 内已经安装好 NVIDIA 的图形驱动的情况下，WSL2 的 Ubuntu 内无需另装驱动即可支持 <code>nvidia-smi</code> 命令显示 NVIDIA 界面，我们选择通过 NVIDIA Docker 的方式来安装 PyTorch。</p>
 <h5 id="安装-NVIDIA-Docker"><a href="#安装-NVIDIA-Docker" class="headerlink" title="安装 NVIDIA Docker"></a>安装 NVIDIA Docker</h5><p>可以直接参考<a target="_blank" rel="noopener" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">官网的安装步骤</a>。</p>
 <p>NVIDIA Docker 实际上是通过安装原版 Docker + 添加 NVIDIA 配置部分实现的。</p>
@@ -1557,6 +1586,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">scoop info 7zip</span><br><span class="line"></span><br><span class="line">Name        : 7zip</span><br><span class="line">Description : A multi-format file archiver with high compression ratios</span><br><span class="line">Version     : 21.07</span><br><span class="line">Bucket      : main</span><br><span class="line">Website     : https:&#x2F;&#x2F;www.7-zip.org</span><br><span class="line">License     : LGPL-2.1-or-later</span><br><span class="line">Updated at  : 2022&#x2F;04&#x2F;04 星期一 17:24:43</span><br><span class="line">Updated by  : Issac Lin</span><br><span class="line">Installed   : 21.07</span><br><span class="line">Binaries    : 7z.exe</span><br><span class="line">Shortcuts   : 7-Zip</span><br><span class="line">Notes       : Add 7-Zip as a context menu option by running: &quot;&lt;root&gt;\install-context.reg&quot;</span><br></pre></td></tr></table></figure>
 <p>安装该程序，偶尔有些程序会需要管理员权限才能完成安装，可以在用 scoop 安装 gsudo 之后使用 <code>sudo</code> 命令。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip</span><br></pre></td></tr></table></figure>
+<p>可以通过强制更新这个操作来达到不卸载的情况下重装程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update -f 7zip</span><br></pre></td></tr></table></figure>
 <p>卸载该程序，有时会出现程序安装出现报错的情况，最好先对不完全的安装进行卸载再重新安装。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall 7zip</span><br></pre></td></tr></table></figure>
 <p>不想升级该程序时，可以固定该程序的版本。</p>
@@ -1581,7 +1612,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop cache rm *</span><br></pre></td></tr></table></figure>
 <p>检查 scoop 本体、bucket 和安装的程序是否有问题。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop checkup</span><br></pre></td></tr></table></figure>
-<p>通常此处会提示有一个潜在的问题，运行建议的命令就可以解决。</p>
+<p>如果是 Windows 11，通常此处会提示有两个潜在的问题，其中一个问题需要进入设置-系统-开发者选项并打开来解决；而另一个运行建议的命令就可以解决。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scoop checkup</span><br><span class="line"></span><br><span class="line">WARN  LongPaths support is not enabled.</span><br><span class="line">  You can enable it by running:</span><br><span class="line">    sudo Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem&#39; -Name &#39;LongPathsEnabled&#39; -Value 1</span><br><span class="line">  (Requires &#39;sudo&#39; command. Run &#39;scoop install sudo&#39; if you don&#39;t have it.)</span><br><span class="line">WARN  Found 1 potential problem.</span><br></pre></td></tr></table></figure>
 <h3 id="更详尽的说明"><a href="#更详尽的说明" class="headerlink" title="更详尽的说明"></a>更详尽的说明</h3><p>官方在 <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Scoop/wiki/Commands">GitHub 的 Command 页面</a> 里写得很不具体，对各项命令的使用方法都只是一笔带过。我个人比较推荐 @nimzo6689 在 Qiita 上写的这四篇文章，每个命令都附带有具体例子说明，很详尽。</p>
 <p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/1ab33380366e324c0b84">全Scoopコマンド解説 その１ ～使用頻度（高）～</a></p>
@@ -1669,7 +1700,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">系统与驱动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop"><span class="nav-number">2.1.</span> <span class="nav-text">包管理器 scoop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget"><span class="nav-number">2.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scoop-%E5%92%8C-winget-%E7%9A%84%E6%97%A5%E5%B8%B8%E6%9B%B4%E6%96%B0%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.3.</span> <span class="nav-text">scoop 和 winget 的日常更新命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-amp-Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.</span> <span class="nav-text">Windows 命令行 &amp; Microsoft Store 应用商店</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">2.3.1.</span> <span class="nav-text">Windows 命令行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.2.</span> <span class="nav-text">Microsoft Store 应用商店</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E9%83%A8%E5%88%86"><span class="nav-number">2.4.1.</span> <span class="nav-text">可执行文件部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E9%83%A8%E5%88%86"><span class="nav-number">2.4.2.</span> <span class="nav-text">压缩包解压部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E7%89%88%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">破解版软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop-%E9%83%A8%E5%88%86"><span class="nav-number">3.1.</span> <span class="nav-text">包管理器 scoop 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#exiftool"><span class="nav-number">3.1.1.</span> <span class="nav-text">exiftool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#frp-nssm"><span class="nav-number">3.1.2.</span> <span class="nav-text">frp-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-nssm"><span class="nav-number">3.1.3.</span> <span class="nav-text">python-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rclone"><span class="nav-number">3.1.4.</span> <span class="nav-text">rclone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#blender-nssm"><span class="nav-number">3.1.5.</span> <span class="nav-text">blender-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quickcpu-registry"><span class="nav-number">3.1.6.</span> <span class="nav-text">quickcpu-registry</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%89%8D%E6%8F%90%E7%9F%A5%E8%AF%86"><span class="nav-number">3.1.6.1.</span> <span class="nav-text">前提知识</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E4%BF%AE%E6%94%B9"><span class="nav-number">3.1.6.2.</span> <span class="nav-text">正式修改</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#winaero-tweaker"><span class="nav-number">3.1.7.</span> <span class="nav-text">winaero-tweaker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget-1"><span class="nav-number">3.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#winget-pin"><span class="nav-number">3.2.1.</span> <span class="nav-text">winget pin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DisplayCAL"><span class="nav-number">3.2.2.</span> <span class="nav-text">DisplayCAL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Firefox"><span class="nav-number">3.2.3.</span> <span class="nav-text">Mozilla Firefox</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Thunderbird"><span class="nav-number">3.2.4.</span> <span class="nav-text">Mozilla Thunderbird</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StartAllBack"><span class="nav-number">3.2.5.</span> <span class="nav-text">StartAllBack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-1"><span class="nav-number">3.3.</span> <span class="nav-text">Windows 命令行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%A6%81%E7%94%A8-Modern-Standby-%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.3.1.</span> <span class="nav-text">笔记本禁用 Modern Standby 睡眠模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%A5%E9%94%99"><span class="nav-number">3.3.2.</span> <span class="nav-text">WSL-Ubuntu 运行时报错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E5%9C%A8%E5%85%B3%E9%97%AD%E7%BB%88%E7%AB%AF%E5%90%8E%E8%87%AA%E5%8A%A8%E9%80%80%E5%87%BA"><span class="nav-number">3.3.3.</span> <span class="nav-text">WSL-Ubuntu 在关闭终端后自动退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-PyTorch"><span class="nav-number">3.3.4.</span> <span class="nav-text">安装与配置 PyTorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NVIDIA-Docker"><span class="nav-number">3.3.4.1.</span> <span class="nav-text">安装 NVIDIA Docker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-PyTorch"><span class="nav-number">3.3.4.2.</span> <span class="nav-text">安装并配置 PyTorch</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9Ascoop-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.</span> <span class="nav-text">附录：scoop 常用命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA-bucket-%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">对单个 bucket 的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">对单个程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9-scoop-%E6%9C%AC%E4%BD%93%E3%80%81bucket-%E5%92%8C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">对 scoop 本体、bucket 和安装程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">更详尽的说明</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">系统与驱动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop"><span class="nav-number">2.1.</span> <span class="nav-text">包管理器 scoop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget"><span class="nav-number">2.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scoop-%E5%92%8C-winget-%E7%9A%84%E6%97%A5%E5%B8%B8%E6%9B%B4%E6%96%B0%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.3.</span> <span class="nav-text">scoop 和 winget 的日常更新命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-amp-Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.</span> <span class="nav-text">Windows 命令行 &amp; Microsoft Store 应用商店</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">2.3.1.</span> <span class="nav-text">Windows 命令行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.2.</span> <span class="nav-text">Microsoft Store 应用商店</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E9%83%A8%E5%88%86"><span class="nav-number">2.4.1.</span> <span class="nav-text">可执行文件部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E9%83%A8%E5%88%86"><span class="nav-number">2.4.2.</span> <span class="nav-text">压缩包解压部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E7%89%88%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">破解版软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop-%E9%83%A8%E5%88%86"><span class="nav-number">3.1.</span> <span class="nav-text">包管理器 scoop 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#exiftool"><span class="nav-number">3.1.1.</span> <span class="nav-text">exiftool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#frp-nssm"><span class="nav-number">3.1.2.</span> <span class="nav-text">frp-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-nssm"><span class="nav-number">3.1.3.</span> <span class="nav-text">python-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rclone"><span class="nav-number">3.1.4.</span> <span class="nav-text">rclone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#blender-nssm"><span class="nav-number">3.1.5.</span> <span class="nav-text">blender-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quickcpu-registry"><span class="nav-number">3.1.6.</span> <span class="nav-text">quickcpu-registry</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%89%8D%E6%8F%90%E7%9F%A5%E8%AF%86"><span class="nav-number">3.1.6.1.</span> <span class="nav-text">前提知识</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E4%BF%AE%E6%94%B9"><span class="nav-number">3.1.6.2.</span> <span class="nav-text">正式修改</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#winaero-tweaker"><span class="nav-number">3.1.7.</span> <span class="nav-text">winaero-tweaker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget-1"><span class="nav-number">3.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#winget-pin"><span class="nav-number">3.2.1.</span> <span class="nav-text">winget pin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DisplayCAL"><span class="nav-number">3.2.2.</span> <span class="nav-text">DisplayCAL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Google-Chrome"><span class="nav-number">3.2.3.</span> <span class="nav-text">Google Chrome</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Firefox"><span class="nav-number">3.2.4.</span> <span class="nav-text">Mozilla Firefox</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Thunderbird"><span class="nav-number">3.2.5.</span> <span class="nav-text">Mozilla Thunderbird</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StartAllBack"><span class="nav-number">3.2.6.</span> <span class="nav-text">StartAllBack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-1"><span class="nav-number">3.3.</span> <span class="nav-text">Windows 命令行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%A6%81%E7%94%A8-Modern-Standby-%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.3.1.</span> <span class="nav-text">笔记本禁用 Modern Standby 睡眠模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%A5%E9%94%99"><span class="nav-number">3.3.2.</span> <span class="nav-text">WSL-Ubuntu 运行时报错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E5%9C%A8%E5%85%B3%E9%97%AD%E7%BB%88%E7%AB%AF%E5%90%8E%E8%87%AA%E5%8A%A8%E9%80%80%E5%87%BA"><span class="nav-number">3.3.3.</span> <span class="nav-text">WSL-Ubuntu 在关闭终端后自动退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5-Windows-%E5%AE%BF%E4%B8%BB%E6%9C%BA"><span class="nav-number">3.3.4.</span> <span class="nav-text">WSL-Ubuntu 无法连接 Windows 宿主机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-PyTorch"><span class="nav-number">3.3.5.</span> <span class="nav-text">安装与配置 PyTorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NVIDIA-Docker"><span class="nav-number">3.3.5.1.</span> <span class="nav-text">安装 NVIDIA Docker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-PyTorch"><span class="nav-number">3.3.5.2.</span> <span class="nav-text">安装并配置 PyTorch</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9Ascoop-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.</span> <span class="nav-text">附录：scoop 常用命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA-bucket-%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">对单个 bucket 的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">对单个程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9-scoop-%E6%9C%AC%E4%BD%93%E3%80%81bucket-%E5%92%8C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">对 scoop 本体、bucket 和安装程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">更详尽的说明</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
