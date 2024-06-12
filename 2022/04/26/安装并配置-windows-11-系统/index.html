@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2024-05-27T13:40:05.210Z">
+<meta property="article:modified_time" content="2024-06-12T10:59:41.133Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-05-27 14:40:05" itemprop="dateModified" datetime="2024-05-27T14:40:05+01:00">2024-05-27</time>
+                <time title="修改时间：2024-06-12 11:59:41" itemprop="dateModified" datetime="2024-06-12T11:59:41+01:00">2024-06-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,7 +242,7 @@
 </li>
 <li><p>安装完重启进入配置界面，此时选择脱机账户而非微软账户。原因在于这里如果直接使用微软账号，系统内个人文件夹的名字会跟随微软账号的名称，相当容易出问题；同时，微软账户完全可以在进入系统之后再绑上，这时个人文件夹的名称已经确定，不会带来任何可能的负面影响。</p>
 </li>
-<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而使 Windows 11 能够在断网的情况下安装的操作非常麻烦。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#64;&#105;&#x2e;&#105;">&#105;&#64;&#105;&#x2e;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
+<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而使 Windows 11 能够在断网的情况下安装的操作非常麻烦。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#x69;&#x40;&#x69;&#46;&#105;">&#x69;&#x40;&#x69;&#46;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
 </li>
 <li><p>个人文件夹的名字一般习惯直接取 i，不仅自指而且由于不包含中文和空格，以后安装其他程序（例如 nodejs）的时候不会报错，否则会很麻烦。</p>
 </li>
@@ -309,7 +309,7 @@
 <p>先安装基本工具 git，之后添加 scoop（勺子）的官方 bucket（冰淇淋桶），即官方提供的各种软件包列表。个人推荐只添加 extra 和 versions 这两个列表并指安装这两个列表内的程序，因为这两个列表能保证所有通过 scoop 安装的软件的最高清洁度。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scoop install git</span><br><span class="line">scoop bucket add extras</span><br><span class="line">scoop bucket add versions</span><br></pre></td></tr></table></figure>
 <p>安装 CLI 程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git adb argyllcms aria2 cacert cmake cuda curl cwrsync cygwin dark exiftool fastfetch ffmpeg frp go gpg gsudo innounp iperf3 lux mambaforge nodejs nssm pandoc phantomjs python311 r rhash rclone tdm-gcc telnet vim vivetool winget yt-dlp   </span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git adb argyllcms aria2 cacert cmake cuda curl cwrsync cygwin dark exiftool fastfetch ffmpeg frp go gpg gsudo innounp iperf3 lux mambaforge nodejs nssm pandoc phantomjs python311 r rhash rclone tdm-gcc telnet vim winget yt-dlp   </span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -323,7 +323,7 @@
 </tr>
 <tr>
 <td>aria2</td>
-<td></td>
+<td>多线程可断点续传，<code>scoop config aria2-warning-enabled false</code> 关闭终端提示</td>
 </tr>
 <tr>
 <td>——————</td>
@@ -371,7 +371,7 @@
 </tr>
 <tr>
 <td>fastfetch</td>
-<td>推荐预设 <code>paleofetch.jsonc</code></td>
+<td>推荐仓库内的预设 <code>/presets/paleofetch.jsonc</code></td>
 </tr>
 <tr>
 <td>ffmpeg</td>
@@ -454,10 +454,6 @@
 <td></td>
 </tr>
 <tr>
-<td>vivetool</td>
-<td>备用，用于打开某些 Windows 默认关闭的功能</td>
-</tr>
-<tr>
 <td>winget</td>
 <td>与其使用系统内自带的无法自我更新的 winget，不如直接交给 scoop 来安装</td>
 </tr>
@@ -466,7 +462,7 @@
 <td>原 youtube-dl 已停止更新，yt-dlp 为其派生（fork）</td>
 </tr>
 </tbody></table>
-<p>ssh git 的时候端口可能报错，虽然开 TUN 模式可以绕过，但一般还是推荐指定 443 端口连接。</p>
+<p>如果用 ssh 连接 git 的时候（<code>ssh -T git@github.com</code>）出现端口报错，虽然开 TUN 模式可以绕过，但一般还是推荐指定 443 端口连接。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim ~\.ssh\config</span><br><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line">    Hostname ssh.github.com</span><br><span class="line">    Poert 443</span><br></pre></td></tr></table></figure>
 <p>git 修改代理、检查代理以及取消代理：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http:&#x2F;&#x2F;127.0.0.1:2080</span><br><span class="line">git config --global https.proxy https:&#x2F;&#x2F;127.0.0.1:2080</span><br><span class="line"></span><br><span class="line">git config --global --get http.proxy</span><br><span class="line"></span><br><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
@@ -487,7 +483,7 @@
 <p>由于所有 conda/mamba 包全都是直接属于 MambaForge 版本内的，因此为了不造成混乱，不推荐使用 <code>conda update conda</code> 来更新。只需要等 MambaForge 大版本更新即可。</p>
 <p>MambaForge persist 的只有 env 文件夹，因此 base 环境是不会保存的。</p>
 <p>安装 GUI 程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher capture2text calibre cheat-engine eac hourglass locale-emulator makemkv megasync moonlight motrix mpc-hc-fork obs-studio screentogif sumatrapdf aida64extreme capframex crystaldiskinfo crystaldiskmark cpu-z ddu dismplusplus everything fancontrol fiddler furmark geekuninstaller gpu-z hwinfo nekoray ocat quickcpu rainmeter rufus spacesniffer twinkle-tray wingetui wox-beta github mobaxterm rstudio termius texstudio vscode</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher capture2text calibre cheat-engine eac hourglass locale-emulator makemkv megasync moonlight mpc-hc-fork obs-studio screentogif sumatrapdf capframex crystaldiskinfo crystaldiskmark cpu-z ddu dismplusplus everything fancontrol fiddler furmark geekuninstaller gpu-z hwinfo nekoray ocat quickcpu rainmeter rufus spacesniffer twinkle-tray wingetui wox-beta github mobaxterm rstudio termius texstudio vscode</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 GUI 程序。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install madvr winaero-tweaker</span><br></pre></td></tr></table></figure>
 <table>
@@ -550,10 +546,6 @@
 <td>串流工具，配合 NVIDIA GeForce Expreience</td>
 </tr>
 <tr>
-<td>motrix</td>
-<td></td>
-</tr>
-<tr>
 <td>mpc-hc-fork</td>
 <td>管理员模式关联格式，需要启动两遍</td>
 </tr>
@@ -572,10 +564,6 @@
 <tr>
 <td>——————</td>
 <td></td>
-</tr>
-<tr>
-<td>aida64extreme</td>
-<td>序列号可参考 <a target="_blank" rel="noopener" href="https://webcache.googleusercontent.com/search?q=cache:8BEEDLyHjLUJ:https://gist.github.com/bygalacos/d147c5fd8aa296f3d1e240b1dbd04af4?permalink_comment_id=4530396&hl=en&gl=hk">bygalacos/Aida64_Key.txt</a></td>
 </tr>
 <tr>
 <td>capframex</td>
@@ -687,7 +675,7 @@
 </tr>
 <tr>
 <td>termius</td>
-<td></td>
+<td>有学生教育优惠所以好使</td>
 </tr>
 <tr>
 <td>texstudio</td>
@@ -725,7 +713,7 @@
 <h4 id="设置代理与程序安装-1"><a href="#设置代理与程序安装-1" class="headerlink" title="设置代理与程序安装"></a>设置代理与程序安装</h4><p>winget 会自动调用系统的代理设置，在 v2ray 内配置即可。</p>
 <p>由于 winget 一行命令只能安装一个程序，winget 的安装命令会较长。</p>
 <p>安装无 GUI 的 Windows 内必要组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">winget install Microsoft.WindowsAppRuntime.1.4</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.6</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.7</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.8</span><br><span class="line">winget install Microsoft.DotNet.Framework.DeveloperPack_4</span><br><span class="line">winget install Microsoft.VCRedist.2005.x86</span><br><span class="line">winget install Microsoft.VCRedist.2005.x64</span><br><span class="line">winget install Microsoft.VCRedist.2008.x86</span><br><span class="line">winget install Microsoft.VCRedist.2008.x64</span><br><span class="line">winget install Microsoft.VCRedist.2010.x86</span><br><span class="line">winget install Microsoft.VCRedist.2010.x64</span><br><span class="line">winget install Microsoft.VCRedist.2012.x86</span><br><span class="line">winget install Microsoft.VCRedist.2012.x64</span><br><span class="line">winget install Microsoft.VCRedist.2013.x86</span><br><span class="line">winget install Microsoft.VCRedist.2013.x64</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x86</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x64</span><br><span class="line">winget install -i Microsoft.VisualStudio.2022.BuildTools</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">winget install Microsoft.WindowsAppRuntime.1.4</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.6</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.7</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.8</span><br><span class="line">winget install Microsoft.DotNet.Framework.DeveloperPack_4</span><br><span class="line">winget install Microsoft.VCRedist.2005.x86</span><br><span class="line">winget install Microsoft.VCRedist.2005.x64</span><br><span class="line">winget install Microsoft.VCRedist.2008.x86</span><br><span class="line">winget install Microsoft.VCRedist.2008.x64</span><br><span class="line">winget install Microsoft.VCRedist.2010.x86</span><br><span class="line">winget install Microsoft.VCRedist.2010.x64</span><br><span class="line">winget install Microsoft.VCRedist.2012.x86</span><br><span class="line">winget install Microsoft.VCRedist.2012.x64</span><br><span class="line">winget install Microsoft.VCRedist.2013.x86</span><br><span class="line">winget install Microsoft.VCRedist.2013.x64</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x86</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x64</span><br><span class="line">winget install -i Microsoft.DirectX</span><br><span class="line">winget install -i Microsoft.VisualStudio.2022.BuildTools</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -750,13 +738,16 @@
 <td>不推荐只装 x64 的，否则无论更新还是使用的时候都会很麻烦。以及最新版本都整合在 2015+ 内</td>
 </tr>
 <tr>
+<td>DirectX 9</td>
+<td>Windows 10/11 预装了 DirectX 12，但未包含部分旧版 DirectX 9 的库文件，以及安装过程有附带软件需要手动处理</td>
+</tr>
+<tr>
 <td>VisualStudio BuildTools</td>
 <td>最好先安装 cuda 再安装 VS 2022，安装时需要指定 <code>-i</code> 参数调出可交互界面，只需选择 C++ 桌面开发</td>
 </tr>
 </tbody></table>
-<p>Windows 10/11 预装了 DirectX 12，不过其并未包含一些旧版本 DirectX 的库文件。如果需要安装旧版 DirectX 9 可以去<a target="_blank" rel="noopener" href="https://download.microsoft.com/download/1/7/1/1718CCC4-6315-4D8E-9543-8E28A4E18C4C/dxwebsetup.exe">微软官网</a>手动下载安装。</p>
 <p>安装 GUI 程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">winget install -i Bandisoft.Bandizip</span><br><span class="line">winget install -i ByteDance.JianyingPro</span><br><span class="line">winget install -i ByteDance.CapCut</span><br><span class="line">winget install -i Discord.Discord</span><br><span class="line">winget install -i FlorianHoech.DisplayCAL</span><br><span class="line">winget install -i PeterPawlowski.foobar2000</span><br><span class="line">winget install -i PeterPawlowski.foobar2000.EncoderPack</span><br><span class="line">winget install -i Google.Chrome</span><br><span class="line">winget install -i Tonec.InternetDownloadManager</span><br><span class="line">winget install -i Nevcairiel.LAVFilters</span><br><span class="line">winget install -i TheDocumentFoundation.LibreOffice</span><br><span class="line">winget install -i Logitech.OptionsPlus</span><br><span class="line">winget install -i MacType.MacType</span><br><span class="line">winget install -i Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget install -i Mozilla.Firefox</span><br><span class="line">winget install -i Guru3D.Afterburner</span><br><span class="line">winget install -i Notion.Notion</span><br><span class="line">winget install -i Nvidia.GeForceExperience</span><br><span class="line">winget install -i Daum.PotPlayer</span><br><span class="line">winget install -i Microsoft.PowerShell</span><br><span class="line">winget install -i Microsoft.PowerToys</span><br><span class="line">winget install -i Sandboxie.Plus</span><br><span class="line">winget install -i Guru3D.RTSS</span><br><span class="line">winget install -i Spotify.Spotify</span><br><span class="line">winget install -i StartIsBack.StartAllBack</span><br><span class="line">winget install -i Valve.Steam</span><br><span class="line">winget install -i tailscale.tailscale</span><br><span class="line">winget install -i Telegram.TelegramDesktop</span><br><span class="line">winget install -i Tencent.TencentMeeting</span><br><span class="line">winget install -i Tencent.TIM</span><br><span class="line">winget install -i Tencent.WeChat</span><br><span class="line">winget install -i VirtualDesktop.Streamer</span><br><span class="line">winget install -i VivaldiTechnologies.Vivaldi</span><br><span class="line">winget install -i ZeroTier.ZeroTierOne</span><br><span class="line">winget install -i Sogou.SogouInput</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">winget install -i FinalWire.AIDA64.Extreme -v 7.20</span><br><span class="line">winget install -i Bandisoft.Bandizip</span><br><span class="line">winget install -i NirSoft.BlueScreenView</span><br><span class="line">winget install -i BlueStack.BlueStacks</span><br><span class="line">winget install -i ByteDance.JianyingPro</span><br><span class="line">winget install -i ByteDance.CapCut</span><br><span class="line">winget install -i Discord.Discord</span><br><span class="line">winget install -i FlorianHoech.DisplayCAL</span><br><span class="line">winget install -i PeterPawlowski.foobar2000</span><br><span class="line">winget install -i PeterPawlowski.foobar2000.EncoderPack</span><br><span class="line">winget install -i Google.Chrome</span><br><span class="line">winget install -i Tonec.InternetDownloadManager</span><br><span class="line">winget install -i Nevcairiel.LAVFilters</span><br><span class="line">winget install -i Logitech.OptionsPlus</span><br><span class="line">winget install -i MacType.MacType</span><br><span class="line">winget install -i Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget install -i Mozilla.Firefox</span><br><span class="line">winget install -i Notion.Notion</span><br><span class="line">winget install -i Nvidia.GeForceExperience</span><br><span class="line">winget install -i Daum.PotPlayer</span><br><span class="line">winget install -i Microsoft.PowerShell</span><br><span class="line">winget install -i Microsoft.PowerToys</span><br><span class="line">winget install -i Sandboxie.Plus</span><br><span class="line">winget install -i Guru3D.RTSS</span><br><span class="line">winget install -i Spotify.Spotify</span><br><span class="line">winget install -i StartIsBack.StartAllBack</span><br><span class="line">winget install -i Valve.Steam</span><br><span class="line">winget install -i tailscale.tailscale</span><br><span class="line">winget install -i Telegram.TelegramDesktop</span><br><span class="line">winget install -i Tencent.TencentMeeting</span><br><span class="line">winget install -i Tencent.TIM</span><br><span class="line">winget install -i Tencent.WeChat</span><br><span class="line">winget install -i VirtualDesktop.Streamer</span><br><span class="line">winget install -i VivaldiTechnologies.Vivaldi</span><br><span class="line">winget install -i ZeroTier.ZeroTierOne</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -765,8 +756,20 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>aida64extreme</td>
+<td>与其 scoop hold 不如 winget pin 以阻止更新。7.20.6802 序列号：<code>FKBN4-F3WD6-X7DJS-JD8EY-5R6H4</code></td>
+</tr>
+<tr>
 <td>Bandizip</td>
 <td></td>
+</tr>
+<tr>
+<td>BlueScreenView</td>
+<td>可以查看蓝屏的具体 dump 文件内容，windows 系统有默认打开系统失败的小内存转储（256 KB），存储在 <code>%SystemRoot%\Minidump\</code></td>
+</tr>
+<tr>
+<td>BlueStacks</td>
+<td>默认下载的版本为 Android 11，<a target="_blank" rel="noopener" href="https://support.bluestacks.com/hc/en-us/articles/4415238471053-System-requirements-for-BlueStacks-5-on-Hyper-V-enabled-Windows-10-and-11">5.20 版本起（2023.12）已经支持在开启了 Hyper-V 的系统内运行</a>，以及不仅是模拟器，也是虚拟定位</td>
 </tr>
 <tr>
 <td>Capcut/JianyingPro</td>
@@ -801,12 +804,8 @@
 <td>配合 PotPlayer 使用</td>
 </tr>
 <tr>
-<td>LibreOffice</td>
-<td>备用</td>
-</tr>
-<tr>
 <td>Logi Options+</td>
-<td></td>
+<td>和 Master 2S 配合使用</td>
 </tr>
 <tr>
 <td>MacType</td>
@@ -821,16 +820,12 @@
 <td>Firefox 没问题，但是 Thunderbird 最新的 115 版本过于糟糕，需要手动安装 102 版本</td>
 </tr>
 <tr>
-<td>MSI Afterburner</td>
-<td>scoop 安装的版本会因为 VC2008 的问题提示“并行配置不正确”</td>
-</tr>
-<tr>
 <td>Notion</td>
 <td></td>
 </tr>
 <tr>
 <td>NVIDIA GeForce Experience</td>
-<td>单纯需要 NVIDIA 驱动的话可以不装，但是 Moonlight 串流需要</td>
+<td>更新 NVIDIA 驱动同时 Moonlight 串流需要</td>
 </tr>
 <tr>
 <td>RTSS</td>
@@ -874,7 +869,7 @@
 </tr>
 <tr>
 <td>TencentMeeting</td>
-<td></td>
+<td>开始菜单程序栏内快捷方式多余，需要删除一个</td>
 </tr>
 <tr>
 <td>TIM</td>
@@ -902,10 +897,14 @@
 </tr>
 </tbody></table>
 <h4 id="scoop-和-winget-的日常更新命令"><a href="#scoop-和-winget-的日常更新命令" class="headerlink" title="scoop 和 winget 的日常更新命令"></a>scoop 和 winget 的日常更新命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update * &amp;&amp; winget upgrade -i -r -u --verbose</span><br></pre></td></tr></table></figure>
-<h3 id="Windows-命令行-amp-Microsoft-Store-应用商店"><a href="#Windows-命令行-amp-Microsoft-Store-应用商店" class="headerlink" title="Windows 命令行 &amp; Microsoft Store 应用商店"></a>Windows 命令行 &amp; Microsoft Store 应用商店</h3><h4 id="Windows-命令行"><a href="#Windows-命令行" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h4><p>由于 WSL1 不依赖 Hyper-V，而 WSL2 依赖，因此在系统功能中打开 Hyper-V 后，再安装 wsl2 的 Ubuntu 更为合适。</p>
+<h3 id="Windows-命令行-amp-Microsoft-Store-应用商店"><a href="#Windows-命令行-amp-Microsoft-Store-应用商店" class="headerlink" title="Windows 命令行 &amp; Microsoft Store 应用商店"></a>Windows 命令行 &amp; Microsoft Store 应用商店</h3><h4 id="Windows-命令行"><a href="#Windows-命令行" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h4><p>目前在 Windows 内使用 Linux 通常使用的是 wsl2，首先需要打开 Windows 功能内的 Hyper-V 和虚拟机平台（Virtual Machine Platform）。如果系统内没有 Hyper-V 则只需要打开虚拟机平台。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
 <p>注意事项：</p>
 <ul>
+<li><p>wsl2 依赖于 Windows 功能内的虚拟机平台（Virtual Machine Platform）。这个功能是 Hyper-V 的一个子集，但在 Windows 功能列表内是和 Hyper-V 并列出现的。因此使用 wsl2 时可以不打开 Hyper-V，只需要保证虚拟机平台已经开启即可。不过通常还是全部打开。</p>
+</li>
+<li><p>Windows 家庭版的 Windows 功能一栏内是没有 Hyper-V 的，不过由于前述，同样是可以使用 wsl2 的。参考来源：<a target="_blank" rel="noopener" href="https://github.com/MicrosoftDocs/WSL/issues/899">Is Hyper-V necessary or not for WSL2? Can it be activated on Windows 10 Home? #899</a></p>
+</li>
 <li><p>Windows 10 和 11 使用 <code>wsl --install</code> 安装的其实就是 Microsoft Store 应用商店中 Windows Subsystem for Linux。</p>
 </li>
 <li><p>此时 Windows 功能中的“适用于 Linux 的 Windows 子系统”始终是未勾选状态的，这完全没有问题也并不需要手动勾起这个选项。参考来源：<a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/commandline/a-preview-of-wsl-in-the-microsoft-store-is-now-available/">A preview of WSL in the Microsoft Store is now available!</a>。</p>
@@ -937,6 +936,10 @@
 <td></td>
 </tr>
 <tr>
+<td>Dynamic Theme</td>
+<td>动态主题，用于接管 Windows 聚焦</td>
+</tr>
+<tr>
 <td>Battery Percentage Icon</td>
 <td>笔记本在 Windows 中无法直接在任务栏中显示电量百分比，故使用插件</td>
 </tr>
@@ -958,10 +961,6 @@
 <tr>
 <td>ATK V HUB</td>
 <td>VGN 键盘驱动软件</td>
-</tr>
-<tr>
-<td>Bluestacks 5</td>
-<td>与其用于跑游戏，不如更用来改虚拟定位</td>
 </tr>
 <tr>
 <td>Corsair Link 4</td>
@@ -1004,20 +1003,12 @@
 <td>多终端的数据同步工作就交给群晖了</td>
 </tr>
 <tr>
-<td>Tencent Meeting</td>
-<td>开始菜单程序栏内快捷方式多余，需要删除一个</td>
-</tr>
-<tr>
 <td>Mozilla Thunderbird</td>
 <td>手动安装 102 版本并阻止其进行更新，如果是从 115 版本降级则可参考<a target="_blank" rel="noopener" href="https://www.reddit.com/r/Thunderbird/comments/16jwt7a/%E2%84%B9_how_to_downgrade_from_thunderbird_115_to_102/">本帖</a></td>
 </tr>
 <tr>
 <td>texlive</td>
 <td>管理员模式安装完整版 TeX 到 <code>C:\Program Files\texlive</code>，TeXworks 可以不装</td>
-</tr>
-<tr>
-<td>VMware Workstation</td>
-<td>密钥：<code>MC60H-DWHD5-H80U9-6V85M-8280D</code></td>
 </tr>
 <tr>
 <td>百度云管家</td>
@@ -1059,6 +1050,10 @@
 <td>ProQuest 的书籍需要通过这个打开</td>
 </tr>
 <tr>
+<td>Brother Suite</td>
+<td>DCP-7180DN 的打印机驱动</td>
+</tr>
+<tr>
 <td>EarMaster Pro 7</td>
 <td>以前购买的正版序列号：<code>71009-40B97-TXMKA</code></td>
 </tr>
@@ -1077,6 +1072,10 @@
 <tr>
 <td>WPS Office</td>
 <td>Microsoft Office 糟糕的 UI 绘制策略使得其运行速度缓慢，相较之下 WPS Office 的处理速度要快不少，但要注意其修改默认程序</td>
+</tr>
+<tr>
+<td>VMware Workstation</td>
+<td>密钥：<code>MC60H-DWHD5-H80U9-6V85M-8280D</code></td>
 </tr>
 <tr>
 <td>ThunderMaster</td>
@@ -1138,6 +1137,10 @@
 <td>用于生成订阅链接</td>
 </tr>
 <tr>
+<td>zentimings</td>
+<td>AMD 平台查看内存信息</td>
+</tr>
+<tr>
 <td>鲁大师 5.21</td>
 <td></td>
 </tr>
@@ -1146,7 +1149,7 @@
 <td></td>
 </tr>
 <tr>
-<td>图吧工具箱 2023</td>
+<td>图吧工具箱 202405</td>
 <td></td>
 </tr>
 <tr>
@@ -1210,7 +1213,7 @@
 </tr>
 <tr>
 <td>DiskGenius</td>
-<td>单文件版</td>
+<td>单文件版，但是不稳定，不推荐用</td>
 </tr>
 <tr>
 <td>Duplicate Cleaner Pro</td>
@@ -1256,9 +1259,245 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nssm.exe set render AppParameters &#39;-b &quot;D:\3DCG\test-project.blend&quot; -o &quot;D:\test-####&quot; -E CYCLES -x 1 -F PNG -f 1230 -- --cycles-device OPTIX&#39;</span><br></pre></td></tr></table></figure>
 <p>获取当前设定的渲染参数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nssm.exe get render AppParameters</span><br></pre></td></tr></table></figure>
-<h4 id="quickcpu-registry"><a href="#quickcpu-registry" class="headerlink" title="quickcpu-registry"></a>quickcpu-registry</h4><p>对于台式机 + 13 代 CPU 的大小核架构，要调整到完全发挥性能是一件比较头疼的事情。</p>
+<h4 id="quickcpu"><a href="#quickcpu" class="headerlink" title="quickcpu"></a>quickcpu</h4><p>无论是 Intel 平台还是 AMD 平台，在使用 Windows 11 的时候一律使用平衡+更长的电池使用时间（系统-电源-最佳能效）即可。</p>
+<h5 id="Intel-平台"><a href="#Intel-平台" class="headerlink" title="Intel 平台"></a>Intel 平台</h5><p>从平衡+最大性能叠加（系统-电源-最佳性能）起，Intel SpeedStep（EIST）会逐渐不生效。以 P5.1+E3.9 的 i5-12600KF 在待机状态下为例：</p>
+<ul>
+<li><p>平衡+更长的电池使用时间（系统-电源-最佳能效）：核心频率均低于 1GHz，功耗在 9W 左右</p>
+</li>
+<li><p>平衡+最大性能叠加（系统-电源-最佳性能）：核心频率极少低于 1GHz，大部分时间保持为 5.1GHz+3.9GHz，功耗在 25W 左右</p>
+</li>
+<li><p>高性能及以上：核心频率持续保持为 5.1GHz+3.9GHz，功耗在 28W 左右</p>
+</li>
+</ul>
+<p>而这些电源模式在满载的时候的表现都是完全相同的，所以完全没有必要启用更高的电源计划。</p>
+<h5 id="AMD-平台"><a href="#AMD-平台" class="headerlink" title="AMD 平台"></a>AMD 平台</h5><p>电源计划上和 Intel 平台的表现大致相同，因此没有必要启用更高的电源计划，但是需要修改电源策略。</p>
+<ul>
+<li><p>AMD 平台上由于只有在早年农企时代有和 Intel SpeedStep（EIST）类似的 Cool’n’Quiet，最新的锐龙处理器都支持，从而即使打开了平衡+最大性能叠加（系统-电源-最佳性能），所有核心依旧会保持至少 3GHz 的高频率，从而在待机时相比于 Intel 平台会更耗电。</p>
+</li>
+<li><p>最新的 Windows 10/11 会将 AMD 的全大核按照 cppc v2 规范所描述的核心特性优先级（体质）进行排序，然后将位于末尾的核心视为小核，进行强行大小核的调度。具体而言，单 CCD 的八大核 CPU 会被视为 7P+1E。双 CCD 的十六核 CPU 的具体调度尚未确定。</p>
+</li>
+<li><p>与之相关联的有两个电源策略：“异类线程调度策略”（93b8b6dc-0698-4d1c-9ee4-0644e900c85d）和“异类短运行线程调度策略”（bae08b81-2d5e-4688-ad6a-13243356654b）。</p>
+<ul>
+<li><p>异类线程调度策略：决定了异构调度中，重要线程该使用哪种核心。</p>
+</li>
+<li><p>异类短运行线程调度策略：决定了异构调度中，重要线程但运行时间短该使用哪种核心。</p>
+</li>
+</ul>
+</li>
+<li><p>两个策略都有六个选项，其选项的具体含义如下：</p>
+<ul>
+<li><p><code>所有处理器 / All (0)</code>：所有核心可用。</p>
+</li>
+<li><p><code>高性能处理器 / Large (1)</code>：只有大核可用。</p>
+</li>
+<li><p><code>首选高性能处理器 / LargeOrIdle (2)</code>：大核或者闲置核心可用。</p>
+</li>
+<li><p><code>高效处理器 / Small (3)</code>：小核可用。</p>
+</li>
+<li><p><code>首选高效处理器 / SmallOrIdle (4)</code>：小核或者闲置核心可用。</p>
+</li>
+<li><p><code>自动 / Dynamic (5)</code>：根据优先级或者其他数据来决定。</p>
+</li>
+</ul>
+</li>
+<li><p>Windows 内的默认值与其问题：</p>
+<ul>
+<li><p>异类线程调度策略：默认为<code>自动 / Dynamic (5)</code>。体质稍弱的大核会一直闲置，而基于其本身为实实在在的大核而非小核，我们希望它参与计算。</p>
+</li>
+<li><p>异类短运行线程调度策略：默认为<code>首选高性能处理器 / LargeOrIdle (2)</code>。短运行线程会被优先分配到体质更好的大核上，没有问题。</p>
+</li>
+</ul>
+</li>
+<li><p>比较好的处理方式是：</p>
+<ul>
+<li><p>异类线程调度策略：从<code>自动 (5)</code>调整为<code>所有处理器 (0)</code>。这样体质稍弱的大核也会参与计算。</p>
+</li>
+<li><p>异类短运行线程调度策略：保持<code>首选高性能处理器 / LargeOrIdle (2)</code>。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="winaero-tweaker"><a href="#winaero-tweaker" class="headerlink" title="winaero-tweaker"></a>winaero-tweaker</h4><p>这款程序能修改 Windows 的地方实在太多太多了，自己常用的几项如下：</p>
+<ul>
+<li><p>Context Menu-File Hash Menu</p>
+</li>
+<li><p>Context Menu-Take Ownership</p>
+</li>
+<li><p>Context Menu-View Owner</p>
+</li>
+<li><p>File Explorer-Customize This PC Folders-Restore Windows 10 Folders</p>
+</li>
+<li><p>File Explorer-File Explorer Starting Folder-This PC</p>
+</li>
+</ul>
+<p>注：打开 Windows 11-Disable Bakcground Apps 会使更换锁屏壁纸的 Windows 聚焦无法正常使用。</p>
+<h3 id="包管理器-winget-1"><a href="#包管理器-winget-1" class="headerlink" title="包管理器 winget"></a>包管理器 winget</h3><h4 id="winget-pin"><a href="#winget-pin" class="headerlink" title="winget pin"></a>winget pin</h4><p>由于 winget 内的版本错误以及阻止 winget 对软件自动更新，为以下软件添加 winget pin。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">winget pin add Adobe.Acrobat.Reader.64-bit</span><br><span class="line">winget pin add Mozilla.Firefox</span><br><span class="line">winget pin add Google.Chrome</span><br><span class="line">winget pin add Microsoft.Edge</span><br><span class="line">winget pin add Mozilla.Thunderbird</span><br><span class="line">winget pin add Telegram.TelegramDesktop</span><br><span class="line">winget pin add Microsoft.PowerToys</span><br><span class="line">winget pin add Discord.Discord</span><br><span class="line">winget pin add Tonec.InternetDownloadManager</span><br><span class="line">winget pin add Logitech.OptionsPlus</span><br><span class="line">winget pin add Tencent.TencentMeeting</span><br><span class="line">winget pin add Tencent.TIM</span><br><span class="line">winget pin add Tencent.WeChat</span><br><span class="line">winget pin add Ubisoft.Connect</span><br><span class="line">winget pin add Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget pin add Microsoft.AppInstaller</span><br><span class="line">winget pin add FinalWire.AIDA64.Extreme</span><br><span class="line">winget pin add ByteDance.JianyingPro</span><br><span class="line">winget pin add ByteDance.CapCut</span><br><span class="line">winget pin add NirSoft.BlueScreenView</span><br></pre></td></tr></table></figure>
+<h4 id="DisplayCAL"><a href="#DisplayCAL" class="headerlink" title="DisplayCAL"></a>DisplayCAL</h4><p>由于 DisplayCAL 自 2019 年末的 v3.8.9.3 起已停止更新，其自动下载的 argyllcms 也一直是旧的 v2.3.1。</p>
+<ul>
+<li><p>如果先通过 scoop 安装 argyllcms，则在使用 winget 安装 DisplayCAL 时会自动调用 scoop 所安装的最新版的 argyllcms。</p>
+</li>
+<li><p>如果 argyllcms 的安装在 DisplayCAL 之后，则需要为其手动指定 argyllcms 路径：点击文件-定位 ArgyllCMS 可执行文件，选择 <code>C:\Users\i\scoop\apps\argyllcms\current\bin</code> 路径即可。</p>
+</li>
+</ul>
+<p>不过在一些笔记本上最新版本的 argyllcms 会出现异常报错，此时将最新版本的 argyllcms 卸载后使用 DisplayCAL 自动下载的 v2.3.1 老版本即可正常运行校色。</p>
+<h4 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h4><ul>
+<li><p>Chrome 的个人配置文件全部储存在 <code>%LocalAppData%\Google\Chrome\User Data</code> 文件夹内。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。</p>
+</li>
+<li><p>账号是需要重新登陆的，不过扩展程序和其配置都会被保留。</p>
+</li>
+</ul>
+<h4 id="Mozilla-Firefox"><a href="#Mozilla-Firefox" class="headerlink" title="Mozilla Firefox"></a>Mozilla Firefox</h4><ul>
+<li><p>Firefox 的个人配置文件全部储存在 <code>%AppData%\Mozilla\Firefox\Profiles\arufwjt6.default-release</code> 文件夹内，其中 <code>arufwjt6</code> 部分为每位用户特有的八位辨识码。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。注意别删除末尾不带 <code>-release</code> 的文件夹，以及最好清空放入而不是删除随后放入重命名后的文件夹，至少这样的一定不会报错的。</p>
+</li>
+<li><p>颜色管理：</p>
+<ul>
+<li><p>打开 <code>about:config</code>，搜索框内搜索 <code>color_management</code>。</p>
+</li>
+<li><p>将 <code>gfx.color_management.mode</code> 的值从 <code>2</code> 调整为 <code>1</code>，这样没有嵌入 tag 的图片也能按 sRGB 正常显示。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Mozilla-Thunderbird"><a href="#Mozilla-Thunderbird" class="headerlink" title="Mozilla Thunderbird"></a>Mozilla Thunderbird</h4><p>Thunderbird 和 Firefox 的逻辑完全一致，个人配置文件同样全部储存在 <code>%AppData%\Thunderbird\Profiles\iriktu0w.default-release</code> 文件夹内。恢复时的操作也都一致。</p>
+<h4 id="StartAllBack"><a href="#StartAllBack" class="headerlink" title="StartAllBack"></a>StartAllBack</h4><p>修改如下：</p>
+<ul>
+<li><p>“开始”菜单-启用</p>
+</li>
+<li><p>“开始”菜单-使用大图标-大</p>
+</li>
+<li><p>“开始”菜单-覆盖项目排序-无偏好</p>
+</li>
+<li><p>资源管理器-使用 Win10 Ribbon UI</p>
+</li>
+</ul>
+<h3 id="Windows-命令行-1"><a href="#Windows-命令行-1" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h3><h4 id="修改-Windows-默认动态端口"><a href="#修改-Windows-默认动态端口" class="headerlink" title="修改 Windows 默认动态端口"></a>修改 Windows 默认动态端口</h4><p>目前安装的 Windows（2024.06）还在使用旧版的动态端口 <code>1025-20000</code>，因此会造成开机时 nekoray 提示 2080 端口被占用。此时推荐根据<a target="_blank" rel="noopener" href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">新的 IANA 标准</a>需要手动修改 Windows 内的动态端口为 <code>49152-65535</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i&gt; sudo netsh int ipv4 set dynamicport tcp start&#x3D;49152 num&#x3D;16384</span><br><span class="line">Ok.</span><br><span class="line"></span><br><span class="line">PS C:\Users\i&gt; netsh int ipv4 show dynamicport tcp</span><br><span class="line"></span><br><span class="line">Protocol tcp Dynamic Port Range</span><br><span class="line">---------------------------------</span><br><span class="line">Start Port      : 49152</span><br><span class="line">Number of Ports : 16384</span><br></pre></td></tr></table></figure>
+<h4 id="笔记本禁用-Modern-Standby-睡眠模式"><a href="#笔记本禁用-Modern-Standby-睡眠模式" class="headerlink" title="笔记本禁用 Modern Standby 睡眠模式"></a>笔记本禁用 Modern Standby 睡眠模式</h4><p>使用 <code>powercfg /a</code> 可以检查当前电脑的睡眠模式。</p>
+<p>对于笔记本而言，存在一种由微软在 2018 年推出的名为 Modern Standby (S0ix) 的睡眠模式。这种睡眠模式在 <code>powercfg /a</code> 的名称为 “待机（S0 低电量待机）连接的网络”，原本是想模拟出类似手机锁屏但仍然可以接收消息的状态，但实际实现则非常非常糟糕，特别体现在合盖进入这种“睡眠”之后依旧有非常高的发热，耗电就不用说了，更要命的是很容易损伤屏幕等设备，从包里拿出机器都烫手得要命，要是更严重的情况下只能说后果不堪设想。</p>
+<p>通常使用下面这行命令禁用 Modern Standby 睡眠模式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo reg add HKLM\System\CurrentControlSet\Control\Power &#x2F;v PlatformAoAcOverride &#x2F;t REG_DWORD &#x2F;d 0 </span><br></pre></td></tr></table></figure>
+<p>如果需要恢复，则使用以下命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo reg delete HKLM\System\CurrentControlSet\Control\Power &#x2F;v PlatformAoAcOverride</span><br></pre></td></tr></table></figure>
+<h4 id="WSL-Ubuntu-运行时报错"><a href="#WSL-Ubuntu-运行时报错" class="headerlink" title="WSL-Ubuntu 运行时报错"></a>WSL-Ubuntu 运行时报错</h4><p>安装完成的 Ubuntu 运行时有可能出现类似以下的报错：</p>
+<ul>
+<li><p><code>libcuda.so.1 is not a symbolic link</code></p>
+</li>
+<li><p><code>&lt;3&gt;WSL (11) ERROR: UtilTranslatePathList:2671: Failed to translate</code></p>
+</li>
+</ul>
+<p>第一个错误通常执行以下命令以排除报错。参考自 <a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/5548">#5548</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;[interop]\nappendWindowsPath &#x3D; false&quot; | sudo tee -a &#x2F;etc&#x2F;wsl.conf</span><br><span class="line">sudo mkdir &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2</span><br><span class="line">sudo ln -s &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib&#x2F;* &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2</span><br><span class="line">echo &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2 | sudo tee &#x2F;etc&#x2F;ld.so.conf.d&#x2F;ld.wsl.conf</span><br></pre></td></tr></table></figure>
+<p>第二个错误通常较少发生，以下命令为应急措施。参考自 <a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/9360">#9360</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;[interop]\nappendWindowsPath &#x3D; false&quot; | sudo tee -a &#x2F;etc&#x2F;wsl.conf</span><br></pre></td></tr></table></figure>
+<h4 id="WSL-Ubuntu-在关闭终端后自动退出"><a href="#WSL-Ubuntu-在关闭终端后自动退出" class="headerlink" title="WSL-Ubuntu 在关闭终端后自动退出"></a>WSL-Ubuntu 在关闭终端后自动退出</h4><p>可以在 Windows 主机上运行以下代码使 WSL-Ubuntu 持续在后台运行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl screen</span><br></pre></td></tr></table></figure>
+<h4 id="WSL-Ubuntu-无法连接-Windows-宿主机"><a href="#WSL-Ubuntu-无法连接-Windows-宿主机" class="headerlink" title="WSL-Ubuntu 无法连接 Windows 宿主机"></a>WSL-Ubuntu 无法连接 Windows 宿主机</h4><ul>
+<li><p>防火墙的问题。通常将当前网络从公有转为私有即可。</p>
+</li>
+<li><p>以及要非常谨慎任何重置网络配置的操作。很有可能出现重置之后有些项目就非常再难以添加，从而无法回到重置之前，导致 WSL-Ubuntu 既连不上 Windows 宿主机也连不上外网。</p>
+</li>
+</ul>
+<h4 id="安装与配置-PyTorch"><a href="#安装与配置-PyTorch" class="headerlink" title="安装与配置 PyTorch"></a>安装与配置 PyTorch</h4><p>由于在 Windows 内已经安装好 NVIDIA 的图形驱动的情况下，WSL2 的 Ubuntu 内无需另装驱动即可支持 <code>nvidia-smi</code> 命令显示 NVIDIA 界面，我们选择通过 NVIDIA Docker 的方式来安装 PyTorch。</p>
+<h5 id="安装-NVIDIA-Docker"><a href="#安装-NVIDIA-Docker" class="headerlink" title="安装 NVIDIA Docker"></a>安装 NVIDIA Docker</h5><p>可以直接参考<a target="_blank" rel="noopener" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">官网的安装步骤</a>。</p>
+<p>NVIDIA Docker 实际上是通过安装原版 Docker + 添加 NVIDIA 配置部分实现的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;get.docker.com | sh </span><br><span class="line">  &amp;&amp; sudo systemctl --now enable docker</span><br><span class="line">distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID) \</span><br><span class="line">      &amp;&amp; curl -fsSL https:&#x2F;&#x2F;nvidia.github.io&#x2F;libnvidia-container&#x2F;gpgkey | sudo gpg --dearmor -o &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;nvidia-container-toolkit-keyring.gpg \</span><br><span class="line">      &amp;&amp; curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;libnvidia-container&#x2F;$distribution&#x2F;libnvidia-container.list | \</span><br><span class="line">            sed &#39;s#deb https:&#x2F;&#x2F;#deb [signed-by&#x3D;&#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;nvidia-container-toolkit-keyring.gpg] https:&#x2F;&#x2F;#g&#39; | \</span><br><span class="line">            sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-container-toolkit.list</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y nvidia-container-toolkit</span><br><span class="line">sudo nvidia-ctk runtime configure --runtime&#x3D;docker</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h5 id="安装并配置-PyTorch"><a href="#安装并配置-PyTorch" class="headerlink" title="安装并配置 PyTorch"></a>安装并配置 PyTorch</h5><p>NVIDIA 官方有提供 <a target="_blank" rel="noopener" href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">PyTorch 镜像目录</a>，在 Tags 子页面中可以查看最新版本。</p>
+<p>下载 PyTorch 的 Docker 镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull nvcr.io&#x2F;nvidia&#x2F;pytorch:23.05-py3</span><br></pre></td></tr></table></figure>
+<p>为了方便使用 Jupyter Notebook，选择使用密码而非 token。首先在 Windows 内进入 Python 准备加密后的密码，以 <code>test</code> 四个字符作为密码为例，单引号引起的 argon2 开头的即是加密后的密码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i&gt; python.exe</span><br><span class="line">Python 3.10.11 (tags&#x2F;v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; from notebook.auth import passwd</span><br><span class="line">&gt;&gt;&gt; passwd()</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">&#39;argon2:$argon2id$v&#x3D;19$m&#x3D;10240,t&#x3D;10,p&#x3D;8$hbTQHVdvX&#x2F;CTnlXsEGhYWQ$fwr4JZrbRk7Iqz9bvkeooPiMVpQ9IYa0RYtkYOblgKw&#39;</span><br></pre></td></tr></table></figure>
+<p>使用 Dockerfile 以修改原镜像。在 Dockerfile 内填入加密后的密码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi pytorch_dockerfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Start with the nvidia pytorch base image</span><br><span class="line">FROM nvcr.io&#x2F;nvidia&#x2F;pytorch:23.05-py3</span><br><span class="line"></span><br><span class="line"># Generate a jupyter notebook configuration file</span><br><span class="line">RUN jupyter notebook --generate-config --allow-root</span><br><span class="line"></span><br><span class="line"># Expose the port for jupyter notebook</span><br><span class="line">EXPOSE 8888</span><br><span class="line"></span><br><span class="line"># Set the command to start jupyter notebook</span><br><span class="line">CMD [&quot;jupyter&quot;, &quot;notebook&quot;, &quot;--notebook-dir&#x3D;&#x2F;workspace&quot;, &quot;--ip&quot;, &quot;0.0.0.0&quot;, &quot;--no-browser&quot;, &quot;--allow-root&quot;, &quot;--NotebookApp.password&#x3D;&#39;argon2:$argon2id$v&#x3D;19$m&#x3D;10240,t&#x3D;10,p&#x3D;8$hbTQHVdvX&#x2F;CTnlXsEGhYWQ$fwr4JZrbRk7Iqz9bvkeooPiMVpQ9IYa0RYtkYOblgKw&#39;&quot;]</span><br></pre></td></tr></table></figure>
+<p>建立新镜像 my_pytorch:23.05-py3：</p>
+<ul>
+<li><p><code>-t</code> 为指定源 Docker 镜像，通常格式为 <code>&lt;name&gt;:&lt;version&gt;</code>。</p>
+</li>
+<li><p><code>-f</code> 为指定特定路径下的 Dockerfile 文件。</p>
+</li>
+<li><p><code>.</code> 为指定建立该镜像所需要文件的目录。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker build -t my_pytorch:23.05-py3 -f pytorch_dockerfile .</span><br></pre></td></tr></table></figure>
+<p>通过新镜像建立带有指定密码的 PyTorch 容器：</p>
+<ul>
+<li><p><code>--gpus all</code> 使容器能访问所有的 GPU。</p>
+</li>
+<li><p><code>-d</code> 为 <code>detached</code>，使容器运行在后台的分离模式。</p>
+</li>
+<li><p><code>--restart=unless-stopped</code> 使 Docker 在 PyTorch 容器退出时自动重启容器，使其始终运行。</p>
+</li>
+<li><p><code>-p 8889:8888</code> 将 Windows 主机的 8889 端口映射到容器的 8888 端口，这样可以通过直接通过 <a target="_blank" rel="noopener" href="http://localhost:8889/"></a> 来访问 PyTorch 容器内的 Jupyter Notebook。不用主机的 8888 端口是因为其已经被主机的 Jupyter Notebook 使用了。</p>
+</li>
+<li><p><code>-v /mnt/d:/workspace</code> 由于 Windows 的硬盘都被装载在 <code>/mnt</code> 目录下，此处将 Windows 的 D 盘映射为 PyTorch 容器内 Jupyter Notebook 的工作目录。</p>
+</li>
+<li><p><code>--ipc=host</code> 设定容器的网络模式为 <code>host</code>，从而 PyTorch 容器内进程（如 Jupyter Notebook）可以和 Windows 主机内的所有进程进行通信。<code>ipc</code> 意为进程间通信。</p>
+</li>
+<li><p><code>--ulimit memlock=-1</code> 和 <code>--ulimit stack=67108864</code> 为 NVIDIA 官方推荐的 PyTorch 容器的资源限制量。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --gpus all -d --restart&#x3D;unless-stopped -p 8889:8888 -v &#x2F;mnt&#x2F;d:&#x2F;workspace --ipc&#x3D;host --ulimit memlock&#x3D;-1 --ulimit stack&#x3D;67108864 my_pytorch:23.05-py3</span><br></pre></td></tr></table></figure>
+<p>这样每次开机后，打开 WSL-Ubuntu 的终端，PyTorch 容器和其之内的 Jupyter Notebook 就会在后台运行，且不会受终端关闭的影响而关闭。</p>
+<p>另附 Docker 常用命令少许：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br><span class="line">sudo docker ps -a</span><br><span class="line">sudo docker images</span><br><span class="line"></span><br><span class="line">sudo docker rm 7036a89e0c13</span><br><span class="line">sudo docker rmi e0064f8b7b5e</span><br><span class="line">sudo docker system prune</span><br><span class="line">sudo docker system prune -a</span><br><span class="line"></span><br><span class="line">sudo docker stop 7036a89e0c13</span><br><span class="line">sudo docker restart 7036a89e0c13</span><br><span class="line"></span><br><span class="line">sudo docker exec -it 7036a89e0c13 sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="附录：scoop-常用命令介绍"><a href="#附录：scoop-常用命令介绍" class="headerlink" title="附录：scoop 常用命令介绍"></a>附录：scoop 常用命令介绍</h2><h3 id="对单个-bucket-的命令"><a href="#对单个-bucket-的命令" class="headerlink" title="对单个 bucket 的命令"></a>对单个 bucket 的命令</h3><p>列出所有 scoop 的官方 bucket。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket known</span><br><span class="line"></span><br><span class="line">main</span><br><span class="line">extras</span><br><span class="line">versions</span><br><span class="line">nirsoft</span><br><span class="line">php</span><br><span class="line">nerd-fonts</span><br><span class="line">nonportable</span><br><span class="line">java</span><br><span class="line">games</span><br></pre></td></tr></table></figure>
+<p>为 scoop 添加 bucket。这里的 main 为 scoop 的自带默认 bucket，个人不推荐添加维护和更新不一定稳定的非官方 bucket，在此就先略过。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add extra</span><br></pre></td></tr></table></figure>
+<p>删除该 bucket。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket rm extra</span><br></pre></td></tr></table></figure>
+<h3 id="对单个程序的命令"><a href="#对单个程序的命令" class="headerlink" title="对单个程序的命令"></a>对单个程序的命令</h3><p>在 scoop 的官方 bucket 中搜索某个程序（例如 7zip），虽然通常更推荐使用 <a target="_blank" rel="noopener" href="https://scoop.sh/">Scoop - A command-line installer for Windows</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">scoop search 7zip</span><br><span class="line"></span><br><span class="line">&#39;main&#39; bucket:</span><br><span class="line">    7zip (21.07)</span><br><span class="line">    7zip19.00-helper (19.00)</span><br><span class="line"></span><br><span class="line">&#39;versions&#39; bucket:</span><br><span class="line">    7zip-beta (21.07)</span><br><span class="line">    7zip-zstd (v21.03-v1.5.0-R2)</span><br></pre></td></tr></table></figure>
+<p>查看该程序在 scoop 上的各种信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">scoop info 7zip</span><br><span class="line"></span><br><span class="line">Name        : 7zip</span><br><span class="line">Description : A multi-format file archiver with high compression ratios</span><br><span class="line">Version     : 21.07</span><br><span class="line">Bucket      : main</span><br><span class="line">Website     : https:&#x2F;&#x2F;www.7-zip.org</span><br><span class="line">License     : LGPL-2.1-or-later</span><br><span class="line">Updated at  : 2022&#x2F;04&#x2F;04 星期一 17:24:43</span><br><span class="line">Updated by  : Issac Lin</span><br><span class="line">Installed   : 21.07</span><br><span class="line">Binaries    : 7z.exe</span><br><span class="line">Shortcuts   : 7-Zip</span><br><span class="line">Notes       : Add 7-Zip as a context menu option by running: &quot;&lt;root&gt;\install-context.reg&quot;</span><br></pre></td></tr></table></figure>
+<p>安装该程序，偶尔有些程序会需要管理员权限才能完成安装，可以在用 scoop 安装 gsudo 之后使用 <code>sudo</code> 命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip</span><br></pre></td></tr></table></figure>
+<p>可以通过强制更新这个操作来达到不卸载的情况下重装程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update -f 7zip</span><br></pre></td></tr></table></figure>
+<p>卸载该程序，有时会出现程序安装出现报错的情况，最好先对不完全的安装进行卸载再重新安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall 7zip</span><br></pre></td></tr></table></figure>
+<p>不想升级该程序时，可以固定该程序的版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop hold 7zip</span><br></pre></td></tr></table></figure>
+<p>解除对该程序的版本固定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop unhold 7zip</span><br></pre></td></tr></table></figure>
+<h3 id="对-scoop-本体、bucket-和安装程序的命令"><a href="#对-scoop-本体、bucket-和安装程序的命令" class="headerlink" title="对 scoop 本体、bucket 和安装程序的命令"></a>对 scoop 本体、bucket 和安装程序的命令</h3><p>设置 scoop 的 HTTP 代理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop config proxy 127.0.0.1:10809</span><br></pre></td></tr></table></figure>
+<p>解除 scoop 的 HTTP 代理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop config rm proxy</span><br></pre></td></tr></table></figure>
+<p>是否使用 aria2 进行下载的开关。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoop config aria2-enabled true</span><br><span class="line">scoop config aria2-enabled false</span><br></pre></td></tr></table></figure>
+<p>每次使用 aria2 进行下载时是否进行通知的开关。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoop config aria2-warning-enabled false</span><br><span class="line">scoop config aria2-warning-enabled true</span><br></pre></td></tr></table></figure>
+<p>列出所有使用 scoop 安装的程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop list</span><br></pre></td></tr></table></figure>
+<p>单独更新 scoop 自身和 bucket 信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scoop update</span><br><span class="line"></span><br><span class="line">Updating Scoop...</span><br><span class="line">Updating &#39;extras&#39; bucket...</span><br><span class="line">Updating &#39;main&#39; bucket...</span><br><span class="line">Updating &#39;versions&#39; bucket...</span><br><span class="line">Scoop was updated successfully!</span><br></pre></td></tr></table></figure>
+<p>通过和本地的 bucket 信息对比，检查当前 scoop 自身和使用 scoop 安装的程序是否需要更新并给出列表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">scoop status</span><br><span class="line"></span><br><span class="line">Scoop is up to date.</span><br><span class="line"></span><br><span class="line">Name             Installed Version Latest Version Missing Dependencies Info</span><br><span class="line">----             ----------------- -------------- -------------------- ----</span><br><span class="line">nodejs           18.4.0            18.5.0</span><br><span class="line">rstudio          2022.02.3-492     2022.07.0-548</span><br><span class="line">vscode           1.68.1            1.69.0</span><br><span class="line">windows-terminal 1.13.11431.0      1.14.1861.0</span><br></pre></td></tr></table></figure>
+<p>同时更新 scoop 自身、bucket 和所有程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update *</span><br></pre></td></tr></table></figure>
+<p>清理 scoop 已更新程序的旧版本文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop cleanup *</span><br></pre></td></tr></table></figure>
+<p>清理 scoop 下载的程序安装包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop cache rm *</span><br></pre></td></tr></table></figure>
+<p>检查 scoop 本体、bucket 和安装的程序是否有问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop checkup</span><br></pre></td></tr></table></figure>
+<p>如果是 Windows 11，通常此处会提示有两个潜在的问题，其中一个问题需要进入设置-系统-开发者选项并打开来解决；而另一个运行建议的命令就可以解决。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scoop checkup</span><br><span class="line"></span><br><span class="line">WARN  LongPaths support is not enabled.</span><br><span class="line">  You can enable it by running:</span><br><span class="line">    sudo Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem&#39; -Name &#39;LongPathsEnabled&#39; -Value 1</span><br><span class="line">  (Requires &#39;sudo&#39; command. Run &#39;scoop install sudo&#39; if you don&#39;t have it.)</span><br><span class="line">WARN  Found 1 potential problem.</span><br></pre></td></tr></table></figure>
+<h3 id="更详尽的说明"><a href="#更详尽的说明" class="headerlink" title="更详尽的说明"></a>更详尽的说明</h3><p>官方在 <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Scoop/wiki/Commands">GitHub 的 Command 页面</a> 里写得很不具体，对各项命令的使用方法都只是一笔带过。我个人比较推荐 @nimzo6689 在 Qiita 上写的这四篇文章，每个命令都附带有具体例子说明，很详尽。</p>
+<p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/1ab33380366e324c0b84">全Scoopコマンド解説 その１ ～使用頻度（高）～</a></p>
+<p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/0fb3e918248866c2c23e">全Scoopコマンド解説 その２ ～使用頻度（中）～</a></p>
+<p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/53c63439f56ccd2d38c1">全Scoopコマンド解説 その３ ～使用頻度（低）～</a></p>
+<p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/5ead753169dbad72e4eb">Scoop で利用できる Bucket の解説（<code>scoop bucket known</code> 限定）</a></p>
+<details>
+<summary>已弃用的内容存档：处理 intel 的大小核</summary>
+
+<p>对于台式机 + 13 代 CPU 的大小核架构，要调整到完全发挥性能是一件比较头疼的事情。</p>
 <p>以下参考自<a target="_blank" rel="noopener" href="https://space.bilibili.com/74042905">二川二水的资料室</a>的专栏文章<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv19998442">《反驳关于英特尔大小核的一些传统看法&amp;Windows大小核调度策略的注释》</a>，提取了核心观点并进行了简单加工。</p>
-<h5 id="前提知识"><a href="#前提知识" class="headerlink" title="前提知识"></a>前提知识</h5><ol>
+<p>前提知识</p>
+<ol>
 <li><p>微软自 Windows 10 起引入了大小核异构调度，Heterogeneous scheduling (big.LITTLE)。</p>
 </li>
 <li><p>大小核异构调度启用的前提条件：</p>
@@ -1424,7 +1663,8 @@
 <td>8</td>
 </tr>
 </tbody></table>
-<h5 id="正式修改"><a href="#正式修改" class="headerlink" title="正式修改"></a>正式修改</h5><p>我们有两种选择：</p>
+<p>正式修改</p>
+<p>我们有两种选择：</p>
 <ol>
 <li><p>直接弃用大小核异构调度。</p>
 </li>
@@ -1435,10 +1675,6 @@
 <ul>
 <li><p>点击 QuickCPU 顶部的电源控制按钮，跳出单独的电源计划管理页面。</p>
 </li>
-<li><p>进入左侧 Power Settings 的第二栏 Power plan management，启用末尾的电源计划“卓越性能”（e9a42b02-d5df-448d-aa00-03f14749eb61）。</p>
-</li>
-<li><p>重命名为“卓越性能（无异构调度）”，此时 UUID 也会自动变化，可以防止电源计划的相互混淆。</p>
-</li>
 <li><p>进入左侧 Power Settings 的第一栏 Power plan settings，修改“生效的异类策略”（7f2f5cfa-f10c-4823-b5e1-e93ae85f46b5）的外接供电和电池供电为<code>使用异类策略 0 (0)</code>。</p>
 </li>
 <li><p>关闭 QuickCPU 重启既可。</p>
@@ -1446,7 +1682,7 @@
 </ul>
 <p>我们详细来叙述第二种对应的操作：</p>
 <ol>
-<li><p>在 QuickCPU 中启用电源计划“卓越性能”（e9a42b02-d5df-448d-aa00-03f14749eb61），确保“生效的异类策略”（7f2f5cfa-f10c-4823-b5e1-e93ae85f46b5）的外接供电和电池供电为<code>使用异类策略 4 (4)</code>。</p>
+<li><p>在 QuickCPU 中确保“生效的异类策略”（7f2f5cfa-f10c-4823-b5e1-e93ae85f46b5）的外接供电和电池供电为<code>使用异类策略 4 (4)</code>。</p>
 </li>
 <li><p>在注册表 <code>HKLM\System\CurrentControlSet\Control\Session Manager\Kernel</code> 内新建项 <code>KGroups</code>，随后再在其内新建项 <code>00</code>。<code>00</code> 代表的是使用的拥有大小核的单颗 CPU，若有多颗 CPU 则按顺序 <code>01</code> 等添加即可。</p>
 </li>
@@ -1507,180 +1743,7 @@
 <li><p>有兴趣的可以再核对一下微软的官方文档的 286-287 页，即第四章线程-线程调度-异构调度（大小核）：Catlin, B., Hanrahan, J.E., Russinovich, M.E., Solomon, D.A. and Ionescu, A. (2017). <em>Windows Internals, Part 1: System architecture, processes, threads, memory managment, and more.</em> Redmond: Microsoft, pp. 286-287.</p>
 </li>
 </ul>
-<h4 id="winaero-tweaker"><a href="#winaero-tweaker" class="headerlink" title="winaero-tweaker"></a>winaero-tweaker</h4><p>这款程序能修改 Windows 的地方实在太多太多了，自己常用的几项如下：</p>
-<ul>
-<li><p>Context Menu-File Hash Menu</p>
-</li>
-<li><p>Context Menu-Take Ownership</p>
-</li>
-<li><p>Context Menu-View Owner</p>
-</li>
-<li><p>File Explorer-Customize This PC Folders-Restore Windows 10 Folders</p>
-</li>
-<li><p>File Explorer-File Explorer Starting Folder-This PC</p>
-</li>
-</ul>
-<p>注：打开 Windows 11-Disable Bakcground Apps 会使更换锁屏壁纸的 Windows 聚焦无法正常使用。</p>
-<h3 id="包管理器-winget-1"><a href="#包管理器-winget-1" class="headerlink" title="包管理器 winget"></a>包管理器 winget</h3><h4 id="winget-pin"><a href="#winget-pin" class="headerlink" title="winget pin"></a>winget pin</h4><p>由于 winget 内的版本错误以及阻止 winget 对软件自动更新，为以下软件添加 winget pin。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">winget pin add Adobe.Acrobat.Reader.64-bit</span><br><span class="line">winget pin add Mozilla.Firefox</span><br><span class="line">winget pin add Google.Chrome</span><br><span class="line">winget pin add Microsoft.Edge</span><br><span class="line">winget pin add Mozilla.Thunderbird</span><br><span class="line">winget pin add Telegram.TelegramDesktop</span><br><span class="line">winget pin add Microsoft.PowerToys</span><br><span class="line">winget pin add Discord.Discord</span><br><span class="line">winget pin add Tonec.InternetDownloadManager</span><br><span class="line">winget pin add Logitech.OptionsPlus</span><br><span class="line">winget pin add Sogou.SogouInput</span><br><span class="line">winget pin add Tencent.TencentMeeting</span><br><span class="line">winget pin add Tencent.TIM</span><br><span class="line">winget pin add Tencent.WeChat</span><br><span class="line">winget pin add Sogou.SogouInput</span><br><span class="line">winget pin add Ubisoft.Connect</span><br><span class="line">winget pin add Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget pin add Microsoft.AppInstaller</span><br></pre></td></tr></table></figure>
-<h4 id="DisplayCAL"><a href="#DisplayCAL" class="headerlink" title="DisplayCAL"></a>DisplayCAL</h4><p>由于 DisplayCAL 自 2019 年末的 v3.8.9.3 起已停止更新，其自动下载的 argyllcms 也一直是旧的 v2.3.1。</p>
-<ul>
-<li><p>如果先通过 scoop 安装 argyllcms，则在使用 winget 安装 DisplayCAL 时会自动调用 scoop 所安装的最新版的 argyllcms。</p>
-</li>
-<li><p>如果 argyllcms 的安装在 DisplayCAL 之后，则需要为其手动指定 argyllcms 路径：点击文件-定位 ArgyllCMS 可执行文件，选择 <code>C:\Users\i\scoop\apps\argyllcms\current\bin</code> 路径即可。</p>
-</li>
-</ul>
-<p>不过在一些笔记本上最新版本的 argyllcms 会出现异常报错，此时将最新版本的 argyllcms 卸载后使用 DisplayCAL 自动下载的 v2.3.1 老版本即可正常运行校色。</p>
-<h4 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h4><ul>
-<li><p>Chrome 的个人配置文件全部储存在 <code>%LocalAppData%\Google\Chrome\User Data</code> 文件夹内。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。</p>
-</li>
-<li><p>账号是需要重新登陆的，不过扩展程序和其配置都会被保留。</p>
-</li>
-</ul>
-<h4 id="Mozilla-Firefox"><a href="#Mozilla-Firefox" class="headerlink" title="Mozilla Firefox"></a>Mozilla Firefox</h4><ul>
-<li><p>Firefox 的个人配置文件全部储存在 <code>%AppData%\Mozilla\Firefox\Profiles\arufwjt6.default-release</code> 文件夹内，其中 <code>arufwjt6</code> 部分为每位用户特有的八位辨识码。新系统中恢复旧配置时，只需将新系统内的个人文件夹清空后，放入旧配置文件夹内的所有文件既可。注意别删除末尾不带 <code>-release</code> 的文件夹，以及最好清空放入而不是删除随后放入重命名后的文件夹，至少这样的一定不会报错的。</p>
-</li>
-<li><p>颜色管理：</p>
-<ul>
-<li><p>打开 <code>about:config</code>，搜索框内搜索 <code>color_management</code>。</p>
-</li>
-<li><p>将 <code>gfx.color_management.mode</code> 的值从 <code>2</code> 调整为 <code>1</code>，这样没有嵌入 tag 的图片也能按 sRGB 正常显示。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="Mozilla-Thunderbird"><a href="#Mozilla-Thunderbird" class="headerlink" title="Mozilla Thunderbird"></a>Mozilla Thunderbird</h4><p>Thunderbird 和 Firefox 的逻辑完全一致，个人配置文件同样全部储存在 <code>%AppData%\Thunderbird\Profiles\iriktu0w.default-release</code> 文件夹内。恢复时的操作也都一致。</p>
-<h4 id="StartAllBack"><a href="#StartAllBack" class="headerlink" title="StartAllBack"></a>StartAllBack</h4><p>修改如下：</p>
-<ul>
-<li><p>“开始”菜单-启用</p>
-</li>
-<li><p>“开始”菜单-使用大图标-大</p>
-</li>
-<li><p>“开始”菜单-覆盖项目排序-无偏好</p>
-</li>
-<li><p>资源管理器-使用 Win10 Ribbon UI</p>
-</li>
-</ul>
-<h3 id="Windows-命令行-1"><a href="#Windows-命令行-1" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h3><h4 id="修改-Windows-默认动态端口"><a href="#修改-Windows-默认动态端口" class="headerlink" title="修改 Windows 默认动态端口"></a>修改 Windows 默认动态端口</h4><p>似乎安装的 Windows 还在使用旧版的动态端口 <code>1025-20000</code>，因此会造成开机时 nekoray 提示 2080 端口被占用。此时推荐根据<a target="_blank" rel="noopener" href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">新的 IANA 标准</a>需要手动修改 Windows 内的动态端口为 <code>49152-65535</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i&gt; sudo netsh int ipv4 set dynamicport tcp start&#x3D;49152 num&#x3D;16384</span><br><span class="line">Ok.</span><br><span class="line"></span><br><span class="line">PS C:\Users\i&gt; netsh int ipv4 show dynamicport tcp</span><br><span class="line"></span><br><span class="line">Protocol tcp Dynamic Port Range</span><br><span class="line">---------------------------------</span><br><span class="line">Start Port      : 49152</span><br><span class="line">Number of Ports : 16384</span><br></pre></td></tr></table></figure>
-<h4 id="笔记本禁用-Modern-Standby-睡眠模式"><a href="#笔记本禁用-Modern-Standby-睡眠模式" class="headerlink" title="笔记本禁用 Modern Standby 睡眠模式"></a>笔记本禁用 Modern Standby 睡眠模式</h4><p>使用 <code>powercfg /a</code> 可以检查当前电脑的睡眠模式。</p>
-<p>对于笔记本而言，存在一种由微软在 2018 年推出的名为 Modern Standby (S0ix) 的睡眠模式。这种睡眠模式在 <code>powercfg /a</code> 的名称为 “待机（S0 低电量待机）连接的网络”，原本是想模拟出类似手机锁屏但仍然可以接收消息的状态，但实际实现则非常非常糟糕，特别体现在合盖进入这种“睡眠”之后依旧有非常高的发热，耗电就不用说了，更要命的是很容易损伤屏幕等设备，从包里拿出机器都烫手得要命，要是更严重的情况下只能说后果不堪设想。</p>
-<p>通常使用下面这行命令禁用 Modern Standby 睡眠模式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo reg add HKLM\System\CurrentControlSet\Control\Power &#x2F;v PlatformAoAcOverride &#x2F;t REG_DWORD &#x2F;d 0 </span><br></pre></td></tr></table></figure>
-<p>如果需要恢复，则使用以下命令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo reg delete HKLM\System\CurrentControlSet\Control\Power &#x2F;v PlatformAoAcOverride</span><br></pre></td></tr></table></figure>
-<h4 id="WSL-Ubuntu-运行时报错"><a href="#WSL-Ubuntu-运行时报错" class="headerlink" title="WSL-Ubuntu 运行时报错"></a>WSL-Ubuntu 运行时报错</h4><p>安装完成的 Ubuntu 运行时有可能出现类似以下的报错：</p>
-<ul>
-<li><p><code>libcuda.so.1 is not a symbolic link</code></p>
-</li>
-<li><p><code>&lt;3&gt;WSL (11) ERROR: UtilTranslatePathList:2671: Failed to translate</code></p>
-</li>
-</ul>
-<p>第一个错误通常执行以下命令以排除报错。参考自 <a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/5548">#5548</a>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;[interop]\nappendWindowsPath &#x3D; false&quot; | sudo tee -a &#x2F;etc&#x2F;wsl.conf</span><br><span class="line">sudo mkdir &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2</span><br><span class="line">sudo ln -s &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib&#x2F;* &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2</span><br><span class="line">echo &#x2F;usr&#x2F;lib&#x2F;wsl&#x2F;lib2 | sudo tee &#x2F;etc&#x2F;ld.so.conf.d&#x2F;ld.wsl.conf</span><br></pre></td></tr></table></figure>
-<p>第二个错误通常较少发生，以下命令为应急措施。参考自 <a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/9360">#9360</a>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;[interop]\nappendWindowsPath &#x3D; false&quot; | sudo tee -a &#x2F;etc&#x2F;wsl.conf</span><br></pre></td></tr></table></figure>
-<h4 id="WSL-Ubuntu-在关闭终端后自动退出"><a href="#WSL-Ubuntu-在关闭终端后自动退出" class="headerlink" title="WSL-Ubuntu 在关闭终端后自动退出"></a>WSL-Ubuntu 在关闭终端后自动退出</h4><p>可以在 Windows 主机上运行以下代码使 WSL-Ubuntu 持续在后台运行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl screen</span><br></pre></td></tr></table></figure>
-<h4 id="WSL-Ubuntu-无法连接-Windows-宿主机"><a href="#WSL-Ubuntu-无法连接-Windows-宿主机" class="headerlink" title="WSL-Ubuntu 无法连接 Windows 宿主机"></a>WSL-Ubuntu 无法连接 Windows 宿主机</h4><ul>
-<li><p>防火墙的问题。通常将当前网络从公有转为私有即可。</p>
-</li>
-<li><p>以及要非常谨慎任何重置网络配置的操作。很有可能出现重置之后有些项目就非常再难以添加，从而无法回到重置之前，导致 WSL-Ubuntu 既连不上 Windows 宿主机也连不上外网。</p>
-</li>
-</ul>
-<h4 id="安装与配置-PyTorch"><a href="#安装与配置-PyTorch" class="headerlink" title="安装与配置 PyTorch"></a>安装与配置 PyTorch</h4><p>由于在 Windows 内已经安装好 NVIDIA 的图形驱动的情况下，WSL2 的 Ubuntu 内无需另装驱动即可支持 <code>nvidia-smi</code> 命令显示 NVIDIA 界面，我们选择通过 NVIDIA Docker 的方式来安装 PyTorch。</p>
-<h5 id="安装-NVIDIA-Docker"><a href="#安装-NVIDIA-Docker" class="headerlink" title="安装 NVIDIA Docker"></a>安装 NVIDIA Docker</h5><p>可以直接参考<a target="_blank" rel="noopener" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">官网的安装步骤</a>。</p>
-<p>NVIDIA Docker 实际上是通过安装原版 Docker + 添加 NVIDIA 配置部分实现的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;get.docker.com | sh </span><br><span class="line">  &amp;&amp; sudo systemctl --now enable docker</span><br><span class="line">distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID) \</span><br><span class="line">      &amp;&amp; curl -fsSL https:&#x2F;&#x2F;nvidia.github.io&#x2F;libnvidia-container&#x2F;gpgkey | sudo gpg --dearmor -o &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;nvidia-container-toolkit-keyring.gpg \</span><br><span class="line">      &amp;&amp; curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;libnvidia-container&#x2F;$distribution&#x2F;libnvidia-container.list | \</span><br><span class="line">            sed &#39;s#deb https:&#x2F;&#x2F;#deb [signed-by&#x3D;&#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;nvidia-container-toolkit-keyring.gpg] https:&#x2F;&#x2F;#g&#39; | \</span><br><span class="line">            sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-container-toolkit.list</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y nvidia-container-toolkit</span><br><span class="line">sudo nvidia-ctk runtime configure --runtime&#x3D;docker</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
-<h5 id="安装并配置-PyTorch"><a href="#安装并配置-PyTorch" class="headerlink" title="安装并配置 PyTorch"></a>安装并配置 PyTorch</h5><p>NVIDIA 官方有提供 <a target="_blank" rel="noopener" href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">PyTorch 镜像目录</a>，在 Tags 子页面中可以查看最新版本。</p>
-<p>下载 PyTorch 的 Docker 镜像。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull nvcr.io&#x2F;nvidia&#x2F;pytorch:23.05-py3</span><br></pre></td></tr></table></figure>
-<p>为了方便使用 Jupyter Notebook，选择使用密码而非 token。首先在 Windows 内进入 Python 准备加密后的密码，以 <code>test</code> 四个字符作为密码为例，单引号引起的 argon2 开头的即是加密后的密码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\i&gt; python.exe</span><br><span class="line">Python 3.10.11 (tags&#x2F;v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; from notebook.auth import passwd</span><br><span class="line">&gt;&gt;&gt; passwd()</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">&#39;argon2:$argon2id$v&#x3D;19$m&#x3D;10240,t&#x3D;10,p&#x3D;8$hbTQHVdvX&#x2F;CTnlXsEGhYWQ$fwr4JZrbRk7Iqz9bvkeooPiMVpQ9IYa0RYtkYOblgKw&#39;</span><br></pre></td></tr></table></figure>
-<p>使用 Dockerfile 以修改原镜像。在 Dockerfile 内填入加密后的密码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi pytorch_dockerfile</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Start with the nvidia pytorch base image</span><br><span class="line">FROM nvcr.io&#x2F;nvidia&#x2F;pytorch:23.05-py3</span><br><span class="line"></span><br><span class="line"># Generate a jupyter notebook configuration file</span><br><span class="line">RUN jupyter notebook --generate-config --allow-root</span><br><span class="line"></span><br><span class="line"># Expose the port for jupyter notebook</span><br><span class="line">EXPOSE 8888</span><br><span class="line"></span><br><span class="line"># Set the command to start jupyter notebook</span><br><span class="line">CMD [&quot;jupyter&quot;, &quot;notebook&quot;, &quot;--notebook-dir&#x3D;&#x2F;workspace&quot;, &quot;--ip&quot;, &quot;0.0.0.0&quot;, &quot;--no-browser&quot;, &quot;--allow-root&quot;, &quot;--NotebookApp.password&#x3D;&#39;argon2:$argon2id$v&#x3D;19$m&#x3D;10240,t&#x3D;10,p&#x3D;8$hbTQHVdvX&#x2F;CTnlXsEGhYWQ$fwr4JZrbRk7Iqz9bvkeooPiMVpQ9IYa0RYtkYOblgKw&#39;&quot;]</span><br></pre></td></tr></table></figure>
-<p>建立新镜像 my_pytorch:23.05-py3：</p>
-<ul>
-<li><p><code>-t</code> 为指定源 Docker 镜像，通常格式为 <code>&lt;name&gt;:&lt;version&gt;</code>。</p>
-</li>
-<li><p><code>-f</code> 为指定特定路径下的 Dockerfile 文件。</p>
-</li>
-<li><p><code>.</code> 为指定建立该镜像所需要文件的目录。</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker build -t my_pytorch:23.05-py3 -f pytorch_dockerfile .</span><br></pre></td></tr></table></figure>
-<p>通过新镜像建立带有指定密码的 PyTorch 容器：</p>
-<ul>
-<li><p><code>--gpus all</code> 使容器能访问所有的 GPU。</p>
-</li>
-<li><p><code>-d</code> 为 <code>detached</code>，使容器运行在后台的分离模式。</p>
-</li>
-<li><p><code>--restart=unless-stopped</code> 使 Docker 在 PyTorch 容器退出时自动重启容器，使其始终运行。</p>
-</li>
-<li><p><code>-p 8889:8888</code> 将 Windows 主机的 8889 端口映射到容器的 8888 端口，这样可以通过直接通过 <a target="_blank" rel="noopener" href="http://localhost:8889/"></a> 来访问 PyTorch 容器内的 Jupyter Notebook。不用主机的 8888 端口是因为其已经被主机的 Jupyter Notebook 使用了。</p>
-</li>
-<li><p><code>-v /mnt/d:/workspace</code> 由于 Windows 的硬盘都被装载在 <code>/mnt</code> 目录下，此处将 Windows 的 D 盘映射为 PyTorch 容器内 Jupyter Notebook 的工作目录。</p>
-</li>
-<li><p><code>--ipc=host</code> 设定容器的网络模式为 <code>host</code>，从而 PyTorch 容器内进程（如 Jupyter Notebook）可以和 Windows 主机内的所有进程进行通信。<code>ipc</code> 意为进程间通信。</p>
-</li>
-<li><p><code>--ulimit memlock=-1</code> 和 <code>--ulimit stack=67108864</code> 为 NVIDIA 官方推荐的 PyTorch 容器的资源限制量。</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --gpus all -d --restart&#x3D;unless-stopped -p 8889:8888 -v &#x2F;mnt&#x2F;d:&#x2F;workspace --ipc&#x3D;host --ulimit memlock&#x3D;-1 --ulimit stack&#x3D;67108864 my_pytorch:23.05-py3</span><br></pre></td></tr></table></figure>
-<p>这样每次开机后，打开 WSL-Ubuntu 的终端，PyTorch 容器和其之内的 Jupyter Notebook 就会在后台运行，且不会受终端关闭的影响而关闭。</p>
-<p>另附 Docker 常用命令少许：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br><span class="line">sudo docker ps -a</span><br><span class="line">sudo docker images</span><br><span class="line"></span><br><span class="line">sudo docker rm 7036a89e0c13</span><br><span class="line">sudo docker rmi e0064f8b7b5e</span><br><span class="line">sudo docker system prune</span><br><span class="line">sudo docker system prune -a</span><br><span class="line"></span><br><span class="line">sudo docker stop 7036a89e0c13</span><br><span class="line">sudo docker restart 7036a89e0c13</span><br><span class="line"></span><br><span class="line">sudo docker exec -it 7036a89e0c13 sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="附录：scoop-常用命令介绍"><a href="#附录：scoop-常用命令介绍" class="headerlink" title="附录：scoop 常用命令介绍"></a>附录：scoop 常用命令介绍</h2><h3 id="对单个-bucket-的命令"><a href="#对单个-bucket-的命令" class="headerlink" title="对单个 bucket 的命令"></a>对单个 bucket 的命令</h3><p>列出所有 scoop 的官方 bucket。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket known</span><br><span class="line"></span><br><span class="line">main</span><br><span class="line">extras</span><br><span class="line">versions</span><br><span class="line">nirsoft</span><br><span class="line">php</span><br><span class="line">nerd-fonts</span><br><span class="line">nonportable</span><br><span class="line">java</span><br><span class="line">games</span><br></pre></td></tr></table></figure>
-<p>为 scoop 添加 bucket。这里的 main 为 scoop 的自带默认 bucket，个人不推荐添加维护和更新不一定稳定的非官方 bucket，在此就先略过。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add extra</span><br></pre></td></tr></table></figure>
-<p>删除该 bucket。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket rm extra</span><br></pre></td></tr></table></figure>
-<h3 id="对单个程序的命令"><a href="#对单个程序的命令" class="headerlink" title="对单个程序的命令"></a>对单个程序的命令</h3><p>在 scoop 的官方 bucket 中搜索某个程序（例如 7zip），虽然通常更推荐使用 <a target="_blank" rel="noopener" href="https://scoop.sh/">Scoop - A command-line installer for Windows</a>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">scoop search 7zip</span><br><span class="line"></span><br><span class="line">&#39;main&#39; bucket:</span><br><span class="line">    7zip (21.07)</span><br><span class="line">    7zip19.00-helper (19.00)</span><br><span class="line"></span><br><span class="line">&#39;versions&#39; bucket:</span><br><span class="line">    7zip-beta (21.07)</span><br><span class="line">    7zip-zstd (v21.03-v1.5.0-R2)</span><br></pre></td></tr></table></figure>
-<p>查看该程序在 scoop 上的各种信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">scoop info 7zip</span><br><span class="line"></span><br><span class="line">Name        : 7zip</span><br><span class="line">Description : A multi-format file archiver with high compression ratios</span><br><span class="line">Version     : 21.07</span><br><span class="line">Bucket      : main</span><br><span class="line">Website     : https:&#x2F;&#x2F;www.7-zip.org</span><br><span class="line">License     : LGPL-2.1-or-later</span><br><span class="line">Updated at  : 2022&#x2F;04&#x2F;04 星期一 17:24:43</span><br><span class="line">Updated by  : Issac Lin</span><br><span class="line">Installed   : 21.07</span><br><span class="line">Binaries    : 7z.exe</span><br><span class="line">Shortcuts   : 7-Zip</span><br><span class="line">Notes       : Add 7-Zip as a context menu option by running: &quot;&lt;root&gt;\install-context.reg&quot;</span><br></pre></td></tr></table></figure>
-<p>安装该程序，偶尔有些程序会需要管理员权限才能完成安装，可以在用 scoop 安装 gsudo 之后使用 <code>sudo</code> 命令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip</span><br></pre></td></tr></table></figure>
-<p>可以通过强制更新这个操作来达到不卸载的情况下重装程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update -f 7zip</span><br></pre></td></tr></table></figure>
-<p>卸载该程序，有时会出现程序安装出现报错的情况，最好先对不完全的安装进行卸载再重新安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop uninstall 7zip</span><br></pre></td></tr></table></figure>
-<p>不想升级该程序时，可以固定该程序的版本。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop hold 7zip</span><br></pre></td></tr></table></figure>
-<p>解除对该程序的版本固定。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop unhold 7zip</span><br></pre></td></tr></table></figure>
-<h3 id="对-scoop-本体、bucket-和安装程序的命令"><a href="#对-scoop-本体、bucket-和安装程序的命令" class="headerlink" title="对 scoop 本体、bucket 和安装程序的命令"></a>对 scoop 本体、bucket 和安装程序的命令</h3><p>设置 scoop 的 HTTP 代理。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop config proxy 127.0.0.1:10809</span><br></pre></td></tr></table></figure>
-<p>解除 scoop 的 HTTP 代理。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop config rm proxy</span><br></pre></td></tr></table></figure>
-<p>是否使用 aria2 进行下载的开关。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoop config aria2-enabled true</span><br><span class="line">scoop config aria2-enabled false</span><br></pre></td></tr></table></figure>
-<p>每次使用 aria2 进行下载时是否进行通知的开关。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoop config aria2-warning-enabled false</span><br><span class="line">scoop config aria2-warning-enabled true</span><br></pre></td></tr></table></figure>
-<p>列出所有使用 scoop 安装的程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop list</span><br></pre></td></tr></table></figure>
-<p>单独更新 scoop 自身和 bucket 信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scoop update</span><br><span class="line"></span><br><span class="line">Updating Scoop...</span><br><span class="line">Updating &#39;extras&#39; bucket...</span><br><span class="line">Updating &#39;main&#39; bucket...</span><br><span class="line">Updating &#39;versions&#39; bucket...</span><br><span class="line">Scoop was updated successfully!</span><br></pre></td></tr></table></figure>
-<p>通过和本地的 bucket 信息对比，检查当前 scoop 自身和使用 scoop 安装的程序是否需要更新并给出列表。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">scoop status</span><br><span class="line"></span><br><span class="line">Scoop is up to date.</span><br><span class="line"></span><br><span class="line">Name             Installed Version Latest Version Missing Dependencies Info</span><br><span class="line">----             ----------------- -------------- -------------------- ----</span><br><span class="line">nodejs           18.4.0            18.5.0</span><br><span class="line">rstudio          2022.02.3-492     2022.07.0-548</span><br><span class="line">vscode           1.68.1            1.69.0</span><br><span class="line">windows-terminal 1.13.11431.0      1.14.1861.0</span><br></pre></td></tr></table></figure>
-<p>同时更新 scoop 自身、bucket 和所有程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update *</span><br></pre></td></tr></table></figure>
-<p>清理 scoop 已更新程序的旧版本文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop cleanup *</span><br></pre></td></tr></table></figure>
-<p>清理 scoop 下载的程序安装包。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop cache rm *</span><br></pre></td></tr></table></figure>
-<p>检查 scoop 本体、bucket 和安装的程序是否有问题。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop checkup</span><br></pre></td></tr></table></figure>
-<p>如果是 Windows 11，通常此处会提示有两个潜在的问题，其中一个问题需要进入设置-系统-开发者选项并打开来解决；而另一个运行建议的命令就可以解决。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scoop checkup</span><br><span class="line"></span><br><span class="line">WARN  LongPaths support is not enabled.</span><br><span class="line">  You can enable it by running:</span><br><span class="line">    sudo Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem&#39; -Name &#39;LongPathsEnabled&#39; -Value 1</span><br><span class="line">  (Requires &#39;sudo&#39; command. Run &#39;scoop install sudo&#39; if you don&#39;t have it.)</span><br><span class="line">WARN  Found 1 potential problem.</span><br></pre></td></tr></table></figure>
-<h3 id="更详尽的说明"><a href="#更详尽的说明" class="headerlink" title="更详尽的说明"></a>更详尽的说明</h3><p>官方在 <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Scoop/wiki/Commands">GitHub 的 Command 页面</a> 里写得很不具体，对各项命令的使用方法都只是一笔带过。我个人比较推荐 @nimzo6689 在 Qiita 上写的这四篇文章，每个命令都附带有具体例子说明，很详尽。</p>
-<p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/1ab33380366e324c0b84">全Scoopコマンド解説 その１ ～使用頻度（高）～</a></p>
-<p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/0fb3e918248866c2c23e">全Scoopコマンド解説 その２ ～使用頻度（中）～</a></p>
-<p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/53c63439f56ccd2d38c1">全Scoopコマンド解説 その３ ～使用頻度（低）～</a></p>
-<p><a target="_blank" rel="noopener" href="https://qiita.com/nimzo6689/items/5ead753169dbad72e4eb">Scoop で利用できる Bucket の解説（<code>scoop bucket known</code> 限定）</a></p>
+</details>
 
     </div>
 
@@ -1762,7 +1825,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">系统与驱动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop"><span class="nav-number">2.1.</span> <span class="nav-text">包管理器 scoop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget"><span class="nav-number">2.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scoop-%E5%92%8C-winget-%E7%9A%84%E6%97%A5%E5%B8%B8%E6%9B%B4%E6%96%B0%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.3.</span> <span class="nav-text">scoop 和 winget 的日常更新命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-amp-Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.</span> <span class="nav-text">Windows 命令行 &amp; Microsoft Store 应用商店</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">2.3.1.</span> <span class="nav-text">Windows 命令行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.2.</span> <span class="nav-text">Microsoft Store 应用商店</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E9%83%A8%E5%88%86"><span class="nav-number">2.4.1.</span> <span class="nav-text">可执行文件部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E9%83%A8%E5%88%86"><span class="nav-number">2.4.2.</span> <span class="nav-text">压缩包解压部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E7%89%88%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">破解版软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop-%E9%83%A8%E5%88%86"><span class="nav-number">3.1.</span> <span class="nav-text">包管理器 scoop 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#exiftool"><span class="nav-number">3.1.1.</span> <span class="nav-text">exiftool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#frp-nssm"><span class="nav-number">3.1.2.</span> <span class="nav-text">frp-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-nssm"><span class="nav-number">3.1.3.</span> <span class="nav-text">python-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rclone"><span class="nav-number">3.1.4.</span> <span class="nav-text">rclone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#blender-nssm"><span class="nav-number">3.1.5.</span> <span class="nav-text">blender-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quickcpu-registry"><span class="nav-number">3.1.6.</span> <span class="nav-text">quickcpu-registry</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%89%8D%E6%8F%90%E7%9F%A5%E8%AF%86"><span class="nav-number">3.1.6.1.</span> <span class="nav-text">前提知识</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E4%BF%AE%E6%94%B9"><span class="nav-number">3.1.6.2.</span> <span class="nav-text">正式修改</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#winaero-tweaker"><span class="nav-number">3.1.7.</span> <span class="nav-text">winaero-tweaker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget-1"><span class="nav-number">3.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#winget-pin"><span class="nav-number">3.2.1.</span> <span class="nav-text">winget pin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DisplayCAL"><span class="nav-number">3.2.2.</span> <span class="nav-text">DisplayCAL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Google-Chrome"><span class="nav-number">3.2.3.</span> <span class="nav-text">Google Chrome</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Firefox"><span class="nav-number">3.2.4.</span> <span class="nav-text">Mozilla Firefox</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Thunderbird"><span class="nav-number">3.2.5.</span> <span class="nav-text">Mozilla Thunderbird</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StartAllBack"><span class="nav-number">3.2.6.</span> <span class="nav-text">StartAllBack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-1"><span class="nav-number">3.3.</span> <span class="nav-text">Windows 命令行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-Windows-%E9%BB%98%E8%AE%A4%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3"><span class="nav-number">3.3.1.</span> <span class="nav-text">修改 Windows 默认动态端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%A6%81%E7%94%A8-Modern-Standby-%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.3.2.</span> <span class="nav-text">笔记本禁用 Modern Standby 睡眠模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%A5%E9%94%99"><span class="nav-number">3.3.3.</span> <span class="nav-text">WSL-Ubuntu 运行时报错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E5%9C%A8%E5%85%B3%E9%97%AD%E7%BB%88%E7%AB%AF%E5%90%8E%E8%87%AA%E5%8A%A8%E9%80%80%E5%87%BA"><span class="nav-number">3.3.4.</span> <span class="nav-text">WSL-Ubuntu 在关闭终端后自动退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5-Windows-%E5%AE%BF%E4%B8%BB%E6%9C%BA"><span class="nav-number">3.3.5.</span> <span class="nav-text">WSL-Ubuntu 无法连接 Windows 宿主机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-PyTorch"><span class="nav-number">3.3.6.</span> <span class="nav-text">安装与配置 PyTorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NVIDIA-Docker"><span class="nav-number">3.3.6.1.</span> <span class="nav-text">安装 NVIDIA Docker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-PyTorch"><span class="nav-number">3.3.6.2.</span> <span class="nav-text">安装并配置 PyTorch</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9Ascoop-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.</span> <span class="nav-text">附录：scoop 常用命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA-bucket-%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">对单个 bucket 的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">对单个程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9-scoop-%E6%9C%AC%E4%BD%93%E3%80%81bucket-%E5%92%8C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">对 scoop 本体、bucket 和安装程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">更详尽的说明</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">系统与驱动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop"><span class="nav-number">2.1.</span> <span class="nav-text">包管理器 scoop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget"><span class="nav-number">2.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E4%BD%93%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">本体安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">设置代理与程序安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scoop-%E5%92%8C-winget-%E7%9A%84%E6%97%A5%E5%B8%B8%E6%9B%B4%E6%96%B0%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.3.</span> <span class="nav-text">scoop 和 winget 的日常更新命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-amp-Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.</span> <span class="nav-text">Windows 命令行 &amp; Microsoft Store 应用商店</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">2.3.1.</span> <span class="nav-text">Windows 命令行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Microsoft-Store-%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="nav-number">2.3.2.</span> <span class="nav-text">Microsoft Store 应用商店</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E5%AE%89%E8%A3%85"><span class="nav-number">2.4.</span> <span class="nav-text">正常安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E9%83%A8%E5%88%86"><span class="nav-number">2.4.1.</span> <span class="nav-text">可执行文件部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E9%83%A8%E5%88%86"><span class="nav-number">2.4.2.</span> <span class="nav-text">压缩包解压部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E7%89%88%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">破解版软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-scoop-%E9%83%A8%E5%88%86"><span class="nav-number">3.1.</span> <span class="nav-text">包管理器 scoop 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#exiftool"><span class="nav-number">3.1.1.</span> <span class="nav-text">exiftool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#frp-nssm"><span class="nav-number">3.1.2.</span> <span class="nav-text">frp-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-nssm"><span class="nav-number">3.1.3.</span> <span class="nav-text">python-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rclone"><span class="nav-number">3.1.4.</span> <span class="nav-text">rclone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#blender-nssm"><span class="nav-number">3.1.5.</span> <span class="nav-text">blender-nssm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quickcpu"><span class="nav-number">3.1.6.</span> <span class="nav-text">quickcpu</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Intel-%E5%B9%B3%E5%8F%B0"><span class="nav-number">3.1.6.1.</span> <span class="nav-text">Intel 平台</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AMD-%E5%B9%B3%E5%8F%B0"><span class="nav-number">3.1.6.2.</span> <span class="nav-text">AMD 平台</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#winaero-tweaker"><span class="nav-number">3.1.7.</span> <span class="nav-text">winaero-tweaker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-winget-1"><span class="nav-number">3.2.</span> <span class="nav-text">包管理器 winget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#winget-pin"><span class="nav-number">3.2.1.</span> <span class="nav-text">winget pin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DisplayCAL"><span class="nav-number">3.2.2.</span> <span class="nav-text">DisplayCAL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Google-Chrome"><span class="nav-number">3.2.3.</span> <span class="nav-text">Google Chrome</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Firefox"><span class="nav-number">3.2.4.</span> <span class="nav-text">Mozilla Firefox</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mozilla-Thunderbird"><span class="nav-number">3.2.5.</span> <span class="nav-text">Mozilla Thunderbird</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StartAllBack"><span class="nav-number">3.2.6.</span> <span class="nav-text">StartAllBack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E5%91%BD%E4%BB%A4%E8%A1%8C-1"><span class="nav-number">3.3.</span> <span class="nav-text">Windows 命令行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-Windows-%E9%BB%98%E8%AE%A4%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3"><span class="nav-number">3.3.1.</span> <span class="nav-text">修改 Windows 默认动态端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%A6%81%E7%94%A8-Modern-Standby-%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.3.2.</span> <span class="nav-text">笔记本禁用 Modern Standby 睡眠模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%A5%E9%94%99"><span class="nav-number">3.3.3.</span> <span class="nav-text">WSL-Ubuntu 运行时报错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E5%9C%A8%E5%85%B3%E9%97%AD%E7%BB%88%E7%AB%AF%E5%90%8E%E8%87%AA%E5%8A%A8%E9%80%80%E5%87%BA"><span class="nav-number">3.3.4.</span> <span class="nav-text">WSL-Ubuntu 在关闭终端后自动退出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSL-Ubuntu-%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5-Windows-%E5%AE%BF%E4%B8%BB%E6%9C%BA"><span class="nav-number">3.3.5.</span> <span class="nav-text">WSL-Ubuntu 无法连接 Windows 宿主机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-PyTorch"><span class="nav-number">3.3.6.</span> <span class="nav-text">安装与配置 PyTorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NVIDIA-Docker"><span class="nav-number">3.3.6.1.</span> <span class="nav-text">安装 NVIDIA Docker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-PyTorch"><span class="nav-number">3.3.6.2.</span> <span class="nav-text">安装并配置 PyTorch</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%9Ascoop-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.</span> <span class="nav-text">附录：scoop 常用命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA-bucket-%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">对单个 bucket 的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">对单个程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9-scoop-%E6%9C%AC%E4%BD%93%E3%80%81bucket-%E5%92%8C%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">对 scoop 本体、bucket 和安装程序的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">更详尽的说明</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
