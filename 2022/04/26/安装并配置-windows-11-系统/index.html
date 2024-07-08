@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2024-06-12T12:37:37.846Z">
+<meta property="article:modified_time" content="2024-07-06T16:34:31.823Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-12 13:37:37" itemprop="dateModified" datetime="2024-06-12T13:37:37+01:00">2024-06-12</time>
+                <time title="修改时间：2024-07-06 17:34:31" itemprop="dateModified" datetime="2024-07-06T17:34:31+01:00">2024-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,7 +242,7 @@
 </li>
 <li><p>安装完重启进入配置界面，此时选择脱机账户而非微软账户。原因在于这里如果直接使用微软账号，系统内个人文件夹的名字会跟随微软账号的名称，相当容易出问题；同时，微软账户完全可以在进入系统之后再绑上，这时个人文件夹的名称已经确定，不会带来任何可能的负面影响。</p>
 </li>
-<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而使 Windows 11 能够在断网的情况下安装的操作非常麻烦。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#x69;&#x40;&#105;&#46;&#x69;">&#x69;&#x40;&#105;&#46;&#x69;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
+<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而使 Windows 11 能够在断网的情况下安装的操作非常麻烦。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#64;&#x69;&#x2e;&#105;">&#105;&#64;&#x69;&#x2e;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
 </li>
 <li><p>个人文件夹的名字一般习惯直接取 i，不仅自指而且由于不包含中文和空格，以后安装其他程序（例如 nodejs）的时候不会报错，否则会很麻烦。</p>
 </li>
@@ -254,11 +254,11 @@
 <ul>
 <li><p>手动 HWID：先装 Windows 10，用便宜的 Windows 10 激活码激活后绑定微软账户，升级至 Windows 11。这样微软账户上就会有一个基于硬件 ID（主板型号）的数字许可证。之后重装系统既可。</p>
 </li>
-<li><p>第三方程序 HWID：通过执行<a target="_blank" rel="noopener" href="https://github.com/massgravel/Microsoft-Activation-Scripts">脚本</a> <code>irm https://massgrave.dev/get | iex</code> 生成欺骗文件使 Microsoft 以为本机的 Windows 11 是从 Windows 10 升级而来，从而授予微软账户一个基于硬件 ID（主板）的数字许可证。不需要重装系统。</p>
+<li><p>第三方程序 HWID：通过执行<a target="_blank" rel="noopener" href="https://github.com/massgravel/Microsoft-Activation-Scripts">脚本</a> <code>irm https://get.activated.win | iex</code> 生成欺骗文件使 Microsoft 以为本机的 Windows 11 是从 Windows 10 升级而来，从而授予微软账户一个基于硬件 ID（主板）的数字许可证。不需要重装系统。</p>
 </li>
 </ul>
 </li>
-<li><p>个人推荐：Retail 激活码 &gt; 手动 HWID &gt; 第三方程序 HWID。</p>
+<li><p>靠谱程度：Retail 激活码 &gt; 手动 HWID &gt; 第三方程序 HWID，但一般直接用脚本都完全没问题。</p>
 </li>
 <li><p>在 Powershell 中使用 <code>slmgr /dlv</code> 或者 <code>slmgr /dli</code> 检查 Windows 激活的具体信息。</p>
 </li>
@@ -485,7 +485,7 @@
 <p>安装 GUI 程序：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher capture2text calibre cheat-engine eac hourglass locale-emulator makemkv megasync moonlight mpc-hc-fork obs-studio screentogif sumatrapdf capframex crystaldiskinfo crystaldiskmark cpu-z ddu dismplusplus everything fancontrol fiddler furmark geekuninstaller gpu-z hwinfo nekoray ocat quickcpu rainmeter rufus spacesniffer twinkle-tray wingetui wox-beta github mobaxterm rstudio termius texstudio vscode</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 GUI 程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install madvr winaero-tweaker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install winaero-tweaker vcredist</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -515,7 +515,7 @@
 </tr>
 <tr>
 <td>cheat-engine</td>
-<td></td>
+<td>添加 zh-cn 语言包</td>
 </tr>
 <tr>
 <td>eac</td>
@@ -528,10 +528,6 @@
 <tr>
 <td>locale-emulator</td>
 <td>打开 Locale Emulator Installer 进行安装</td>
-</tr>
-<tr>
-<td>madvr</td>
-<td>管理员运行 install.bat，和播放器的安装先后无关</td>
 </tr>
 <tr>
 <td>makemkv</td>
@@ -627,7 +623,7 @@
 </tr>
 <tr>
 <td>quickcpu</td>
-<td>在 POWER 顶部栏选项中，可以调用“卓越性能”电源模式和调整各种电源模式细节，详见后文</td>
+<td>在 POWER 顶部栏选项中，可以调整电源模式的各种细节，详见后文</td>
 </tr>
 <tr>
 <td>rainmeter</td>
@@ -644,6 +640,10 @@
 <tr>
 <td>twinkle-tray</td>
 <td>调整连接台式机显示器的亮度，安装在笔记本上时主要用于调整外接显示器</td>
+</tr>
+<tr>
+<td>vcredist</td>
+<td>会安装到系统路径内，主要使用 winget 安装的 vcredist 在更新的时候经常会出现 x86 和 x64 版本打架的情况</td>
 </tr>
 <tr>
 <td>winaero-tweaker</td>
@@ -693,7 +693,7 @@
 </li>
 <li><p>软件的自我更新也会也可以被 winget 检测，因此完美弥补了 scoop 的缺陷。</p>
 </li>
-<li><p>非常适合 Windows 内的必要组件 VCRedist、.Net Runtime 等的安装。</p>
+<li><p>非常适合 Windows 内的必要组件如 .Net Runtime 等的安装。</p>
 </li>
 </ul>
 <p>缺点：</p>
@@ -713,7 +713,7 @@
 <h4 id="设置代理与程序安装-1"><a href="#设置代理与程序安装-1" class="headerlink" title="设置代理与程序安装"></a>设置代理与程序安装</h4><p>winget 会自动调用系统的代理设置，在 v2ray 内配置即可。</p>
 <p>由于 winget 一行命令只能安装一个程序，winget 的安装命令会较长。</p>
 <p>安装无 GUI 的 Windows 内必要组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">winget install Microsoft.WindowsAppRuntime.1.4</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.6</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.7</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.8</span><br><span class="line">winget install Microsoft.DotNet.Framework.DeveloperPack_4</span><br><span class="line">winget install Microsoft.VCRedist.2005.x86</span><br><span class="line">winget install Microsoft.VCRedist.2005.x64</span><br><span class="line">winget install Microsoft.VCRedist.2008.x86</span><br><span class="line">winget install Microsoft.VCRedist.2008.x64</span><br><span class="line">winget install Microsoft.VCRedist.2010.x86</span><br><span class="line">winget install Microsoft.VCRedist.2010.x64</span><br><span class="line">winget install Microsoft.VCRedist.2012.x86</span><br><span class="line">winget install Microsoft.VCRedist.2012.x64</span><br><span class="line">winget install Microsoft.VCRedist.2013.x86</span><br><span class="line">winget install Microsoft.VCRedist.2013.x64</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x86</span><br><span class="line">winget install Microsoft.VCRedist.2015+.x64</span><br><span class="line">winget install -i Microsoft.DirectX</span><br><span class="line">winget install -i Microsoft.VisualStudio.2022.BuildTools</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">winget install Microsoft.WindowsAppRuntime.1.4</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.6</span><br><span class="line">winget install Microsoft.DotNet.DesktopRuntime.8</span><br><span class="line">winget install Microsoft.DotNet.Framework.DeveloperPack_4</span><br><span class="line">winget install -i Microsoft.DirectX</span><br><span class="line">winget install -i Microsoft.VisualStudio.2022.BuildTools</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -727,19 +727,15 @@
 </tr>
 <tr>
 <td>.NET DesktopRuntime</td>
-<td>6+7+8</td>
+<td>6+8，7 版本已经终止服务</td>
 </tr>
 <tr>
 <td>.Net Framework</td>
 <td>4.8，旧版 3.5 需要去<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/download/details.aspx?id=25150">微软官网</a>手动下载安装</td>
 </tr>
 <tr>
-<td>VCRedist</td>
-<td>不推荐只装 x64 的，否则无论更新还是使用的时候都会很麻烦。以及最新版本都整合在 2015+ 内</td>
-</tr>
-<tr>
 <td>DirectX 9</td>
-<td>Windows 10/11 预装了 DirectX 12，但未包含部分旧版 DirectX 9 的库文件，以及安装过程有附带软件需要手动处理</td>
+<td>Windows 10/11 预装了 DirectX 12，但未包含部分旧版 DirectX 9 的库文件，以及安装过程有附带 bing 工具栏需要手动取消</td>
 </tr>
 <tr>
 <td>VisualStudio BuildTools</td>
@@ -747,7 +743,7 @@
 </tr>
 </tbody></table>
 <p>安装 GUI 程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">winget install -i FinalWire.AIDA64.Extreme -v 7.20</span><br><span class="line">winget install -i Bandisoft.Bandizip</span><br><span class="line">winget install -i NirSoft.BlueScreenView</span><br><span class="line">winget install -i BlueStack.BlueStacks</span><br><span class="line">winget install -i ByteDance.JianyingPro</span><br><span class="line">winget install -i ByteDance.CapCut</span><br><span class="line">winget install -i Discord.Discord</span><br><span class="line">winget install -i FlorianHoech.DisplayCAL</span><br><span class="line">winget install -i PeterPawlowski.foobar2000</span><br><span class="line">winget install -i PeterPawlowski.foobar2000.EncoderPack</span><br><span class="line">winget install -i Google.Chrome</span><br><span class="line">winget install -i Tonec.InternetDownloadManager</span><br><span class="line">winget install -i Nevcairiel.LAVFilters</span><br><span class="line">winget install -i Logitech.OptionsPlus</span><br><span class="line">winget install -i MacType.MacType</span><br><span class="line">winget install -i Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget install -i Mozilla.Firefox</span><br><span class="line">winget install -i Notion.Notion</span><br><span class="line">winget install -i Nvidia.GeForceExperience</span><br><span class="line">winget install -i Daum.PotPlayer</span><br><span class="line">winget install -i Microsoft.PowerShell</span><br><span class="line">winget install -i Microsoft.PowerToys</span><br><span class="line">winget install -i Sandboxie.Plus</span><br><span class="line">winget install -i Guru3D.RTSS</span><br><span class="line">winget install -i Spotify.Spotify</span><br><span class="line">winget install -i StartIsBack.StartAllBack</span><br><span class="line">winget install -i Valve.Steam</span><br><span class="line">winget install -i tailscale.tailscale</span><br><span class="line">winget install -i Telegram.TelegramDesktop</span><br><span class="line">winget install -i Tencent.TencentMeeting</span><br><span class="line">winget install -i Tencent.TIM</span><br><span class="line">winget install -i Tencent.WeChat</span><br><span class="line">winget install -i VirtualDesktop.Streamer</span><br><span class="line">winget install -i VivaldiTechnologies.Vivaldi</span><br><span class="line">winget install -i ZeroTier.ZeroTierOne</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">winget install -i FinalWire.AIDA64.Extreme -v 7.20</span><br><span class="line">winget install -i Bandisoft.Bandizip</span><br><span class="line">winget install -i NirSoft.BlueScreenView</span><br><span class="line">winget install -i ByteDance.JianyingPro</span><br><span class="line">winget install -i ByteDance.CapCut</span><br><span class="line">winget install -i Discord.Discord</span><br><span class="line">winget install -i FlorianHoech.DisplayCAL</span><br><span class="line">winget install -i PeterPawlowski.foobar2000</span><br><span class="line">winget install -i PeterPawlowski.foobar2000.EncoderPack</span><br><span class="line">winget install -i Google.Chrome</span><br><span class="line">winget install -i Tonec.InternetDownloadManager</span><br><span class="line">winget install -i Nevcairiel.LAVFilters</span><br><span class="line">winget install -i Logitech.OptionsPlus</span><br><span class="line">winget install -i MacType.MacType</span><br><span class="line">winget install -i Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget install -i Mozilla.Firefox</span><br><span class="line">winget install -i Notion.Notion</span><br><span class="line">winget install -i Nvidia.GeForceExperience</span><br><span class="line">winget install -i Daum.PotPlayer</span><br><span class="line">winget install -i Microsoft.PowerShell</span><br><span class="line">winget install -i Microsoft.PowerToys</span><br><span class="line">winget install -i Sandboxie.Plus</span><br><span class="line">winget install -i Guru3D.RTSS</span><br><span class="line">winget install -i Spotify.Spotify</span><br><span class="line">winget install -i StartIsBack.StartAllBack</span><br><span class="line">winget install -i Valve.Steam</span><br><span class="line">winget install -i tailscale.tailscale</span><br><span class="line">winget install -i Telegram.TelegramDesktop</span><br><span class="line">winget install -i Tencent.TencentMeeting</span><br><span class="line">winget install -i Tencent.TIM</span><br><span class="line">winget install -i Tencent.WeChat</span><br><span class="line">winget install -i VirtualDesktop.Streamer</span><br><span class="line">winget install -i Vivaldi.Vivaldi</span><br><span class="line">winget install -i ZeroTier.ZeroTierOne</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -765,11 +761,7 @@
 </tr>
 <tr>
 <td>BlueScreenView</td>
-<td>可以查看蓝屏的具体 dump 文件内容，windows 系统有默认打开系统失败的小内存转储（256 KB），存储在 <code>%SystemRoot%\Minidump\</code></td>
-</tr>
-<tr>
-<td>BlueStacks</td>
-<td>默认下载的版本为 Android 11，<a target="_blank" rel="noopener" href="https://support.bluestacks.com/hc/en-us/articles/4415238471053-System-requirements-for-BlueStacks-5-on-Hyper-V-enabled-Windows-10-and-11">5.20 版本起（2023.12）已经支持在开启了 Hyper-V 的系统内运行</a>，以及不仅是模拟器，也是虚拟定位</td>
+<td>可以查看蓝屏的具体 dump 文件内容，Windows 11 系统有默认打开系统失败的小内存转储（256 KB），存储在 <code>%SystemRoot%\Minidump\</code></td>
 </tr>
 <tr>
 <td>Capcut/JianyingPro</td>
@@ -891,23 +883,21 @@
 <td>ZeroTier</td>
 <td>系统服务和 UI 独立生效</td>
 </tr>
-<tr>
-<td>搜狗拼音</td>
-<td>当心流氓修改，以及必须在安装中文、日文、西文字体之后进行</td>
-</tr>
 </tbody></table>
 <h4 id="scoop-和-winget-的日常更新命令"><a href="#scoop-和-winget-的日常更新命令" class="headerlink" title="scoop 和 winget 的日常更新命令"></a>scoop 和 winget 的日常更新命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update * &amp;&amp; winget upgrade -i -r -u --verbose</span><br></pre></td></tr></table></figure>
-<h3 id="Windows-命令行-amp-Microsoft-Store-应用商店"><a href="#Windows-命令行-amp-Microsoft-Store-应用商店" class="headerlink" title="Windows 命令行 &amp; Microsoft Store 应用商店"></a>Windows 命令行 &amp; Microsoft Store 应用商店</h3><h4 id="Windows-命令行"><a href="#Windows-命令行" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h4><p>目前在 Windows 内使用 Linux 通常使用的是 wsl2，首先需要打开 Windows 功能内的 Hyper-V 和虚拟机平台（Virtual Machine Platform）。如果系统内没有 Hyper-V 则只需要打开虚拟机平台。</p>
+<h3 id="Windows-命令行-amp-Microsoft-Store-应用商店"><a href="#Windows-命令行-amp-Microsoft-Store-应用商店" class="headerlink" title="Windows 命令行 &amp; Microsoft Store 应用商店"></a>Windows 命令行 &amp; Microsoft Store 应用商店</h3><h4 id="Windows-命令行"><a href="#Windows-命令行" class="headerlink" title="Windows 命令行"></a>Windows 命令行</h4><p>安装 Windows Subsystem for Linux（WSL）。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
 <p>注意事项：</p>
 <ul>
-<li><p>wsl2 依赖于 Windows 功能内的虚拟机平台（Virtual Machine Platform）。这个功能是 Hyper-V 的一个子集，但在 Windows 功能列表内是和 Hyper-V 并列出现的。因此使用 wsl2 时可以不打开 Hyper-V，只需要保证虚拟机平台已经开启即可。不过通常还是全部打开。</p>
+<li><p>目前在 Windows 内使用 Linux 通常使用的是 wsl2。wsl2 依赖于 Windows 功能内的虚拟机平台（Virtual Machine Platform），执行 <code>wsl --install</code> 的时候会自动配置并启用。</p>
+</li>
+<li><p>虚拟机平台是 Hyper-V 的一个子集，但在 Windows 功能列表内是和 Hyper-V 并列出现的。使用 wsl2 时可以不打开 Hyper-V，只需要保证虚拟机平台已经开启即可。如果没有其他 Hyper-V 需求，则推荐只打开虚拟机平台。</p>
 </li>
 <li><p>Windows 家庭版的 Windows 功能一栏内是没有 Hyper-V 的，不过由于前述，同样是可以使用 wsl2 的。参考来源：<a target="_blank" rel="noopener" href="https://github.com/MicrosoftDocs/WSL/issues/899">Is Hyper-V necessary or not for WSL2? Can it be activated on Windows 10 Home? #899</a></p>
 </li>
-<li><p>Windows 10 和 11 使用 <code>wsl --install</code> 安装的其实就是 Microsoft Store 应用商店中 Windows Subsystem for Linux。</p>
+<li><p>Windows 10 和 11 使用 <code>wsl --install</code> 安装的是 Microsoft Store 应用商店中 Windows Subsystem for Linux 而不是 Windows 功能中的“适用于 Linux 的 Windows 子系统”。</p>
 </li>
-<li><p>此时 Windows 功能中的“适用于 Linux 的 Windows 子系统”始终是未勾选状态的，这完全没有问题也并不需要手动勾起这个选项。参考来源：<a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/commandline/a-preview-of-wsl-in-the-microsoft-store-is-now-available/">A preview of WSL in the Microsoft Store is now available!</a>。</p>
+<li><p>因此安装后 Windows 功能中的“适用于 Linux 的 Windows 子系统”也依旧是未勾选状态的，这完全没有问题也并不需要手动勾起这个选项。参考来源：<a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/commandline/a-preview-of-wsl-in-the-microsoft-store-is-now-available/">A preview of WSL in the Microsoft Store is now available!</a>。</p>
 </li>
 <li><p>WSL 可以识别多块 GPU，但无法同时读取多块，每一次只能读取其中的单独一块。参考来源：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-gb/windows/wsl/tutorials/gpu-compute">Get started with GPU acceleration for ML in WSL</a>。</p>
 </li>
@@ -961,6 +951,10 @@
 <tr>
 <td>ATK V HUB</td>
 <td>VGN 键盘驱动软件</td>
+</tr>
+<tr>
+<td>BlueStacks</td>
+<td>使用 winget 下载的版本为 Nougat 32，再切换至 Android 11 会出现卡机 bug，手动安装无问题</td>
 </tr>
 <tr>
 <td>Corsair Link 4</td>
@@ -1023,12 +1017,12 @@
 <td>虽然写在后面，这项最好要先装以防 Windows Defender 误删文件</td>
 </tr>
 <tr>
-<td>原神</td>
-<td>转移游戏本体的时候要注意本体文件内的 <code>config.ini</code>，启动器有时候是会删除这个文件导致无法读取的</td>
+<td>米哈游全家桶</td>
+<td>miHoYo 启动器和 HoYoPlay，目前转移游戏已经非常方便</td>
 </tr>
 <tr>
-<td>铁道</td>
-<td>同上，以及这种现象似乎主要发生在国服启动器内</td>
+<td>尘白</td>
+<td></td>
 </tr>
 <tr>
 <td>游戏推流助手</td>
@@ -1138,7 +1132,7 @@
 </tr>
 <tr>
 <td>zentimings</td>
-<td>AMD 平台查看内存信息</td>
+<td>AMD 平台查看时序信息</td>
 </tr>
 <tr>
 <td>鲁大师 5.21</td>
@@ -1262,11 +1256,13 @@
 <h4 id="quickcpu"><a href="#quickcpu" class="headerlink" title="quickcpu"></a>quickcpu</h4><p>无论是 Intel 平台还是 AMD 平台，在使用 Windows 11 的时候一律使用平衡+更长的电池使用时间（系统-电源-最佳能效）即可。</p>
 <h5 id="Intel-平台"><a href="#Intel-平台" class="headerlink" title="Intel 平台"></a>Intel 平台</h5><p>从平衡+最大性能叠加（系统-电源-最佳性能）起，Intel SpeedStep（EIST）会逐渐不生效。以 P5.1+E3.9 的 i5-12600KF 在待机状态下为例：</p>
 <ul>
-<li><p>平衡+更长的电池使用时间（系统-电源-最佳能效）：核心频率均低于 1GHz，功耗在 9W 左右</p>
+<li><p>平衡+更长的电池使用时间（系统-电源-最佳能效）：每个核心频率都常低于 1GHz，功耗在 9W 左右。</p>
 </li>
-<li><p>平衡+最大性能叠加（系统-电源-最佳性能）：核心频率极少低于 1GHz，大部分时间保持为 5.1GHz+3.9GHz，功耗在 25W 左右</p>
+<li><p>平衡+Balanced Power (No Overlay)：每个核心频率都在 1GHz 附近浮动，且更积极地进行最大睿频，功耗在 15W 左右。</p>
 </li>
-<li><p>高性能及以上：核心频率持续保持为 5.1GHz+3.9GHz，功耗在 28W 左右</p>
+<li><p>平衡+最大性能叠加（系统-电源-最佳性能）：每个核心频率极少低于 1GHz，大部分时间保持为 5.1GHz+3.9GHz，功耗在 25W 左右。</p>
+</li>
+<li><p>高性能及以上：核心频率持续保持为 5.1GHz+3.9GHz，功耗在 28W 左右。</p>
 </li>
 </ul>
 <p>而这些电源模式在满载的时候的表现都是完全相同的，所以完全没有必要启用更高的电源计划。</p>
@@ -1326,13 +1322,25 @@
 <li><p>Context Menu-View Owner</p>
 </li>
 <li><p>File Explorer-Customize This PC Folders-Restore Windows 10 Folders</p>
+<ul>
+<li><p>目前 Windows 11 22631.3737 这个功能需要另外手动处理才能正常生效。</p>
+</li>
+<li><p>进入注册表目录 <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace</code>。</p>
+</li>
+<li><p>如果有的话，删除项 <code>&#123;0DB7E03F-FC29-4DC6-9020-FF41B59E513A&#125;</code>，其代表的是 3D Objects。</p>
+</li>
+<li><p>在其余 11 项中，如果项目内没有值 <code>HideIfEnabled</code>，则将值 <code>HideByDefault</code> 从 1 改为 0。</p>
+</li>
+<li><p>和 winaero-tweaker 中相对应，一共需要手动修改的项有 6 项。</p>
+</li>
+</ul>
 </li>
 <li><p>File Explorer-File Explorer Starting Folder-This PC</p>
 </li>
 </ul>
-<p>注：打开 Windows 11-Disable Bakcground Apps 会使更换锁屏壁纸的 Windows 聚焦无法正常使用。</p>
+<p>注：打开 Windows 11-Disable Bakcground Apps 会使更换锁屏壁纸的 Windows 聚焦无法正常使用，当然一般用的是 store 的动态主题罢了。</p>
 <h3 id="包管理器-winget-1"><a href="#包管理器-winget-1" class="headerlink" title="包管理器 winget"></a>包管理器 winget</h3><h4 id="winget-pin"><a href="#winget-pin" class="headerlink" title="winget pin"></a>winget pin</h4><p>由于 winget 内的版本错误以及阻止 winget 对软件自动更新，为以下软件添加 winget pin。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">winget pin add Adobe.Acrobat.Reader.64-bit</span><br><span class="line">winget pin add Mozilla.Firefox</span><br><span class="line">winget pin add Google.Chrome</span><br><span class="line">winget pin add Microsoft.Edge</span><br><span class="line">winget pin add Mozilla.Thunderbird</span><br><span class="line">winget pin add Telegram.TelegramDesktop</span><br><span class="line">winget pin add Microsoft.PowerToys</span><br><span class="line">winget pin add Discord.Discord</span><br><span class="line">winget pin add Tonec.InternetDownloadManager</span><br><span class="line">winget pin add Logitech.OptionsPlus</span><br><span class="line">winget pin add Tencent.TencentMeeting</span><br><span class="line">winget pin add Tencent.TIM</span><br><span class="line">winget pin add Tencent.WeChat</span><br><span class="line">winget pin add Ubisoft.Connect</span><br><span class="line">winget pin add Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget pin add Microsoft.AppInstaller</span><br><span class="line">winget pin add FinalWire.AIDA64.Extreme</span><br><span class="line">winget pin add ByteDance.JianyingPro</span><br><span class="line">winget pin add ByteDance.CapCut</span><br><span class="line">winget pin add NirSoft.BlueScreenView</span><br><span class="line">winget pin add VivaldiTechnologies.Vivaldi</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">winget pin add Microsoft.VCRedist.2005.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2008.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2008.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2010.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2010.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2012.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2012.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2013.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2013.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2015+.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2015+.x64</span><br><span class="line">winget pin add Microsoft.OneDrive</span><br><span class="line">winget pin add Adobe.Acrobat.Reader.64-bit</span><br><span class="line">winget pin add Mozilla.Firefox</span><br><span class="line">winget pin add Google.Chrome</span><br><span class="line">winget pin add Microsoft.Edge</span><br><span class="line">winget pin add Mozilla.Thunderbird</span><br><span class="line">winget pin add Telegram.TelegramDesktop</span><br><span class="line">winget pin add Microsoft.PowerToys</span><br><span class="line">winget pin add Discord.Discord</span><br><span class="line">winget pin add Tonec.InternetDownloadManager</span><br><span class="line">winget pin add Logitech.OptionsPlus</span><br><span class="line">winget pin add Tencent.TencentMeeting</span><br><span class="line">winget pin add Tencent.TIM</span><br><span class="line">winget pin add Tencent.WeChat</span><br><span class="line">winget pin add Ubisoft.Connect</span><br><span class="line">winget pin add Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget pin add Microsoft.AppInstaller</span><br><span class="line">winget pin add FinalWire.AIDA64.Extreme</span><br><span class="line">winget pin add ByteDance.JianyingPro</span><br><span class="line">winget pin add ByteDance.CapCut</span><br><span class="line">winget pin add NirSoft.BlueScreenView</span><br><span class="line">winget pin add Vivaldi.Vivaldi</span><br><span class="line">winget pin add ByteDance.CapCut</span><br><span class="line">winget pin add ByteDance.JianyingPro</span><br></pre></td></tr></table></figure>
 <h4 id="DisplayCAL"><a href="#DisplayCAL" class="headerlink" title="DisplayCAL"></a>DisplayCAL</h4><p>由于 DisplayCAL 自 2019 年末的 v3.8.9.3 起已停止更新，其自动下载的 argyllcms 也一直是旧的 v2.3.1。</p>
 <ul>
 <li><p>如果先通过 scoop 安装 argyllcms，则在使用 winget 安装 DisplayCAL 时会自动调用 scoop 所安装的最新版的 argyllcms。</p>
