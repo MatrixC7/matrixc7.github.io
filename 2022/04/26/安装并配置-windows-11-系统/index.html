@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
 <meta property="article:published_time" content="2022-04-25T20:48:05.000Z">
-<meta property="article:modified_time" content="2025-01-06T11:42:29.000Z">
+<meta property="article:modified_time" content="2025-02-08T11:52:01.080Z">
 <meta property="article:author" content="Fangru Shao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png">
@@ -193,7 +193,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-01-06 11:42:29" itemprop="dateModified" datetime="2025-01-06T11:42:29Z">2025-01-06</time>
+                <time title="修改时间：2025-02-08 11:52:01" itemprop="dateModified" datetime="2025-02-08T11:52:01Z">2025-02-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,7 +242,7 @@
 </li>
 <li><p>安装完重启进入配置界面，此时选择脱机账户而非微软账户。原因在于这里如果直接使用微软账号，系统内个人文件夹的名字会跟随微软账号的名称，相当容易出问题；同时，微软账户完全可以在进入系统之后再绑上，这时个人文件夹的名称已经确定，不会带来任何可能的负面影响。</p>
 </li>
-<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而使 Windows 11 能够在断网的情况下安装的操作非常麻烦。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#105;&#x40;&#x69;&#46;&#105;">&#105;&#x40;&#x69;&#46;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
+<li><p>但 Windows 11 的安装中可见的只有使用在线的微软账户选项，而使 Windows 11 能够在断网的情况下安装的操作非常麻烦。针对这个问题有个小技巧：在登录个人微软账户的页面使用账户（邮箱：<a href="mailto:&#x69;&#64;&#x69;&#x2e;&#105;">&#x69;&#64;&#x69;&#x2e;&#105;</a>，密码：i），此时安装会提醒该账号已有过多错误的登录尝试而被锁定，直接点击下一步就可以进入脱机账户的设置。<br><img src="https://pic.imgdb.cn/item/640cac69f144a01007dd1d33.png"></p>
 </li>
 <li><p>个人文件夹的名字一般习惯直接取 i，不仅自指而且由于不包含中文和空格，以后安装其他程序（例如 nodejs）的时候不会报错，否则会很麻烦。</p>
 </li>
@@ -306,10 +306,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">irm get.scoop.sh | iex</span><br></pre></td></tr></table></figure>
 <h4 id="设置代理与程序安装"><a href="#设置代理与程序安装" class="headerlink" title="设置代理与程序安装"></a>设置代理与程序安装</h4><p>根据 v2ray 界面内的端口信息，为 scoop 设置 HTTP 代理。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop config proxy localhost:10809</span><br></pre></td></tr></table></figure>
-<p>先安装基本工具 git，之后添加 scoop（勺子）的官方 bucket（冰淇淋桶），即官方提供的各种软件包列表。个人推荐只添加 extra 和 versions 这两个列表并指安装这两个列表内的程序，因为这两个列表能保证所有通过 scoop 安装的软件的最高清洁度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scoop install git</span><br><span class="line">scoop bucket add extras</span><br><span class="line">scoop bucket add versions</span><br></pre></td></tr></table></figure>
+<p>先安装基本工具 git，之后添加 scoop（勺子）的 bucket（冰淇淋桶），即各种软件包列表。个人推荐添加官方提供的 extra 和 versions 和第三方的 kkzzhizhou/scoop-apps。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scoop install git</span><br><span class="line">scoop bucket add extras</span><br><span class="line">scoop bucket add versions</span><br><span class="line">scoop bucket add apps https:&#x2F;&#x2F;github.com&#x2F;kkzzhizhou&#x2F;scoop-apps</span><br></pre></td></tr></table></figure>
 <p>安装 CLI 程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git adb argyllcms aria2 cacert cmake cuda curl cwrsync cygwin dark exiftool fastfetch ffmpeg frp go gpg gsudo innounp-unicode iperf3 lux mambaforge nodejs nssm pandoc phantomjs python311 r rhash rclone tdm-gcc telnet vim winget yt-dlp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git adb argyllcms aria2 cacert cmake cuda curl cwrsync cygwin dark exiftool fastfetch ffmpeg frp go gpg gsudo iperf3 lux mambaforge nodejs nssm pandoc phantomjs python311 r rhash rclone tdm-gcc telnet vim winget yt-dlp</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -392,10 +392,6 @@
 <tr>
 <td>gsudo</td>
 <td></td>
-</tr>
-<tr>
-<td>innounp-unicode</td>
-<td>innounp 原版本可能报错 decompress error</td>
 </tr>
 <tr>
 <td>iperf3</td>
@@ -483,8 +479,8 @@
 <p>由于所有 conda/mamba 包全都是直接属于 MambaForge 版本内的，因此为了不造成混乱，不推荐使用 <code>conda update conda</code> 来更新。只需要等 MambaForge 大版本更新即可。</p>
 <p>MambaForge persist 的只有 env 文件夹，因此 base 环境是不会保存的。</p>
 <p>安装 GUI 程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher capture2text calibre cheat-engine czkawka-gui eac hourglass locale-emulator makemkv megasync moonlight mpc-hc-fork nosleep obs-studio screentogif sumatrapdf capframex crystaldiskinfo crystaldiskmark cpu-z ddu dismplusplus everything fancontrol fiddler furmark revouninstaller gpu-z hwinfo nekoray ocat quickcpu rainmeter rufus spacesniffer twinkle-tray wox-beta github mobaxterm rstudio termius texstudio vscode</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scoop install https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ScoopInstaller&#x2F;Extras&#x2F;d2477d6dec97d92b080163b73afad9e398ce31ad&#x2F;bucket&#x2F;nekoray.json</span><br><span class="line">scoop install sing-box</span><br><span class="line">scoop hold nekoray</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install 7zip blender blender-launcher capture2text calibre cheat-engine czkawka-gui eac hourglass locale-emulator makemkv megasync moonlight mpc-hc-fork nosleep obs-studio screentogif sumatrapdf capframex crystaldiskinfo crystaldiskmark cpu-z ddu dismplusplus dnslookup everything fancontrol fiddler furmark revouninstaller gpu-z hwinfo nekoray ocat quickcpu rainmeter rufus spacesniffer twinkle-tray wox-beta github mobaxterm rstudio termius texstudio vscode</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoop install https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ScoopInstaller&#x2F;Extras&#x2F;d2477d6dec97d92b080163b73afad9e398ce31ad&#x2F;bucket&#x2F;nekoray.json</span><br><span class="line">scoop hold nekoray</span><br></pre></td></tr></table></figure>
 <p>管理员模式下打开 PowerShell 安装 GUI 程序。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scoop install winaero-tweaker vcredist</span><br></pre></td></tr></table></figure>
 <table>
@@ -595,6 +591,10 @@
 <td></td>
 </tr>
 <tr>
+<td>dnslookup</td>
+<td>系统自带的为 nslookup.exe</td>
+</tr>
+<tr>
 <td>everything</td>
 <td>设置开机自启，安装服务</td>
 </tr>
@@ -692,11 +692,7 @@
 </tr>
 <tr>
 <td>nekoray</td>
-<td>4.0.1 版本极糟，建议保持 3.26 后手动指定 sing-box 核心</td>
-</tr>
-<tr>
-<td>sing-box</td>
-<td></td>
+<td>4.0.1 版本极糟，建议保持 3.26</td>
 </tr>
 </tbody></table>
 <h3 id="包管理器-winget"><a href="#包管理器-winget" class="headerlink" title="包管理器 winget"></a>包管理器 winget</h3><p>Windows 下的包管理器。</p>
@@ -756,7 +752,7 @@
 </tr>
 </tbody></table>
 <p>安装 GUI 程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">winget install -i FinalWire.AIDA64.Extreme</span><br><span class="line">winget install -i Bandisoft.Bandizip</span><br><span class="line">winget install -i NirSoft.BlueScreenView</span><br><span class="line">winget install -i ByteDance.JianyingPro</span><br><span class="line">winget install -i ByteDance.CapCut</span><br><span class="line">winget install -i Discord.Discord</span><br><span class="line">winget install -i FlorianHoech.DisplayCAL</span><br><span class="line">winget install -i PeterPawlowski.foobar2000</span><br><span class="line">winget install -i PeterPawlowski.foobar2000.EncoderPack</span><br><span class="line">winget install -i Google.Chrome</span><br><span class="line">winget install -i Tonec.InternetDownloadManager</span><br><span class="line">winget install -i Nevcairiel.LAVFilters</span><br><span class="line">winget install -i Logitech.OptionsPlus</span><br><span class="line">winget install -i Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget install -i Mozilla.Firefox</span><br><span class="line">winget install -i Guru3D.Afterburner</span><br><span class="line">winget install -i Notion.Notion</span><br><span class="line">winget install -i Nvidia.GeForceExperience</span><br><span class="line">winget install -i Daum.PotPlayer</span><br><span class="line">winget install -i Microsoft.PowerShell</span><br><span class="line">winget install -i Microsoft.PowerToys</span><br><span class="line">winget install -i Sandboxie.Plus</span><br><span class="line">winget install -i Spotify.Spotify</span><br><span class="line">winget install -i StartIsBack.StartAllBack</span><br><span class="line">winget install -i Valve.Steam</span><br><span class="line">winget install -i LizardByte.Sunshine</span><br><span class="line">winget install -i tailscale.tailscale</span><br><span class="line">winget install -i Telegram.TelegramDesktop</span><br><span class="line">winget install -i Tencent.TencentMeeting</span><br><span class="line">winget install -i Tencent.TIM</span><br><span class="line">winget install -i Tencent.WeChat</span><br><span class="line">winget install -i VirtualDesktop.Streamer</span><br><span class="line">winget install -i Vivaldi.Vivaldi</span><br><span class="line">winget install -i ZeroTier.ZeroTierOne</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">winget install -i FinalWire.AIDA64.Extreme</span><br><span class="line">winget install -i Bandisoft.Bandizip</span><br><span class="line">winget install -i NirSoft.BlueScreenView</span><br><span class="line">winget install -i ByteDance.JianyingPro</span><br><span class="line">winget install -i ByteDance.CapCut</span><br><span class="line">winget install -i Discord.Discord</span><br><span class="line">winget install -i FlorianHoech.DisplayCAL</span><br><span class="line">winget install -i beeradmoore.dlss-swapper</span><br><span class="line">winget install -i PeterPawlowski.foobar2000</span><br><span class="line">winget install -i PeterPawlowski.foobar2000.EncoderPack</span><br><span class="line">winget install -i Google.Chrome</span><br><span class="line">winget install -i Tonec.InternetDownloadManager</span><br><span class="line">winget install -i Nevcairiel.LAVFilters</span><br><span class="line">winget install -i Logitech.OptionsPlus</span><br><span class="line">winget install -i Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget install -i Mozilla.Firefox</span><br><span class="line">winget install -i Guru3D.Afterburner</span><br><span class="line">winget install -i Notion.Notion</span><br><span class="line">winget install -i Daum.PotPlayer</span><br><span class="line">winget install -i Microsoft.PowerShell</span><br><span class="line">winget install -i Microsoft.PowerToys</span><br><span class="line">winget install -i Sandboxie.Plus</span><br><span class="line">winget install -i Spotify.Spotify</span><br><span class="line">winget install -i StartIsBack.StartAllBack</span><br><span class="line">winget install -i Valve.Steam</span><br><span class="line">winget install -i LizardByte.Sunshine</span><br><span class="line">winget install -i tailscale.tailscale</span><br><span class="line">winget install -i Telegram.TelegramDesktop</span><br><span class="line">winget install -i Tencent.TencentMeeting</span><br><span class="line">winget install -i Tencent.TIM</span><br><span class="line">winget install -i Tencent.WeChat</span><br><span class="line">winget install -i VirtualDesktop.Streamer</span><br><span class="line">winget install -i Vivaldi.Vivaldi</span><br><span class="line">winget install -i ZeroTier.ZeroTierOne</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -787,6 +783,10 @@
 <tr>
 <td>DisplayCAL</td>
 <td>手动指定 scoop 安装的 ArgyllCMS 可执行文件路径，配合 ColorChecker Display 进行校色</td>
+</tr>
+<tr>
+<td>dlss-swapper</td>
+<td>为已经支持 DLSS 的游戏更新最新版本的 DLSS 文件</td>
 </tr>
 <tr>
 <td>foobar2000</td>
@@ -827,10 +827,6 @@
 <tr>
 <td>Notion</td>
 <td></td>
-</tr>
-<tr>
-<td>NVIDIA GeForce Experience</td>
-<td>更新 NVIDIA 驱动</td>
 </tr>
 <tr>
 <td>PotPlayer</td>
@@ -974,8 +970,8 @@
 <td>使用 winget 下载的版本为 Nougat 32，再切换至 Android 11 会出现卡机 bug，手动安装无问题</td>
 </tr>
 <tr>
-<td>Corsair Link 4</td>
-<td>监控 AX1600i 的插口电流情况，以最大程度避免 4090 烧接口</td>
+<td>Corsair iCUE</td>
+<td>旧 Link 4 已过时，监控 AX1600i 的插口电流情况，以最大程度避免 4090 烧接口</td>
 </tr>
 <tr>
 <td>Daemon Tools Lite</td>
@@ -996,6 +992,10 @@
 <tr>
 <td>Microsoft Office 2019</td>
 <td>正版的 Office 家庭与学生版，如果激活有问题就用 ohook，删除多授权<a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/msoffice/forum/all/answers-%e5%88%86%e4%ba%ab%e4%b8%80%e4%b8%aaoffice/70a6dc7a-ec1e-41e6-bea0-1266a4c3c0cf">参考</a></td>
+</tr>
+<tr>
+<td>NVIDIA App</td>
+<td>原 GeForce Experience 已更新为 App</td>
 </tr>
 <tr>
 <td>QTTabBar</td>
@@ -1112,11 +1112,19 @@
 <td>绕过 Gal 的正版请求</td>
 </tr>
 <tr>
+<td>apate</td>
+<td></td>
+</tr>
+<tr>
 <td>Cheat Menu</td>
 <td>RPG 游戏的修改工具</td>
 </tr>
 <tr>
 <td>DLsite 重命名工具</td>
+<td></td>
+</tr>
+<tr>
+<td>DLSSTweaks</td>
 <td></td>
 </tr>
 <tr>
@@ -1345,7 +1353,7 @@
 </ul>
 <p>注：打开 Windows 11-Disable Bakcground Apps 会使更换锁屏壁纸的 Windows 聚焦无法正常使用，当然一般用的是 store 的动态主题罢了。</p>
 <h3 id="包管理器-winget-1"><a href="#包管理器-winget-1" class="headerlink" title="包管理器 winget"></a>包管理器 winget</h3><h4 id="winget-pin"><a href="#winget-pin" class="headerlink" title="winget pin"></a>winget pin</h4><p>由于 winget 内的版本错误以及阻止 winget 对软件自动更新，为以下软件添加 winget pin。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">winget pin add Microsoft.VCRedist.2005.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2008.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2008.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2010.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2010.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2012.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2012.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2013.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2013.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2015+.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2015+.x64</span><br><span class="line">winget pin add Microsoft.OneDrive</span><br><span class="line">winget pin add Adobe.Acrobat.Reader.64-bit</span><br><span class="line">winget pin add Mozilla.Firefox</span><br><span class="line">winget pin add Google.Chrome</span><br><span class="line">winget pin add Microsoft.Edge</span><br><span class="line">winget pin add Mozilla.Thunderbird</span><br><span class="line">winget pin add Telegram.TelegramDesktop</span><br><span class="line">winget pin add Microsoft.PowerToys</span><br><span class="line">winget pin add Discord.Discord</span><br><span class="line">winget pin add Tonec.InternetDownloadManager</span><br><span class="line">winget pin add Logitech.OptionsPlus</span><br><span class="line">winget pin add Tencent.TencentMeeting</span><br><span class="line">winget pin add Tencent.TIM</span><br><span class="line">winget pin add Tencent.WeChat</span><br><span class="line">winget pin add Ubisoft.Connect</span><br><span class="line">winget pin add Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget pin add Microsoft.AppInstaller</span><br><span class="line">winget pin add FinalWire.AIDA64.Extreme</span><br><span class="line">winget pin add ByteDance.JianyingPro</span><br><span class="line">winget pin add ByteDance.CapCut</span><br><span class="line">winget pin add NirSoft.BlueScreenView</span><br><span class="line">winget pin add Vivaldi.Vivaldi</span><br><span class="line">winget pin add Guru3D.RTSS</span><br><span class="line">winget pin add Adobe.Acrobat.Pro</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">winget pin add Microsoft.VCRedist.2005.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2008.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2008.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2010.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2010.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2012.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2012.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2013.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2013.x64</span><br><span class="line">winget pin add Microsoft.VCRedist.2015+.x86</span><br><span class="line">winget pin add Microsoft.VCRedist.2015+.x64</span><br><span class="line">winget pin add Microsoft.OneDrive</span><br><span class="line">winget pin add Adobe.Acrobat.Reader.64-bit</span><br><span class="line">winget pin add Mozilla.Firefox</span><br><span class="line">winget pin add Google.Chrome</span><br><span class="line">winget pin add Microsoft.Edge</span><br><span class="line">winget pin add Mozilla.Thunderbird</span><br><span class="line">winget pin add Telegram.TelegramDesktop</span><br><span class="line">winget pin add Microsoft.PowerToys</span><br><span class="line">winget pin add Discord.Discord</span><br><span class="line">winget pin add Tonec.InternetDownloadManager</span><br><span class="line">winget pin add Logitech.OptionsPlus</span><br><span class="line">winget pin add Tencent.TencentMeeting</span><br><span class="line">winget pin add Tencent.TIM</span><br><span class="line">winget pin add Tencent.WeChat</span><br><span class="line">winget pin add Ubisoft.Connect</span><br><span class="line">winget pin add Microsoft.EdgeWebView2Runtime</span><br><span class="line">winget pin add Microsoft.AppInstaller</span><br><span class="line">winget pin add FinalWire.AIDA64.Extreme</span><br><span class="line">winget pin add ByteDance.JianyingPro</span><br><span class="line">winget pin add ByteDance.CapCut</span><br><span class="line">winget pin add NirSoft.BlueScreenView</span><br><span class="line">winget pin add Vivaldi.Vivaldi</span><br><span class="line">winget pin add Guru3D.RTSS</span><br><span class="line">winget pin add Adobe.Acrobat.Pro</span><br><span class="line">winget pin add Bandisoft.Bandizip</span><br><span class="line">winget pin add Synology.ActiveBackupForBusinessAgent</span><br><span class="line">winget pin add Synology.DriveClient</span><br></pre></td></tr></table></figure>
 <h4 id="DisplayCAL"><a href="#DisplayCAL" class="headerlink" title="DisplayCAL"></a>DisplayCAL</h4><p>由于 DisplayCAL 自 2019 年末的 v3.8.9.3 起已停止更新，其自动下载的 argyllcms 也一直是旧的 v2.3.1。</p>
 <ul>
 <li><p>如果先通过 scoop 安装 argyllcms，则在使用 winget 安装 DisplayCAL 时会自动调用 scoop 所安装的最新版的 argyllcms。</p>
